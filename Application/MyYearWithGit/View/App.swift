@@ -37,12 +37,12 @@ struct MyYearWithGitApp: App {
         setenv("GIT_TERMINAL_PROMPT", "0", 1)
         setenv("GIT_LFS_SKIP_SMUDGE", "1", 1)
 
-        AuxiliaryExecute.setupExecutables()
+        AuxiliaryExecuteWrapper.setupExecutables()
 
         // now check if git is working
         do {
-            let command = AuxiliaryExecute.spawn(
-                command: AuxiliaryExecute.git,
+            let command = AuxiliaryExecuteWrapper.spawn(
+                command: AuxiliaryExecuteWrapper.git,
                 args: [
                     "version",
                 ],

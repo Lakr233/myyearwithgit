@@ -38,8 +38,8 @@ extension RepoAnalyser {
     }
 
     func grabGitCommitDetail(withHash commitHash: String) -> [GitCommitResult.GitFileDiff] {
-        let command = AuxiliaryExecute.spawn(
-            command: AuxiliaryExecute.git,
+        let command = AuxiliaryExecuteWrapper.spawn(
+            command: AuxiliaryExecuteWrapper.git,
             args: [
                 "diff",
                 "\(commitHash)^!",

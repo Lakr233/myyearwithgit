@@ -29,8 +29,8 @@ class User {
         {
             email = Set<String>(build)
         }
-        let command = AuxiliaryExecute.spawn(
-            command: AuxiliaryExecute.git,
+        let command = AuxiliaryExecuteWrapper.spawn(
+            command: AuxiliaryExecuteWrapper.git,
             args: ["config", "user.email"],
             timeout: 1
         ) { str in

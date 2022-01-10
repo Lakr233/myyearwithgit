@@ -27,7 +27,7 @@ class GitLabApi: GitApi {
         let request = createRequest(withPaths: [
             "user",
         ])
-        var result: Bool = false
+        var result = false
         var error: Error?
         let sem = DispatchSemaphore(value: 0)
         URLSession

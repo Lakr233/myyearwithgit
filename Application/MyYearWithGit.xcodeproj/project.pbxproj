@@ -53,6 +53,7 @@
 		50E3A99A2751331B003CBE07 /* SourceRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E3A9992751331B003CBE07 /* SourceRegister.swift */; };
 		50E5007F275C7C33003E6C9A /* GitHubApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E5007E275C7C33003E6C9A /* GitHubApi.swift */; };
 		50E50081275C7C84003E6C9A /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E50080275C7C84003E6C9A /* ApiProtocol.swift */; };
+		50EA933E278C09570059EF8B /* AuxiliaryExecute in Frameworks */ = {isa = PBXBuildFile; productRef = 50EA933D278C09570059EF8B /* AuxiliaryExecute */; };
 		50EB62BB275508E700F6E6FF /* ThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB62BA275508E700F6E6FF /* ThanksView.swift */; };
 		50ECC5472756806E00EA0017 /* AskBeforeCloseMyWindow in Frameworks */ = {isa = PBXBuildFile; productRef = 50ECC5462756806E00EA0017 /* AskBeforeCloseMyWindow */; };
 		50FD1005275101D80090EAFB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD1004275101D80090EAFB /* App.swift */; };
@@ -124,6 +125,7 @@
 				50ECC5472756806E00EA0017 /* AskBeforeCloseMyWindow in Frameworks */,
 				509071382752123A002D2C14 /* OctoKit in Frameworks */,
 				5096DBC82751031A007AA4C7 /* Colorful in Frameworks */,
+				50EA933E278C09570059EF8B /* AuxiliaryExecute in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +306,7 @@
 				5096DBC72751031A007AA4C7 /* Colorful */,
 				509071372752123A002D2C14 /* OctoKit */,
 				50ECC5462756806E00EA0017 /* AskBeforeCloseMyWindow */,
+				50EA933D278C09570059EF8B /* AuxiliaryExecute */,
 			);
 			productName = MyYearWithGit;
 			productReference = 50FD1001275101D80090EAFB /* MyYearWithGit.app */;
@@ -618,6 +621,10 @@
 		5096DBC72751031A007AA4C7 /* Colorful */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Colorful;
+		};
+		50EA933D278C09570059EF8B /* AuxiliaryExecute */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AuxiliaryExecute;
 		};
 		50ECC5462756806E00EA0017 /* AskBeforeCloseMyWindow */ = {
 			isa = XCSwiftPackageProductDependency;

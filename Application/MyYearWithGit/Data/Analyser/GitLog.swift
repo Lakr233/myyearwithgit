@@ -18,8 +18,8 @@ extension RepoAnalyser {
     }
 
     func grabGitCommitLog() -> [GitLogElement]? {
-        let command = AuxiliaryExecute.spawn(
-            command: AuxiliaryExecute.git,
+        let command = AuxiliaryExecuteWrapper.spawn(
+            command: AuxiliaryExecuteWrapper.git,
             args: [
                 "log",
                 "--all",

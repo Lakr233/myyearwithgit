@@ -127,8 +127,8 @@ struct AnalysisView: View {
                 try FileManager.default.copyItem(at: git, to: destGit)
                 let currentDir = FileManager.default.currentDirectoryPath
                 FileManager.default.changeCurrentDirectoryPath(dest.path)
-                _ = AuxiliaryExecute.spawn(
-                    command: AuxiliaryExecute.git,
+                _ = AuxiliaryExecuteWrapper.spawn(
+                    command: AuxiliaryExecuteWrapper.git,
                     args: [
                         "reset",
                         "--hard",
@@ -213,8 +213,8 @@ struct AnalysisView: View {
             + token
             + "@github.com"
             + location
-        AuxiliaryExecute.spawn(
-            command: AuxiliaryExecute.git,
+        AuxiliaryExecuteWrapper.spawn(
+            command: AuxiliaryExecuteWrapper.git,
             args: ["clone", realCloneLink, dest.path],
             timeout: 0
         ) { output in
@@ -242,8 +242,8 @@ struct AnalysisView: View {
             realCloneLink.removeLast()
         }
         realCloneLink += location
-        AuxiliaryExecute.spawn(
-            command: AuxiliaryExecute.git,
+        AuxiliaryExecuteWrapper.spawn(
+            command: AuxiliaryExecuteWrapper.git,
             args: ["clone", realCloneLink, dest.path],
             timeout: 0
         ) { output in
@@ -271,8 +271,8 @@ struct AnalysisView: View {
             realCloneLink.removeLast()
         }
         realCloneLink += location
-        AuxiliaryExecute.spawn(
-            command: AuxiliaryExecute.git,
+        AuxiliaryExecuteWrapper.spawn(
+            command: AuxiliaryExecuteWrapper.git,
             args: ["clone", realCloneLink, dest.path],
             timeout: 0
         ) { output in
