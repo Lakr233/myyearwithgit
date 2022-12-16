@@ -19,7 +19,7 @@
         ///   - timeout: any wall timeout if lager than 0, in seconds. eg: 6
         ///   - stdout: a block call from pipeControlQueue in background when buffer from stdout available for read
         ///   - stderr: a block call from pipeControlQueue in background when buffer from stderr available for read
-        /// - Returns: execution recipe, see it's definition for details
+        /// - Returns: execution receipt, see it's definition for details
         @discardableResult
         static func spawnAsync(
             command: String,
@@ -28,7 +28,7 @@
             timeout: Double = 0,
             stdoutBlock: ((String) -> Void)? = nil,
             stderrBlock: ((String) -> Void)? = nil
-        ) async -> ExecuteRecipe {
+        ) async -> ExecuteReceipt {
             await withCheckedContinuation { cont in
                 self.spawn(
                     command: command,
@@ -37,8 +37,8 @@
                     timeout: timeout,
                     stdoutBlock: stdoutBlock,
                     stderrBlock: stderrBlock
-                ) { recipe in
-                    cont.resume(returning: recipe)
+                ) { receipt in
+                    cont.resume(returning: receipt)
                 }
             }
         }
@@ -50,7 +50,7 @@
         ///   - environment: any environment to be appended/overwrite when calling posix spawn. eg: ["mua" : "nya"]
         ///   - timeout: any wall timeout if lager than 0, in seconds. eg: 6
         ///   - output: a block call from pipeControlQueue in background when buffer from stdout or stderr available for read
-        /// - Returns: execution recipe, see it's definition for details
+        /// - Returns: execution receipt, see it's definition for details
         @discardableResult
         static func spawnAsync(
             command: String,
@@ -58,16 +58,21 @@
             environment: [String: String] = [:],
             timeout: Double = 0,
             output: ((String) -> Void)? = nil
-        ) async -> ExecuteRecipe {
-            await spawnAsync(
+        ) async -> ExecuteReceipt {
+            let lock = NSLock()
+            return await spawnAsync(
                 command: command,
                 args: args,
                 environment: environment,
                 timeout: timeout,
                 stdoutBlock: { str in
+                    lock.lock()
                     output?(str)
+                    lock.unlock()
                 }, stderrBlock: { str in
+                    lock.lock()
                     output?(str)
+                    lock.unlock()
                 }
             )
         }

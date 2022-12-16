@@ -186,7 +186,7 @@ extension RepoAnalyser {
                 debugPrint(currentBuffer.joined(separator: " "), to: &standardError)
                 return
             }
-            guard fileName != nil, let mode = mode else {
+            guard fileName != nil, let mode else {
                 return
             }
             currentFileDiff = .init(
@@ -251,7 +251,7 @@ extension RepoAnalyser {
         func commitBodyBarrier() {
             commitBodyForAnalysis()
             // submit to result if needed
-            if let currentFileDiff = currentFileDiff {
+            if let currentFileDiff {
                 result.append(currentFileDiff)
             }
             currentFileDiff = nil

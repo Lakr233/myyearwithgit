@@ -151,7 +151,7 @@ public extension Router {
 
     func load<T: Codable>(_ session: RequestKitURLSession = URLSession.shared, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy?, expectedResultType: T.Type, completion: @escaping (_ json: T?, _ error: Error?) -> Void) -> URLSessionDataTaskProtocol? {
         let decoder = JSONDecoder()
-        if let dateDecodingStrategy = dateDecodingStrategy {
+        if let dateDecodingStrategy {
             decoder.dateDecodingStrategy = dateDecodingStrategy
         }
         return load(session, decoder: decoder, expectedResultType: expectedResultType, completion: completion)
@@ -166,7 +166,7 @@ public extension Router {
             if let response = response as? HTTPURLResponse {
                 if response.wasSuccessful == false {
                     var userInfo = [String: Any]()
-                    if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    if let data, let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                         userInfo[RequestKitErrorKey] = json as Any?
                     }
                     let error = NSError(domain: self.configuration.errorDomain, code: response.statusCode, userInfo: userInfo)
@@ -175,10 +175,10 @@ public extension Router {
                 }
             }
 
-            if let err = err {
+            if let err {
                 completion(nil, err)
             } else {
-                if let data = data {
+                if let data {
                     do {
                         let decoded = try decoder.decode(T.self, from: data)
                         completion(decoded, nil)
@@ -201,7 +201,7 @@ public extension Router {
             if let response = response as? HTTPURLResponse {
                 if response.wasSuccessful == false {
                     var userInfo = [String: Any]()
-                    if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    if let data, let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                         userInfo[RequestKitErrorKey] = json as Any?
                     }
                     let error = NSError(domain: self.configuration.errorDomain, code: response.statusCode, userInfo: userInfo)

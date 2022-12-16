@@ -43,10 +43,10 @@ public extension Octokit {
     {
         let router = ReviewsRouter.listReviews(configuration, owner, repository, pullRequestNumber)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [Review].self) { pullRequests, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let pullRequests = pullRequests {
+                if let pullRequests {
                     completion(Response.success(pullRequests))
                 }
             }

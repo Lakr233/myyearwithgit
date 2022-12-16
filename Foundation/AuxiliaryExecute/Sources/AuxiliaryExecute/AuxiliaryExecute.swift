@@ -72,8 +72,8 @@ public class AuxiliaryExecute {
         case timeout
     }
 
-    /// Execution Recipe
-    public struct ExecuteRecipe: Codable {
+    /// Execution Receipt
+    public struct ExecuteReceipt: Codable {
         // exit code, usually 0 - 255 by system
         // -1 means something bad happened, set by us for convince
         public let exitCode: Int
@@ -92,7 +92,7 @@ public class AuxiliaryExecute {
         // stderr
         public let stderr: String
 
-        /// General initialization of recipe object
+        /// General initialization of receipt object
         /// - Parameters:
         ///   - exitCode: code when process exit
         ///   - pid: pid when process alive
@@ -116,7 +116,7 @@ public class AuxiliaryExecute {
             self.stderr = stderr
         }
 
-        /// Template for making failure recipe
+        /// Template for making failure receipt
         /// - Parameters:
         ///   - exitCode: default -1
         ///   - pid: default -1
@@ -131,7 +131,7 @@ public class AuxiliaryExecute {
             error: AuxiliaryExecute.ExecuteError?,
             stdout: String = "",
             stderr: String = ""
-        ) -> ExecuteRecipe {
+        ) -> ExecuteReceipt {
             .init(
                 exitCode: exitCode,
                 pid: pid,

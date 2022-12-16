@@ -14,10 +14,10 @@ public extension Octokit {
     func myFollowers(_ session: RequestKitURLSession = URLSession.shared, completion: @escaping (_ response: Response<[User]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = FollowRouter.readAuthenticatedFollowers(configuration)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [User].self) { users, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let users = users {
+                if let users {
                     completion(Response.success(users))
                 }
             }
@@ -34,10 +34,10 @@ public extension Octokit {
     func followers(_ session: RequestKitURLSession = URLSession.shared, name: String, completion: @escaping (_ response: Response<[User]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = FollowRouter.readFollowers(name, configuration)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [User].self) { users, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let users = users {
+                if let users {
                     completion(Response.success(users))
                 }
             }
@@ -53,10 +53,10 @@ public extension Octokit {
     func myFollowing(_ session: RequestKitURLSession = URLSession.shared, completion: @escaping (_ response: Response<[User]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = FollowRouter.readAuthenticatedFollowing(configuration)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [User].self) { users, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let users = users {
+                if let users {
                     completion(.success(users))
                 }
             }
@@ -73,10 +73,10 @@ public extension Octokit {
     func following(_ session: RequestKitURLSession = URLSession.shared, name: String, completion: @escaping (_ response: Response<[User]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = FollowRouter.readFollowing(name, configuration)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [User].self) { users, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let users = users {
+                if let users {
                     completion(Response.success(users))
                 }
             }

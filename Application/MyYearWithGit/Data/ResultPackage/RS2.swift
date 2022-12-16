@@ -40,7 +40,7 @@ class ResultSection2: ResultSection {
             }
         }
 
-        if let mostUsed = mostUsed {
+        if let mostUsed {
             mostUsedLanguage = mostUsed
             howManyLine = mostUsedCount
 
@@ -91,7 +91,7 @@ class ResultSection2: ResultSection {
 
         var container: some View {
             VStack(alignment: .leading, spacing: 0) {
-                if let mostUsedLanguage = mostUsedLanguage {
+                if let mostUsedLanguage {
                     Group {
                         Text(mostUsedLanguage.readableDescription())
                             .font(.system(size: preferredContextSize * 2, weight: .semibold, design: .rounded))

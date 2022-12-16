@@ -70,15 +70,15 @@ public struct OAuthConfiguration: Configuration {
 
     public func authorize(_ session: RequestKitURLSession = URLSession.shared, code: String, completion: @escaping (_ config: TokenConfiguration) -> Void) {
         let request = OAuthRouter.accessToken(self, code).URLRequest
-        if let request = request {
+        if let request {
             let task = session.dataTask(with: request) { data, response, _ in
                 if let response = response as? HTTPURLResponse {
                     if response.statusCode != 200 {
                         return
                     } else {
-                        if let data = data, let string = String(data: data, encoding: .utf8) {
+                        if let data, let string = String(data: data, encoding: .utf8) {
                             let accessToken = self.accessTokenFromResponse(string)
-                            if let accessToken = accessToken {
+                            if let accessToken {
                                 let config = TokenConfiguration(accessToken, url: self.apiEndpoint)
                                 completion(config)
                             }
@@ -100,7 +100,7 @@ public struct OAuthConfiguration: Configuration {
 
     public func accessTokenFromResponse(_ response: String) -> String? {
         let accessTokenParam = response.components(separatedBy: "&").first
-        if let accessTokenParam = accessTokenParam {
+        if let accessTokenParam {
             return accessTokenParam.components(separatedBy: "=").last
         }
         return nil

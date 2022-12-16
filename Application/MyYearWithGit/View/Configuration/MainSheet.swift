@@ -116,7 +116,7 @@ struct MainSheet: View {
         }
     }
 
-    func prepareFor<T: View>(sheet: T) -> some View {
+    func prepareFor(sheet: some View) -> some View {
         sheet
             .frame(
                 width: preferredApplicationSize.width * 0.9,

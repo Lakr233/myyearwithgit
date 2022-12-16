@@ -15,10 +15,10 @@ public extension Octokit {
     func stars(_ session: RequestKitURLSession = URLSession.shared, name: String, completion: @escaping (_ response: Response<[Repository]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = StarsRouter.readStars(name, configuration)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [Repository].self) { repos, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let repos = repos {
+                if let repos {
                     completion(Response.success(repos))
                 }
             }
@@ -34,10 +34,10 @@ public extension Octokit {
     func myStars(_ session: RequestKitURLSession = URLSession.shared, completion: @escaping (_ response: Response<[Repository]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = StarsRouter.readAuthenticatedStars(configuration)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [Repository].self) { repos, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let repos = repos {
+                if let repos {
                     completion(Response.success(repos))
                 }
             }

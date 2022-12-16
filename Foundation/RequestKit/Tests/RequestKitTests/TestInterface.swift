@@ -18,10 +18,10 @@ class TestInterface {
     func postJSON(_ session: RequestKitURLSession, completion: @escaping (_ response: Response<[String: AnyObject]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = JSONTestRouter.testPOST(configuration)
         return router.postJSON(session, expectedResultType: [String: AnyObject].self) { json, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let json = json {
+                if let json {
                     completion(Response.success(json))
                 }
             }
@@ -31,10 +31,10 @@ class TestInterface {
     func getJSON(_ session: RequestKitURLSession, completion: @escaping (_ response: Response<[String: String]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = JSONTestRouter.testGET(configuration)
         return router.load(session, expectedResultType: [String: String].self) { json, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let json = json {
+                if let json {
                     completion(Response.success(json))
                 }
             }
@@ -44,7 +44,7 @@ class TestInterface {
     func loadAndIgnoreResponseBody(_ session: RequestKitURLSession, completion: @escaping (_ response: Response<Void>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = JSONTestRouter.testPOST(configuration)
         return router.load(session) { error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
                 completion(Response.success(()))

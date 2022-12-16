@@ -95,10 +95,10 @@ public extension Octokit {
     {
         let router = PullRequestRouter.readPullRequest(configuration, owner, repository, "\(number)")
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: PullRequest.self) { pullRequest, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let pullRequest = pullRequest {
+                if let pullRequest {
                     completion(Response.success(pullRequest))
                 }
             }
@@ -127,10 +127,10 @@ public extension Octokit {
     {
         let router = PullRequestRouter.readPullRequests(configuration, owner, repository, base, state, sort, direction)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [PullRequest].self) { pullRequests, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let pullRequests = pullRequests {
+                if let pullRequests {
                     completion(Response.success(pullRequests))
                 }
             }
@@ -177,7 +177,7 @@ enum PullRequestRouter: JSONPostRouter {
                 "direction": direction.rawValue,
             ]
 
-            if let base = base {
+            if let base {
                 parameters["base"] = base
             }
 

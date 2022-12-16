@@ -16,6 +16,7 @@
 		501B049E2754F9680077C8FB /* RS6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B049D2754F9680077C8FB /* RS6.swift */; };
 		501B04A0275503040077C8FB /* RS7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B049F275503040077C8FB /* RS7.swift */; };
 		5036504D27546B56007B4B72 /* DictionaryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036504C27546B56007B4B72 /* DictionaryBuilder.swift */; };
+		50572E8D294C1DD7004BC0C6 /* Hooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 50572E8C294C1DD7004BC0C6 /* Hooker.m */; };
 		506CB6E527537ABE00CF2A6E /* GitRepoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506CB6E427537ABE00CF2A6E /* GitRepoResult.swift */; };
 		506CB6E827537F9F00CF2A6E /* RSProtocol.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506CB6E727537F9F00CF2A6E /* RSProtocol.swift.swift */; };
 		5070B09127572A1400D23A75 /* CommitFilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070B09027572A1400D23A75 /* CommitFilterSheet.swift */; };
@@ -55,7 +56,6 @@
 		50E50081275C7C84003E6C9A /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E50080275C7C84003E6C9A /* ApiProtocol.swift */; };
 		50EA933E278C09570059EF8B /* AuxiliaryExecute in Frameworks */ = {isa = PBXBuildFile; productRef = 50EA933D278C09570059EF8B /* AuxiliaryExecute */; };
 		50EB62BB275508E700F6E6FF /* ThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB62BA275508E700F6E6FF /* ThanksView.swift */; };
-		50ECC5472756806E00EA0017 /* AskBeforeCloseMyWindow in Frameworks */ = {isa = PBXBuildFile; productRef = 50ECC5462756806E00EA0017 /* AskBeforeCloseMyWindow */; };
 		50FD1005275101D80090EAFB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD1004275101D80090EAFB /* App.swift */; };
 		50FD1007275101D80090EAFB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD1006275101D80090EAFB /* MainView.swift */; };
 		50FD1009275101D90090EAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50FD1008275101D90090EAFB /* Assets.xcassets */; };
@@ -72,6 +72,7 @@
 		501B049D2754F9680077C8FB /* RS6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RS6.swift; sourceTree = "<group>"; };
 		501B049F275503040077C8FB /* RS7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RS7.swift; sourceTree = "<group>"; };
 		5036504C27546B56007B4B72 /* DictionaryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryBuilder.swift; sourceTree = "<group>"; };
+		50572E8C294C1DD7004BC0C6 /* Hooker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hooker.m; sourceTree = "<group>"; };
 		506CB6E427537ABE00CF2A6E /* GitRepoResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoResult.swift; sourceTree = "<group>"; };
 		506CB6E727537F9F00CF2A6E /* RSProtocol.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSProtocol.swift.swift; sourceTree = "<group>"; };
 		5070B09027572A1400D23A75 /* CommitFilterSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitFilterSheet.swift; sourceTree = "<group>"; };
@@ -122,7 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50ECC5472756806E00EA0017 /* AskBeforeCloseMyWindow in Frameworks */,
 				509071382752123A002D2C14 /* OctoKit in Frameworks */,
 				5096DBC82751031A007AA4C7 /* Colorful in Frameworks */,
 				50EA933E278C09570059EF8B /* AuxiliaryExecute in Frameworks */,
@@ -132,6 +132,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50572E8B294C1DD0004BC0C6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				50FD1004275101D80090EAFB /* App.swift */,
+				50572E8C294C1DD7004BC0C6 /* Hooker.m */,
+				50FD1008275101D90090EAFB /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		506CB6E627537CE000CF2A6E /* ResultPackage */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +232,6 @@
 		50E3A98C27512D70003CBE07 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				50FD1004275101D80090EAFB /* App.swift */,
 				5090713F2752337C002D2C14 /* NavigatorView.swift */,
 				506CB6E92753813B00CF2A6E /* Generic */,
 				50E3A99027513254003CBE07 /* Configuration */,
@@ -279,9 +288,9 @@
 			children = (
 				50A8C400275126C100C545BC /* Info.plist */,
 				50FD100D275101D90090EAFB /* MyYearWithGit.entitlements */,
+				50572E8B294C1DD0004BC0C6 /* App */,
 				50E3A98D27512D74003CBE07 /* Data */,
 				50E3A98C27512D70003CBE07 /* View */,
-				50FD1008275101D90090EAFB /* Assets.xcassets */,
 			);
 			path = MyYearWithGit;
 			sourceTree = "<group>";
@@ -305,7 +314,6 @@
 			packageProductDependencies = (
 				5096DBC72751031A007AA4C7 /* Colorful */,
 				509071372752123A002D2C14 /* OctoKit */,
-				50ECC5462756806E00EA0017 /* AskBeforeCloseMyWindow */,
 				50EA933D278C09570059EF8B /* AuxiliaryExecute */,
 			);
 			productName = MyYearWithGit;
@@ -381,6 +389,7 @@
 				50E3A99A2751331B003CBE07 /* SourceRegister.swift in Sources */,
 				50BAB6D9275A44C700409089 /* BitbucketSheet.swift in Sources */,
 				50E3A998275132CF003CBE07 /* GitLabRepoSheet.swift in Sources */,
+				50572E8D294C1DD7004BC0C6 /* Hooker.m in Sources */,
 				5070B09127572A1400D23A75 /* CommitFilterSheet.swift in Sources */,
 				501B04982754DF100077C8FB /* RS4.swift in Sources */,
 				501B048F2754AE450077C8FB /* RS2.swift in Sources */,
@@ -625,10 +634,6 @@
 		50EA933D278C09570059EF8B /* AuxiliaryExecute */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AuxiliaryExecute;
-		};
-		50ECC5462756806E00EA0017 /* AskBeforeCloseMyWindow */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AskBeforeCloseMyWindow;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

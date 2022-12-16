@@ -29,7 +29,7 @@ class RequestKitURLTestSession: RequestKitURLSession {
     init(expectedURL: String, expectedHTTPMethod: String, jsonFile: String?, statusCode: Int) {
         self.expectedURL = expectedURL
         self.expectedHTTPMethod = expectedHTTPMethod
-        if let jsonFile = jsonFile {
+        if let jsonFile {
             responseString = Helper.stringFromFile(jsonFile)
         } else {
             responseString = nil

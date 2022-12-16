@@ -93,10 +93,10 @@ public extension Octokit {
     func myIssues(_ session: RequestKitURLSession = URLSession.shared, state: Openness = .open, page: String = "1", perPage: String = "100", completion: @escaping (_ response: Response<[Issue]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = IssueRouter.readAuthenticatedIssues(configuration, page, perPage, state)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [Issue].self) { issues, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let issues = issues {
+                if let issues {
                     completion(Response.success(issues))
                 }
             }
@@ -115,10 +115,10 @@ public extension Octokit {
     func issue(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, number: Int, completion: @escaping (_ response: Response<Issue>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = IssueRouter.readIssue(configuration, owner, repository, number)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: Issue.self) { issue, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let issue = issue {
+                if let issue {
                     completion(Response.success(issue))
                 }
             }
@@ -139,10 +139,10 @@ public extension Octokit {
     func issues(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, state: Openness = .open, page: String = "1", perPage: String = "100", completion: @escaping (_ response: Response<[Issue]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = IssueRouter.readIssues(configuration, owner, repository, page, perPage, state)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [Issue].self) { issues, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let issues = issues {
+                if let issues {
                     completion(Response.success(issues))
                 }
             }
@@ -166,10 +166,10 @@ public extension Octokit {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(Time.rfc3339DateFormatter)
         return router.post(session, decoder: decoder, expectedResultType: Issue.self) { issue, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let issue = issue {
+                if let issue {
                     completion(Response.success(issue))
                 }
             }
@@ -192,10 +192,10 @@ public extension Octokit {
     func patchIssue(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, number: Int, title: String? = nil, body: String? = nil, assignee: String? = nil, state: Openness? = nil, completion: @escaping (_ response: Response<Issue>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = IssueRouter.patchIssue(configuration, owner, repository, number, title, body, assignee, state)
         return router.post(session, expectedResultType: Issue.self) { issue, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let issue = issue {
+                if let issue {
                     completion(Response.success(issue))
                 }
             }
@@ -216,10 +216,10 @@ public extension Octokit {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(Time.rfc3339DateFormatter)
         return router.post(session, decoder: decoder, expectedResultType: Comment.self) { issue, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let issue = issue {
+                if let issue {
                     completion(Response.success(issue))
                 }
             }
@@ -239,10 +239,10 @@ public extension Octokit {
     func issueComments(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, number: Int, page: String = "1", perPage: String = "100", completion: @escaping (_ response: Response<[Comment]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = IssueRouter.readIssueComments(configuration, owner, repository, number, page, perPage)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [Comment].self) { comments, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let comments = comments {
+                if let comments {
                     completion(Response.success(comments))
                 }
             }
@@ -301,10 +301,10 @@ enum IssueRouter: JSONPostRouter {
             return ["per_page": perPage, "page": page, "state": state.rawValue]
         case let .postIssue(_, _, _, title, body, assignee, labels):
             var params: [String: Any] = ["title": title]
-            if let body = body {
+            if let body {
                 params["body"] = body
             }
-            if let assignee = assignee {
+            if let assignee {
                 params["assignee"] = assignee
             }
             if !labels.isEmpty {
@@ -313,16 +313,16 @@ enum IssueRouter: JSONPostRouter {
             return params
         case let .patchIssue(_, _, _, _, title, body, assignee, state):
             var params: [String: String] = [:]
-            if let title = title {
+            if let title {
                 params["title"] = title
             }
-            if let body = body {
+            if let body {
                 params["body"] = body
             }
-            if let assignee = assignee {
+            if let assignee {
                 params["assignee"] = assignee
             }
-            if let state = state {
+            if let state {
                 params["state"] = state.rawValue
             }
             return params

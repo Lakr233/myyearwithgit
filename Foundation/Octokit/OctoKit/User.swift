@@ -101,10 +101,10 @@ public extension Octokit {
     func user(_ session: RequestKitURLSession = URLSession.shared, name: String, completion: @escaping (_ response: Response<User>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = UserRouter.readUser(name, configuration)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: User.self) { user, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let user = user {
+                if let user {
                     completion(Response.success(user))
                 }
             }
@@ -120,10 +120,10 @@ public extension Octokit {
     func me(_ session: RequestKitURLSession = URLSession.shared, completion: @escaping (_ response: Response<User>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = UserRouter.readAuthenticatedUser(configuration)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: User.self) { user, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let user = user {
+                if let user {
                     completion(Response.success(user))
                 }
             }

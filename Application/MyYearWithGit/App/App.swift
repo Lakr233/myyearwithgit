@@ -16,7 +16,7 @@ let currentBootWorkingDir: String = FileManager
     .default
     .currentDirectoryPath
 
-let requiredYear = 2021
+let requiredYear = 2022
 
 let processCount: Int = {
     var count = ProcessInfo
@@ -63,31 +63,40 @@ struct MyYearWithGitApp: App {
     }
 
     var body: some Scene {
-        WindowGroup {
-            NavigatorView()
-                .ignoresSafeArea()
-                .frame(
-                    width: preferredApplicationSize.width,
-                    height: preferredApplicationSize.height,
-                    alignment: .center
-                )
-                .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
-                    hideWindowRelatedButtons()
-                })
-            // fixed size for better control over layout effect
-        }
-        .windowStyle(.hiddenTitleBar)
-        .commands {
-            CommandGroup(replacing: .newItem) {
-                // don't create new window lol!
-            }
-        }
+        WindowGroup { content }
+            .windowStyle(.hiddenTitleBar)
+            .commands { CommandGroup(replacing: .newItem) {} }
+            .restrictWindowResizing()
+    }
+
+    // fixed size for better control over layout effect
+    var content: some View {
+        NavigatorView()
+            .ignoresSafeArea()
+            .frame(
+                width: preferredApplicationSize.width,
+                height: preferredApplicationSize.height,
+                alignment: .center
+            )
+            .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
+                hideWindowRelatedButtons()
+            })
     }
 
     func hideWindowRelatedButtons() {
         for window in NSApplication.shared.windows {
             window.standardWindowButton(NSWindow.ButtonType.zoomButton)?.isHidden = true
             window.standardWindowButton(NSWindow.ButtonType.miniaturizeButton)?.isHidden = true
+        }
+    }
+}
+
+private extension Scene {
+    func restrictWindowResizing() -> some Scene {
+        if #available(macOS 13.0, *) {
+            return self.windowResizability(.contentSize)
+        } else {
+            return self
         }
     }
 }

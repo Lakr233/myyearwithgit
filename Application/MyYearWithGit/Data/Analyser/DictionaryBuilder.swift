@@ -39,7 +39,7 @@ class DictionaryBuilder {
             in: buffer.startIndex...,
             options: .byWords
         ) { substring, _, _, _ in
-            guard let substring = substring,
+            guard let substring,
                   substring.count > 3,
                   substring.elegantForDictonary
             else {

@@ -38,7 +38,7 @@ class BitbucketApi: GitApi {
                 defer { sem.signal() }
 
                 // connection error
-                if let err = err {
+                if let err {
                     error = ApiError.network(reason: err.localizedDescription)
                     return
                 }
@@ -49,7 +49,7 @@ class BitbucketApi: GitApi {
                 }
 
                 // json decodable as dict
-                guard let data = data,
+                guard let data,
                       let dic = try? JSONSerialization
                       .jsonObject(
                           with: data, options: .allowFragments
@@ -89,7 +89,7 @@ class BitbucketApi: GitApi {
                 defer { sem.signal() }
 
                 // connection error
-                if let err = err {
+                if let err {
                     error = ApiError.network(reason: err.localizedDescription)
                     return
                 }
@@ -100,7 +100,7 @@ class BitbucketApi: GitApi {
                 }
 
                 // json decodable as dict
-                guard let data = data,
+                guard let data,
                       let dic = try? JSONSerialization
                       .jsonObject(
                           with: data, options: .allowFragments
@@ -130,13 +130,13 @@ class BitbucketApi: GitApi {
 
         sem.wait() // URLSession default timeout is 60 * 2 = 120 secs
 
-        if let error = error {
+        if let error {
             throw error
         }
 
         sem.wait()
 
-        if let error = error {
+        if let error {
             throw error
         }
 
@@ -158,7 +158,7 @@ class BitbucketApi: GitApi {
                         defer { sem.signal() }
 
                         // connection error
-                        if let err = err {
+                        if let err {
                             error = ApiError.network(reason: err.localizedDescription)
                             return
                         }
@@ -169,7 +169,7 @@ class BitbucketApi: GitApi {
                         }
 
                         // json decodable as dict
-                        guard let data = data,
+                        guard let data,
                               let dic = try? JSONSerialization
                               .jsonObject(
                                   with: data, options: .allowFragments
@@ -202,7 +202,7 @@ class BitbucketApi: GitApi {
                         }
                     }.resume()
                 sem.wait()
-                if let error = error {
+                if let error {
                     throw error
                 }
             }
@@ -225,7 +225,7 @@ class BitbucketApi: GitApi {
                     defer { sem.signal() }
 
                     // connection error
-                    if let err = err {
+                    if let err {
                         error = ApiError.network(reason: err.localizedDescription)
                         return
                     }
@@ -236,7 +236,7 @@ class BitbucketApi: GitApi {
                     }
 
                     // json decodable as dict
-                    guard let data = data,
+                    guard let data,
                           let dic = try? JSONSerialization
                           .jsonObject(
                               with: data, options: .allowFragments
@@ -267,7 +267,7 @@ class BitbucketApi: GitApi {
                     }
                 }.resume()
             sem.wait()
-            if let error = error {
+            if let error {
                 throw error
             }
         }
@@ -283,7 +283,7 @@ class BitbucketApi: GitApi {
         for path in paths {
             endpoint.appendPathComponent(path)
         }
-        if let parameters = parameters {
+        if let parameters {
             endpoint = endpoint.appendingQueryParameters(parameters)
         }
         return endpoint

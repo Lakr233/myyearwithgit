@@ -250,7 +250,7 @@ struct ResultView: View {
         .padding(-10)
     }
 
-    func takeSnapshot<V: View>(of view: V) -> NSImage? {
+    func takeSnapshot(of view: some View) -> NSImage? {
         let hostingView = NSHostingView(rootView: view)
         hostingView.frame = .init(origin: .zero, size: hostingView.fittingSize)
 
@@ -266,7 +266,7 @@ struct ResultView: View {
         return image
     }
 
-    func generatePDF<V: View>(of view: V, with pageData: PageData) -> URL? {
+    func generatePDF(of view: some View, with pageData: PageData) -> URL? {
         let hostingView = NSHostingView(rootView: view)
         hostingView.frame = .init(origin: .zero, size: hostingView.fittingSize)
 
@@ -315,7 +315,7 @@ struct ResultView: View {
 
 extension NSImage {
     var pngData: Data? {
-        guard let tiffRepresentation = tiffRepresentation, let bitmapImage = NSBitmapImageRep(data: tiffRepresentation) else { return nil }
+        guard let tiffRepresentation, let bitmapImage = NSBitmapImageRep(data: tiffRepresentation) else { return nil }
         return bitmapImage.representation(using: .png, properties: [:])
     }
 

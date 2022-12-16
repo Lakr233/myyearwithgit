@@ -44,9 +44,9 @@ extension RepoAnalyser {
                 autherEmail = nil
                 lineBuffer = []
             }
-            guard let currentHash = currentHash,
-                  let date = date,
-                  let autherEmail = autherEmail
+            guard let currentHash,
+                  let date,
+                  let autherEmail
             else {
                 return
             }

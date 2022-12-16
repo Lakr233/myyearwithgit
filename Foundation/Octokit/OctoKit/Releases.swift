@@ -60,10 +60,10 @@ public extension Octokit {
     func listReleases(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, completion: @escaping (_ response: Response<[Release]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = ReleaseRouter.listReleases(configuration, owner, repository)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [Release].self) { releases, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let releases = releases {
+                if let releases {
                     completion(Response.success(releases))
                 }
             }
@@ -89,10 +89,10 @@ public extension Octokit {
         decoder.dateDecodingStrategy = .formatted(Time.rfc3339DateFormatter)
 
         return router.post(session, decoder: decoder, expectedResultType: Release.self) { issue, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let issue = issue {
+                if let issue {
                     completion(Response.success(issue))
                 }
             }
@@ -141,13 +141,13 @@ enum ReleaseRouter: JSONPostRouter {
                 "prerelease": prerelease,
                 "draft": draft,
             ]
-            if let targetCommitish = targetCommitish {
+            if let targetCommitish {
                 params["target_commitish"] = targetCommitish
             }
-            if let name = name {
+            if let name {
                 params["name"] = name
             }
-            if let body = body {
+            if let body {
                 params["body"] = body
             }
             return params

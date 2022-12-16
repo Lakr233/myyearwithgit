@@ -16,8 +16,7 @@ struct ConfigEmailSheet: View {
 
     var body: some View {
         SheetTemplate.makeSheet(title: "邮件地址",
-                                body: AnyView(sheet))
-        { confirmed in
+                                body: AnyView(sheet)) { confirmed in
             debugPrint("sheet completed \(confirmed)")
             presentationMode.wrappedValue.dismiss()
         }

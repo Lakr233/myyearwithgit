@@ -15,13 +15,13 @@ struct NavigatorView: View {
 
     var body: some View {
         Group {
-            if let resultPackage = resultPackage {
+            if let resultPackage {
                 ResultView(resultPackage: resultPackage)
                     .environmentObject(PageData())
                     .onAppear {
                         protectWindowFromClose()
                     }
-            } else if let sourcePackage = sourcePackage {
+            } else if let sourcePackage {
                 AnalysisView(sourcePackage: sourcePackage)
             } else {
                 MainView()

@@ -71,10 +71,10 @@ public extension Octokit {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(Time.rfc3339DateFormatter)
         return router.post(session, decoder: decoder, expectedResultType: Status.self) { status, error in
-            if let error = error {
+            if let error {
                 completion(.failure(error))
             } else {
-                if let status = status {
+                if let status {
                     completion(.success(status))
                 }
             }
@@ -98,10 +98,10 @@ public extension Octokit {
     {
         let router = StatusesRouter.listCommitStatuses(configuration, owner: owner, repo: repository, ref: ref)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [Status].self) { statuses, error in
-            if let error = error {
+            if let error {
                 completion(.failure(error))
             } else {
-                if let statuses = statuses {
+                if let statuses {
                     completion(.success(statuses))
                 }
             }
@@ -146,13 +146,13 @@ enum StatusesRouter: JSONPostRouter {
         switch self {
         case let .createCommitStatus(_, _, _, _, state, targetURL, description, context):
             var params: [String: Any] = ["state": state.rawValue]
-            if let targetURL = targetURL {
+            if let targetURL {
                 params["target_url"] = targetURL
             }
-            if let description = description {
+            if let description {
                 params["description"] = description
             }
-            if let context = context {
+            if let context {
                 params["context"] = context
             }
             return params

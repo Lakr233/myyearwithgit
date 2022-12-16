@@ -26,9 +26,9 @@ public extension JSONPostRouter {
             if let response = response as? HTTPURLResponse {
                 if !response.wasSuccessful {
                     var userInfo = [String: Any]()
-                    if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    if let data, let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                         userInfo[RequestKitErrorKey] = json as Any?
-                    } else if let data = data, let string = String(data: data, encoding: String.Encoding.utf8) {
+                    } else if let data, let string = String(data: data, encoding: String.Encoding.utf8) {
                         userInfo[RequestKitErrorKey] = string as Any?
                     }
                     let error = NSError(domain: self.configuration.errorDomain, code: response.statusCode, userInfo: userInfo)
@@ -37,10 +37,10 @@ public extension JSONPostRouter {
                 }
             }
 
-            if let error = error {
+            if let error {
                 completion(nil, error)
             } else {
-                if let data = data {
+                if let data {
                     do {
                         let JSON = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? T
                         completion(JSON, nil)
@@ -71,9 +71,9 @@ public extension JSONPostRouter {
             if let response = response as? HTTPURLResponse {
                 if !response.wasSuccessful {
                     var userInfo = [String: Any]()
-                    if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    if let data, let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
                         userInfo[RequestKitErrorKey] = json as Any?
-                    } else if let data = data, let string = String(data: data, encoding: String.Encoding.utf8) {
+                    } else if let data, let string = String(data: data, encoding: String.Encoding.utf8) {
                         userInfo[RequestKitErrorKey] = string as Any?
                     }
                     let error = NSError(domain: self.configuration.errorDomain, code: response.statusCode, userInfo: userInfo)
@@ -82,10 +82,10 @@ public extension JSONPostRouter {
                 }
             }
 
-            if let error = error {
+            if let error {
                 completion(nil, error)
             } else {
-                if let data = data {
+                if let data {
                     do {
                         let decoded = try decoder.decode(T.self, from: data)
                         completion(decoded, nil)

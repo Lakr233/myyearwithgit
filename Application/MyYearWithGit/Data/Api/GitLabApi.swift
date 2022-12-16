@@ -36,7 +36,7 @@ class GitLabApi: GitApi {
                 defer { sem.signal() }
 
                 // connection error
-                if let err = err {
+                if let err {
                     error = ApiError.network(reason: err.localizedDescription)
                     return
                 }
@@ -47,7 +47,7 @@ class GitLabApi: GitApi {
                 }
 
                 // json decodable as dict
-                guard let data = data,
+                guard let data,
                       let dic = try? JSONSerialization
                       .jsonObject(
                           with: data, options: .allowFragments
@@ -85,7 +85,7 @@ class GitLabApi: GitApi {
             .resume()
         sem.wait()
 
-        if let error = error {
+        if let error {
             throw error
         }
 
@@ -118,7 +118,7 @@ class GitLabApi: GitApi {
                     defer { sem.signal() }
 
                     // connection error
-                    if let err = err {
+                    if let err {
                         error = ApiError.network(reason: err.localizedDescription)
                         return
                     }
@@ -129,7 +129,7 @@ class GitLabApi: GitApi {
                     }
 
                     // json decodable as arr
-                    guard let data = data,
+                    guard let data,
                           let dic = try? JSONSerialization
                           .jsonObject(
                               with: data, options: .allowFragments
@@ -172,7 +172,7 @@ class GitLabApi: GitApi {
             sem.wait()
         }
 
-        if let error = error {
+        if let error {
             throw error
         }
 
@@ -190,7 +190,7 @@ class GitLabApi: GitApi {
         for path in paths {
             endpoint.appendPathComponent(path)
         }
-        if let parameters = parameters {
+        if let parameters {
             endpoint = endpoint.appendingQueryParameters(parameters)
         }
         return endpoint

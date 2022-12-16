@@ -61,7 +61,7 @@ class GitHubApi: GitApi {
             }
         }
         sem.wait()
-        if let error = error {
+        if let error {
             throw error
         }
         if validated {
@@ -73,7 +73,7 @@ class GitHubApi: GitApi {
     }
 
     func repositories() throws -> [URL] {
-        guard let api = api else {
+        guard let api else {
             return []
         }
         var result: Set<URL> = []
@@ -115,7 +115,7 @@ class GitHubApi: GitApi {
             }
         }
         sem.wait()
-        if let error = error {
+        if let error {
             throw error
         }
         debugPrint("GitHub repository for page \(page) returned \(result.count) results")

@@ -32,7 +32,7 @@ class OctoKitURLTestSession: RequestKitURLSession {
         self.expectedURL = expectedURL
         self.expectedHTTPMethod = expectedHTTPMethod
         self.expectedHTTPHeaders = expectedHTTPHeaders
-        if let jsonFile = jsonFile {
+        if let jsonFile {
             responseString = Helper.stringFromFile(jsonFile)
         } else {
             responseString = nil

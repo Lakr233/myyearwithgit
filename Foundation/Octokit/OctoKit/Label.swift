@@ -25,10 +25,10 @@ public extension Octokit {
     func label(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, name: String, completion: @escaping (_ response: Response<Label>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = LabelRouter.readLabel(configuration, owner, repository, name)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: Label.self) { label, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let label = label {
+                if let label {
                     completion(Response.success(label))
                 }
             }
@@ -48,10 +48,10 @@ public extension Octokit {
     func labels(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, page: String = "1", perPage: String = "100", completion: @escaping (_ response: Response<[Label]>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = LabelRouter.readLabels(configuration, owner, repository, page, perPage)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [Label].self) { labels, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let labels = labels {
+                if let labels {
                     completion(Response.success(labels))
                 }
             }
@@ -71,10 +71,10 @@ public extension Octokit {
     func postLabel(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, name: String, color: String, completion: @escaping (_ response: Response<Label>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = LabelRouter.createLabel(configuration, owner, repository, name, color)
         return router.post(session, expectedResultType: Label.self) { label, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let label = label {
+                if let label {
                     completion(Response.success(label))
                 }
             }

@@ -124,7 +124,7 @@ public extension AuxiliaryExecute {
     ///   - timeout: any wall timeout if lager than 0, in seconds. eg: 6
     ///   - stdout: a block call from pipeControlQueue in background when buffer from stdout available for read
     ///   - stderr: a block call from pipeControlQueue in background when buffer from stderr available for read
-    /// - Returns: execution recipe, see it's definition for details
+    /// - Returns: execution receipt, see it's definition for details
     @discardableResult
     func shell(
         command: String,
@@ -133,7 +133,7 @@ public extension AuxiliaryExecute {
         timeout: Double = 0,
         stdoutBlock: ((String) -> Void)? = nil,
         stderrBlock: ((String) -> Void)? = nil
-    ) -> ExecuteRecipe {
+    ) -> ExecuteReceipt {
         // the command with full file system path
         var commandLocation: String?
         if let location = binaryLocationFor(command: command) {
@@ -150,15 +150,15 @@ public extension AuxiliaryExecute {
             commandLocation = binaryLocationFor(command: command)
         }
         // make sure we find the command
-        guard let commandLocation = commandLocation else {
-            return ExecuteRecipe.failure(error: .commandNotFound)
+        guard let commandLocation else {
+            return ExecuteReceipt.failure(error: .commandNotFound)
         }
         // now, let's validate the command
         guard isBinaryValid(at: URL(fileURLWithPath: commandLocation)) else {
-            return ExecuteRecipe.failure(error: .commandInvalid)
+            return ExecuteReceipt.failure(error: .commandInvalid)
         }
         // finally let‘s call the spawn
-        let recipe = AuxiliaryExecute.spawn(
+        let receipt = AuxiliaryExecute.spawn(
             command: commandLocation,
             args: args,
             environment: environment,
@@ -166,7 +166,7 @@ public extension AuxiliaryExecute {
             stdoutBlock: stdoutBlock,
             stderrBlock: stderrBlock
         )
-        return recipe
+        return receipt
     }
 
     /// run script with bash, if bash available
@@ -176,7 +176,7 @@ public extension AuxiliaryExecute {
     ///   - timeout: any wall timeout if lager than 0, in seconds. eg: 6
     ///   - stdout: a block call from pipeControlQueue in background when buffer from stdout available for read
     ///   - stderr: a block call from pipeControlQueue in background when buffer from stderr available for read
-    /// - Returns: execution recipe, see it's definition for details
+    /// - Returns: execution receipt, see it's definition for details
     @discardableResult
     func bash(
         command: String,
@@ -184,7 +184,7 @@ public extension AuxiliaryExecute {
         timeout: Double = 0,
         stdoutBlock: ((String) -> Void)? = nil,
         stderrBlock: ((String) -> Void)? = nil
-    ) -> ExecuteRecipe {
+    ) -> ExecuteReceipt {
         let result = shell(
             command: "bash",
             args: ["-c", command],

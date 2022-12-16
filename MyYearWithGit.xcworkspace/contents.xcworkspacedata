@@ -5,9 +5,6 @@
       location = "group:Application/MyYearWithGit.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Foundation/AskBeforeCloseMyWindow">
-   </FileRef>
-   <FileRef
       location = "group:Foundation/AuxiliaryExecute">
    </FileRef>
    <FileRef

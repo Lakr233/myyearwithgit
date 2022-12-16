@@ -17,8 +17,7 @@ struct FilterSheet: View {
 
     var body: some View {
         SheetTemplate.makeSheet(title: "排除列表",
-                                body: AnyView(sheet))
-        { confirmed in
+                                body: AnyView(sheet)) { confirmed in
             debugPrint("sheet completed \(confirmed)")
             presentationMode.wrappedValue.dismiss()
         }

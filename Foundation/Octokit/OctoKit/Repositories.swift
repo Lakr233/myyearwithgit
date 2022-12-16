@@ -57,11 +57,11 @@ public extension Octokit {
             ? RepositoryRouter.readRepositories(configuration, owner!, page, perPage)
             : RepositoryRouter.readAuthenticatedRepositories(configuration, page, perPage)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: [Repository].self) { repos, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             }
 
-            if let repos = repos {
+            if let repos {
                 completion(Response.success(repos))
             }
         }
@@ -78,10 +78,10 @@ public extension Octokit {
     func repository(_ session: RequestKitURLSession = URLSession.shared, owner: String, name: String, completion: @escaping (_ response: Response<Repository>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = RepositoryRouter.readRepository(configuration, owner, name)
         return router.load(session, dateDecodingStrategy: .formatted(Time.rfc3339DateFormatter), expectedResultType: Repository.self) { repo, error in
-            if let error = error {
+            if let error {
                 completion(Response.failure(error))
             } else {
-                if let repo = repo {
+                if let repo {
                     completion(Response.success(repo))
                 }
             }
