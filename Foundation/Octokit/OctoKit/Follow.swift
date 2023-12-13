@@ -100,23 +100,23 @@ enum FollowRouter: Router {
 
     var configuration: Configuration {
         switch self {
-        case let .readAuthenticatedFollowers(config): return config
-        case let .readFollowers(_, config): return config
-        case let .readAuthenticatedFollowing(config): return config
-        case let .readFollowing(_, config): return config
+        case let .readAuthenticatedFollowers(config): config
+        case let .readFollowers(_, config): config
+        case let .readAuthenticatedFollowing(config): config
+        case let .readFollowing(_, config): config
         }
     }
 
     var path: String {
         switch self {
         case .readAuthenticatedFollowers:
-            return "user/followers"
+            "user/followers"
         case let .readFollowers(username, _):
-            return "users/\(username)/followers"
+            "users/\(username)/followers"
         case .readAuthenticatedFollowing:
-            return "user/following"
+            "user/following"
         case let .readFollowing(username, _):
-            return "users/\(username)/following"
+            "users/\(username)/following"
         }
     }
 

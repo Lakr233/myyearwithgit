@@ -26,35 +26,35 @@ enum PublicKeyRouter: JSONPostRouter {
 
     var configuration: Configuration {
         switch self {
-        case let .postPublicKey(_, _, config): return config
+        case let .postPublicKey(_, _, config): config
         }
     }
 
     var method: HTTPMethod {
         switch self {
         case .postPublicKey:
-            return .POST
+            .POST
         }
     }
 
     var encoding: HTTPEncoding {
         switch self {
         case .postPublicKey:
-            return .json
+            .json
         }
     }
 
     var path: String {
         switch self {
         case .postPublicKey:
-            return "user/keys"
+            "user/keys"
         }
     }
 
     var params: [String: Any] {
         switch self {
         case let .postPublicKey(publicKey, title, _):
-            return ["title": title, "key": publicKey]
+            ["title": title, "key": publicKey]
         }
     }
 }

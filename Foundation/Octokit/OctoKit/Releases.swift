@@ -108,26 +108,26 @@ enum ReleaseRouter: JSONPostRouter {
 
     var configuration: Configuration {
         switch self {
-        case let .listReleases(config, _, _): return config
-        case let .postRelease(config, _, _, _, _, _, _, _, _): return config
+        case let .listReleases(config, _, _): config
+        case let .postRelease(config, _, _, _, _, _, _, _, _): config
         }
     }
 
     var method: HTTPMethod {
         switch self {
         case .listReleases:
-            return .GET
+            .GET
         case .postRelease:
-            return .POST
+            .POST
         }
     }
 
     var encoding: HTTPEncoding {
         switch self {
         case .listReleases:
-            return .url
+            .url
         case .postRelease:
-            return .json
+            .json
         }
     }
 
@@ -157,9 +157,9 @@ enum ReleaseRouter: JSONPostRouter {
     var path: String {
         switch self {
         case let .listReleases(_, owner, repo):
-            return "repos/\(owner)/\(repo)/releases"
+            "repos/\(owner)/\(repo)/releases"
         case let .postRelease(_, owner, repo, _, _, _, _, _, _):
-            return "repos/\(owner)/\(repo)/releases"
+            "repos/\(owner)/\(repo)/releases"
         }
     }
 }

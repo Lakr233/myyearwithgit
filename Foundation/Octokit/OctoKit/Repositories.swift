@@ -98,9 +98,9 @@ enum RepositoryRouter: Router {
 
     var configuration: Configuration {
         switch self {
-        case let .readRepositories(config, _, _, _): return config
-        case let .readAuthenticatedRepositories(config, _, _): return config
-        case let .readRepository(config, _, _): return config
+        case let .readRepositories(config, _, _, _): config
+        case let .readAuthenticatedRepositories(config, _, _): config
+        case let .readRepository(config, _, _): config
         }
     }
 
@@ -115,22 +115,22 @@ enum RepositoryRouter: Router {
     var params: [String: Any] {
         switch self {
         case let .readRepositories(_, _, page, perPage):
-            return ["per_page": perPage, "page": page]
+            ["per_page": perPage, "page": page]
         case let .readAuthenticatedRepositories(_, page, perPage):
-            return ["per_page": perPage, "page": page]
+            ["per_page": perPage, "page": page]
         case .readRepository:
-            return [:]
+            [:]
         }
     }
 
     var path: String {
         switch self {
         case let .readRepositories(_, owner, _, _):
-            return "users/\(owner)/repos"
+            "users/\(owner)/repos"
         case .readAuthenticatedRepositories:
-            return "user/repos"
+            "user/repos"
         case let .readRepository(_, owner, name):
-            return "repos/\(owner)/\(name)"
+            "repos/\(owner)/\(name)"
         }
     }
 }

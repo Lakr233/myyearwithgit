@@ -11,53 +11,53 @@ enum SourceLanguage: String, Codable, HumanReadable {
     static func languageDecision(withFileExtension pathExtension: String) -> Self? {
         switch pathExtension.lowercased() {
         case "c":
-            return .c
+            .c
         case "cs", "csharp":
-            return .csharp
+            .csharp
         case "cpp", "cc", "cxx", "c++":
-            return .cpp
+            .cpp
         case "css":
-            return .css
+            .css
         case "dart":
-            return .dart
+            .dart
         case "ex":
-            return .elixir
+            .elixir
         case "go":
-            return .go
+            .go
         case "groovy", "gvy", "gy", "gsh":
-            return .groovy
+            .groovy
         case "html", "htm":
-            return .html
+            .html
         case "java", "jav", "j":
-            return .java
+            .java
         case "js", "jsx":
-            return .javascript
+            .javascript
         case "kt", "ktm":
-            return .kotlin
+            .kotlin
         case "m", "mm":
-            return .objc
+            .objc
         case "pl":
-            return .perl
+            .perl
         case "php":
-            return .php
+            .php
         case "ps1":
-            return .powershell
+            .powershell
         case "py":
-            return .python
+            .python
         case "rb":
-            return .rbuy
+            .rbuy
         case "rs":
-            return .rust
+            .rust
         case "scala", "sc":
-            return .scala
+            .scala
         case "sh", "command":
-            return .shell
+            .shell
         case "swift":
-            return .swift
+            .swift
         case "ts", "tsx":
-            return .typescript
+            .typescript
         default:
-            return nil
+            nil
         }
     }
 
@@ -88,51 +88,51 @@ enum SourceLanguage: String, Codable, HumanReadable {
     func readableDescription() -> String {
         switch self {
         case .c:
-            return "C"
+            "C"
         case .csharp:
-            return "C#"
+            "C#"
         case .cpp:
-            return "C++"
+            "C++"
         case .css:
-            return "CSS"
+            "CSS"
         case .dart:
-            return "Dart"
+            "Dart"
         case .elixir:
-            return "Elixir"
+            "Elixir"
         case .go:
-            return "Go"
+            "Go"
         case .groovy:
-            return "Groovy"
+            "Groovy"
         case .html:
-            return "HTML"
+            "HTML"
         case .java:
-            return "Java"
+            "Java"
         case .javascript:
-            return "JavaScript"
+            "JavaScript"
         case .kotlin:
-            return "Kotlin"
+            "Kotlin"
         case .objc:
-            return "Objective-C"
+            "Objective-C"
         case .perl:
-            return "Perl"
+            "Perl"
         case .php:
-            return "PHP"
+            "PHP"
         case .powershell:
-            return "PowerShell"
+            "PowerShell"
         case .python:
-            return "Python"
+            "Python"
         case .rbuy:
-            return "Ruby"
+            "Ruby"
         case .rust:
-            return "Rust"
+            "Rust"
         case .scala:
-            return "Scala"
+            "Scala"
         case .shell:
-            return "Shell"
+            "Shell"
         case .swift:
-            return "Swift"
+            "Swift"
         case .typescript:
-            return "TypeScript"
+            "TypeScript"
         }
     }
 }

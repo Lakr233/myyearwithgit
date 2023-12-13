@@ -1,5 +1,5 @@
 //
-//  BlockItem.swift
+//  CommitFilter.swift
 //  MyYearWithGit
 //
 //  Created by Lakr Aream on 2021/12/1.
@@ -42,19 +42,19 @@ class CommitFileFilter {
         func readableDescription() -> String {
             switch self {
             case .nameKeyWord:
-                return "文件名关键词"
+                "文件名关键词"
             case .nameKeyWordCaseSensitive:
-                return "文件名关键词 匹配大小写"
+                "文件名关键词 匹配大小写"
             case .pathKeyWord:
-                return "路径关键词"
+                "路径关键词"
             case .pathKeyWordCaseSensitive:
-                return "路径关键词 匹配大小写"
+                "路径关键词 匹配大小写"
             case .pathComponentFullMatch:
-                return "路径中存在文件名"
+                "路径中存在文件名"
             case .pathComponentFullMatchCaseSensitive:
-                return "路径中存在文件名 匹配大小写"
+                "路径中存在文件名 匹配大小写"
             case .nameRegExFullMatch:
-                return "文件名正则表达式完整匹配"
+                "文件名正则表达式完整匹配"
             }
         }
     }

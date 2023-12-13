@@ -11,7 +11,7 @@ public enum PreviewHeader {
     public var header: HTTPHeader {
         switch self {
         case .reactions:
-            return HTTPHeader(headerField: "Accept", value: "application/vnd.github.squirrel-girl-preview")
+            HTTPHeader(headerField: "Accept", value: "application/vnd.github.squirrel-girl-preview")
         }
     }
 }

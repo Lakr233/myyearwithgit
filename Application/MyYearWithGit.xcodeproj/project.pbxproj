@@ -21,6 +21,7 @@
 		506CB6E827537F9F00CF2A6E /* RSProtocol.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506CB6E727537F9F00CF2A6E /* RSProtocol.swift.swift */; };
 		5070B09127572A1400D23A75 /* CommitFilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070B09027572A1400D23A75 /* CommitFilterSheet.swift */; };
 		5070B09327572C4E00D23A75 /* CommitFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5070B09227572C4E00D23A75 /* CommitFilter.swift */; };
+		50720BEA2B2A2120004A2B8D /* ColorfulX in Frameworks */ = {isa = PBXBuildFile; productRef = 50720BE92B2A2120004A2B8D /* ColorfulX */; };
 		50742544275BAE3B006B5354 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50742543275BAE3B006B5354 /* User.swift */; };
 		50742548275BB0E4006B5354 /* UserDefault.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50742547275BB0E4006B5354 /* UserDefault.swift.swift */; };
 		507528EA2753510B001F373E /* GitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507528E92753510B001F373E /* GitLog.swift */; };
@@ -36,7 +37,6 @@
 		509071462752340B002D2C14 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509071452752340B002D2C14 /* AnalysisView.swift */; };
 		5090714827523992002D2C14 /* AuxiliaryExecute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090714727523992002D2C14 /* AuxiliaryExecute.swift */; };
 		50907160275252A0002D2C14 /* RepoAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090715F275252A0002D2C14 /* RepoAnalyser.swift */; };
-		5096DBC82751031A007AA4C7 /* Colorful in Frameworks */ = {isa = PBXBuildFile; productRef = 5096DBC72751031A007AA4C7 /* Colorful */; };
 		50A8C3F52751143A00C545BC /* TextTypeEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8C3F42751143A00C545BC /* TextTypeEffectView.swift */; };
 		50A8C3F92751222900C545BC /* MainSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8C3F82751222900C545BC /* MainSheet.swift */; };
 		50A8C3FB2751240C00C545BC /* SheetTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8C3FA2751240C00C545BC /* SheetTemplate.swift */; };
@@ -124,8 +124,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				509071382752123A002D2C14 /* OctoKit in Frameworks */,
-				5096DBC82751031A007AA4C7 /* Colorful in Frameworks */,
 				50EA933E278C09570059EF8B /* AuxiliaryExecute in Frameworks */,
+				50720BEA2B2A2120004A2B8D /* ColorfulX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,9 +312,9 @@
 			);
 			name = MyYearWithGit;
 			packageProductDependencies = (
-				5096DBC72751031A007AA4C7 /* Colorful */,
 				509071372752123A002D2C14 /* OctoKit */,
 				50EA933D278C09570059EF8B /* AuxiliaryExecute */,
+				50720BE92B2A2120004A2B8D /* ColorfulX */,
 			);
 			productName = MyYearWithGit;
 			productReference = 50FD1001275101D80090EAFB /* MyYearWithGit.app */;
@@ -328,7 +328,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					50FD1000275101D80090EAFB = {
 						CreatedOnToolsVersion = 13.1;
@@ -428,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -458,9 +459,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -489,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -519,9 +523,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -548,12 +554,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyYearWithGit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Git Year";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Lakr Aream";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -561,7 +569,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.MyYearWithGit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -578,12 +586,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyYearWithGit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Git Year";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Lakr Aream";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -591,7 +601,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.MyYearWithGit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -623,13 +633,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		50720BE92B2A2120004A2B8D /* ColorfulX */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ColorfulX;
+		};
 		509071372752123A002D2C14 /* OctoKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OctoKit;
-		};
-		5096DBC72751031A007AA4C7 /* Colorful */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Colorful;
 		};
 		50EA933D278C09570059EF8B /* AuxiliaryExecute */ = {
 			isa = XCSwiftPackageProductDependency;

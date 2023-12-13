@@ -8,12 +8,15 @@
       location = "group:Foundation/AuxiliaryExecute">
    </FileRef>
    <FileRef
-      location = "group:Foundation/Colorful">
-   </FileRef>
-   <FileRef
       location = "group:Foundation/Octokit">
    </FileRef>
    <FileRef
       location = "group:Foundation/RequestKit">
+   </FileRef>
+   <FileRef
+      location = "group:Foundation/ColorfulX">
+   </FileRef>
+   <FileRef
+      location = "group:Foundation/SpringInterpolation">
    </FileRef>
 </Workspace>

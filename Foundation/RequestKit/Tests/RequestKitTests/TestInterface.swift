@@ -59,44 +59,44 @@ enum JSONTestRouter: JSONPostRouter {
 
     var configuration: Configuration {
         switch self {
-        case let .testPOST(config): return config
-        case let .testGET(config): return config
+        case let .testPOST(config): config
+        case let .testGET(config): config
         }
     }
 
     var method: HTTPMethod {
         switch self {
         case .testPOST:
-            return .POST
+            .POST
         case .testGET:
-            return .GET
+            .GET
         }
     }
 
     var encoding: HTTPEncoding {
         switch self {
         case .testPOST:
-            return .json
+            .json
         case .testGET:
-            return .json
+            .json
         }
     }
 
     var path: String {
         switch self {
         case .testPOST:
-            return "some_route"
+            "some_route"
         case .testGET:
-            return "some_route"
+            "some_route"
         }
     }
 
     var params: [String: Any] {
         switch self {
         case .testPOST:
-            return [:]
+            [:]
         case .testGET:
-            return [:]
+            [:]
         }
     }
 }

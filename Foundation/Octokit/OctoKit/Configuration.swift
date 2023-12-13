@@ -77,9 +77,9 @@ public struct OAuthConfiguration: Configuration {
                         return
                     } else {
                         if let data, let string = String(data: data, encoding: .utf8) {
-                            let accessToken = self.accessTokenFromResponse(string)
+                            let accessToken = accessTokenFromResponse(string)
                             if let accessToken {
-                                let config = TokenConfiguration(accessToken, url: self.apiEndpoint)
+                                let config = TokenConfiguration(accessToken, url: apiEndpoint)
                                 completion(config)
                             }
                         }
@@ -113,35 +113,35 @@ enum OAuthRouter: Router {
 
     var configuration: Configuration {
         switch self {
-        case let .authorize(config): return config
-        case let .accessToken(config, _): return config
+        case let .authorize(config): config
+        case let .accessToken(config, _): config
         }
     }
 
     var method: HTTPMethod {
         switch self {
         case .authorize:
-            return .GET
+            .GET
         case .accessToken:
-            return .POST
+            .POST
         }
     }
 
     var encoding: HTTPEncoding {
         switch self {
         case .authorize:
-            return .url
+            .url
         case .accessToken:
-            return .form
+            .form
         }
     }
 
     var path: String {
         switch self {
         case .authorize:
-            return "login/oauth/authorize"
+            "login/oauth/authorize"
         case .accessToken:
-            return "login/oauth/access_token"
+            "login/oauth/access_token"
         }
     }
 

@@ -18,35 +18,35 @@ public class AuxiliaryExecute {
     // so use binaryLocationFor(command:) to cache it if needed
 
     // system path
-    internal var currentPath: [String] = []
+    var currentPath: [String] = []
     // system binary table
-    internal var binaryTable: [String: String] = [:]
+    var binaryTable: [String: String] = [:]
 
     // for you to put your own search path
-    internal var extraSearchPath: [String] = []
+    var extraSearchPath: [String] = []
     // for you to set your own binary table and will be used firstly
     // if you set nil here
     // -> we will return nil even the binary found in system path
-    internal var overwriteTable: [String: String?] = [:]
+    var overwriteTable: [String: String?] = [:]
 
     // this value is used when providing 0 or negative timeout paramete
-    internal static let maxTimeoutValue: Double = 2_147_483_647
+    static let maxTimeoutValue: Double = 2_147_483_647
 
     /// when reading from file pipe, must called from async queue
-    internal static let pipeControlQueue = DispatchQueue(
+    static let pipeControlQueue = DispatchQueue(
         label: "wiki.qaq.AuxiliaryExecute.pipeRead",
         attributes: .concurrent
     )
 
     /// when killing process or monitoring events from process, must called from async queue
     /// we are making this queue serial queue so won't called at the same time when timeout
-    internal static let processControlQueue = DispatchQueue(
+    static let processControlQueue = DispatchQueue(
         label: "wiki.qaq.AuxiliaryExecute.processControl",
         attributes: []
     )
 
     /// used for setting binary table, avoid crash
-    internal let lock = NSLock()
+    let lock = NSLock()
 
     /// nope!
     private init() {
@@ -100,7 +100,7 @@ public class AuxiliaryExecute {
         ///   - error: error if any
         ///   - stdout: stdout
         ///   - stderr: stderr
-        internal init(
+        init(
             exitCode: Int,
             pid: Int,
             wait: Int,
@@ -124,7 +124,7 @@ public class AuxiliaryExecute {
         ///   - error: error
         ///   - stdout: default empty
         ///   - stderr: default empty
-        internal static func failure(
+        static func failure(
             exitCode: Int = -1,
             pid: Int = -1,
             wait: Int = -1,

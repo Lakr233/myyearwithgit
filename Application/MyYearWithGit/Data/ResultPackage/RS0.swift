@@ -95,7 +95,7 @@ class ResultSection0: ResultSection {
                     Rectangle()
                         .foregroundColor(Color(NSColor.textBackgroundColor))
                         .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 0)
-                    self.container
+                    container
                         .padding(25)
                         .frame(
                             width: r.size.width,
@@ -121,17 +121,18 @@ class ResultSection0: ResultSection {
         var rightContainer: some View {
             VStack(alignment: .leading, spacing: 10) {
                 Spacer()
-                if let name = User.current.namespace, name.count > 0 {
-                    Text("\(String(requiredYear)) 年 􀆄 \(name)") // or 2,021 fuck you swiftui!
+                let name = User.current.namespace
+                if name.count > 0 {
+                    Text("\(String(requiredYear)) 年 x \(name)")
                         .font(.system(size: 12, weight: .semibold, design: .rounded))
                 } else {
-                    Text("\(String(requiredYear)) 年") // or 2,021 fuck you swiftui!
+                    Text("\(String(requiredYear)) 年")
                         .font(.system(size: 12, weight: .semibold, design: .rounded))
                 }
                 Text("我和我的代码，还有这一年。")
                     .font(.system(size: 25, weight: .semibold, design: .rounded))
                 Divider()
-                Text("校验码: 0x\(reportHash)")
+                Text("校验码: 0x\(reportHash.uppercase)")
                     .font(.system(size: 14, weight: .semibold, design: .monospaced))
                     .opacity(0.5)
                 Spacer()

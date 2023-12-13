@@ -1,5 +1,5 @@
 //
-//  Navigators.swift
+//  NavigatorView.swift
 //  MyYearWithGit
 //
 //  Created by Lakr Aream on 2021/11/27.
@@ -76,11 +76,11 @@ struct NavigatorView: View {
                 return
             }
             self.resultPackage = resultPackage
-            self.sourcePackage = nil
+            sourcePackage = nil
         }
         .onReceive(NotificationCenter.default.publisher(for: .analysisErase, object: nil)) { _ in
-            self.resultPackage = nil
-            self.sourcePackage = nil
+            resultPackage = nil
+            sourcePackage = nil
             unprotectWindowFromClose()
         }
     }

@@ -61,7 +61,7 @@ static void replaced_NSWindow_close(NSWindow *self, SEL _cmd)
 #pragma clang diagnostic ignored "-Wundeclared-selector"
 
 __attribute__((constructor))
-static void makeMyMagicWork() {
+static void makeMyMagicWork(void) {
     // do our magic
     HookMessage(
         objc_getClass("NSWindow"),

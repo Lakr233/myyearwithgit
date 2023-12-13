@@ -1,5 +1,5 @@
 //
-//  FileBlockList.swift
+//  CommitFilterSheet.swift
 //  MyYearWithGit
 //
 //  Created by Lakr Aream on 2021/12/1.
@@ -17,7 +17,8 @@ struct FilterSheet: View {
 
     var body: some View {
         SheetTemplate.makeSheet(title: "排除列表",
-                                body: AnyView(sheet)) { confirmed in
+                                body: AnyView(sheet))
+        { confirmed in
             debugPrint("sheet completed \(confirmed)")
             presentationMode.wrappedValue.dismiss()
         }

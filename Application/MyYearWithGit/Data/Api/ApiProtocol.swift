@@ -23,17 +23,17 @@ enum ApiError: Error, LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .emptyData:
-            return "未找到有效的数据，请再试一次。"
+            "未找到有效的数据，请再试一次。"
         case .invalidUrl:
-            return "错误的 URL 数据，请再试一次。"
+            "错误的 URL 数据，请再试一次。"
         case .invalidUser:
-            return "无效的用户信息，请再试一次。"
+            "无效的用户信息，请再试一次。"
         case let .network(reason):
-            return "无法连接到服务器: \(reason)"
+            "无法连接到服务器: \(reason)"
         case let .statusCode(code):
-            return "服务器返回未知状态: \(code) \(HTTPURLResponse.localizedString(forStatusCode: code))"
+            "服务器返回未知状态: \(code) \(HTTPURLResponse.localizedString(forStatusCode: code))"
         case let .response(reason):
-            return "服务器返回错误信息：\(reason)"
+            "服务器返回错误信息：\(reason)"
         }
     }
 }

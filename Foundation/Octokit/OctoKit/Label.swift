@@ -90,36 +90,36 @@ enum LabelRouter: JSONPostRouter {
     var method: HTTPMethod {
         switch self {
         case .createLabel:
-            return .POST
+            .POST
         default:
-            return .GET
+            .GET
         }
     }
 
     var encoding: HTTPEncoding {
         switch self {
         case .createLabel:
-            return .json
+            .json
         default:
-            return .url
+            .url
         }
     }
 
     var configuration: Configuration {
         switch self {
-        case let .readLabel(config, _, _, _): return config
-        case let .readLabels(config, _, _, _, _): return config
-        case let .createLabel(config, _, _, _, _): return config
+        case let .readLabel(config, _, _, _): config
+        case let .readLabels(config, _, _, _, _): config
+        case let .createLabel(config, _, _, _, _): config
         }
     }
 
     var params: [String: Any] {
         switch self {
-        case .readLabel: return [:]
+        case .readLabel: [:]
         case let .readLabels(_, _, _, page, perPage):
-            return ["per_page": perPage, "page": page]
+            ["per_page": perPage, "page": page]
         case let .createLabel(_, _, _, name, color):
-            return ["name": name, "color": color]
+            ["name": name, "color": color]
         }
     }
 

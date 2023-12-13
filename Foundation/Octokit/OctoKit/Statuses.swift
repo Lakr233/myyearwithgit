@@ -118,27 +118,27 @@ enum StatusesRouter: JSONPostRouter {
     var method: HTTPMethod {
         switch self {
         case .createCommitStatus:
-            return .POST
+            .POST
         case .listCommitStatuses:
-            return .GET
+            .GET
         }
     }
 
     var encoding: HTTPEncoding {
         switch self {
         case .createCommitStatus:
-            return .json
+            .json
         case .listCommitStatuses:
-            return .url
+            .url
         }
     }
 
     var configuration: Configuration {
         switch self {
         case let .createCommitStatus(config, _, _, _, _, _, _, _):
-            return config
+            config
         case let .listCommitStatuses(config, _, _, _):
-            return config
+            config
         }
     }
 
@@ -164,9 +164,9 @@ enum StatusesRouter: JSONPostRouter {
     var path: String {
         switch self {
         case let .createCommitStatus(_, owner, repo, sha, _, _, _, _):
-            return "repos/\(owner)/\(repo)/statuses/\(sha)"
+            "repos/\(owner)/\(repo)/statuses/\(sha)"
         case let .listCommitStatuses(_, owner, repo, ref):
-            return "repos/\(owner)/\(repo)/commits/\(ref)/statuses"
+            "repos/\(owner)/\(repo)/commits/\(ref)/statuses"
         }
     }
 }

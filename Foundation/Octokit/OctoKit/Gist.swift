@@ -173,28 +173,28 @@ enum GistRouter: JSONPostRouter {
     var method: HTTPMethod {
         switch self {
         case .postGistFile, .patchGistFile:
-            return .POST
+            .POST
         default:
-            return .GET
+            .GET
         }
     }
 
     var encoding: HTTPEncoding {
         switch self {
         case .postGistFile, .patchGistFile:
-            return .json
+            .json
         default:
-            return .url
+            .url
         }
     }
 
     var configuration: Configuration {
         switch self {
-        case let .readAuthenticatedGists(config, _, _): return config
-        case let .readGists(config, _, _, _): return config
-        case let .readGist(config, _): return config
-        case let .postGistFile(config, _, _, _, _): return config
-        case let .patchGistFile(config, _, _, _, _): return config
+        case let .readAuthenticatedGists(config, _, _): config
+        case let .readGists(config, _, _, _): config
+        case let .readGist(config, _): config
+        case let .postGistFile(config, _, _, _, _): config
+        case let .patchGistFile(config, _, _, _, _): config
         }
     }
 
@@ -231,15 +231,15 @@ enum GistRouter: JSONPostRouter {
     var path: String {
         switch self {
         case .readAuthenticatedGists:
-            return "gists"
+            "gists"
         case let .readGists(_, owner, _, _):
-            return "users/\(owner)/gists"
+            "users/\(owner)/gists"
         case let .readGist(_, id):
-            return "gists/\(id)"
+            "gists/\(id)"
         case .postGistFile:
-            return "gists"
+            "gists"
         case let .patchGistFile(_, id, _, _, _):
-            return "gists/\(id)"
+            "gists/\(id)"
         }
     }
 }

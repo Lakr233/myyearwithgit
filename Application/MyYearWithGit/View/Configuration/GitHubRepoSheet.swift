@@ -104,7 +104,7 @@ struct GitHubRepoSheet: View {
             TextField("删除包含 <关键词> 的仓库，区分大小写。", text: $deleteKeyword)
             Button {
                 if deleteKeyword.count > 0 {
-                    self.currentRepos = currentRepos
+                    currentRepos = currentRepos
                         .filter { !$0.path.contains(deleteKeyword) }
                 }
                 deleteKeyword = ""

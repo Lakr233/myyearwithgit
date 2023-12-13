@@ -139,8 +139,8 @@ enum UserRouter: Router {
 
     var configuration: Configuration {
         switch self {
-        case let .readAuthenticatedUser(config): return config
-        case let .readUser(_, config): return config
+        case let .readAuthenticatedUser(config): config
+        case let .readUser(_, config): config
         }
     }
 
@@ -155,9 +155,9 @@ enum UserRouter: Router {
     var path: String {
         switch self {
         case .readAuthenticatedUser:
-            return "user"
+            "user"
         case let .readUser(username, _):
-            return "users/\(username)"
+            "users/\(username)"
         }
     }
 

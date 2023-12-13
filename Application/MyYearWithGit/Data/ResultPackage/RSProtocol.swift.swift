@@ -1,5 +1,5 @@
 //
-//  RPProtocol.swift.swift
+//  RSProtocol.swift.swift
 //  MyYearWithGit
 //
 //  Created by Lakr Aream on 2021/11/28.
@@ -41,17 +41,17 @@ enum CommitDateInDay: String, HumanReadable {
     func readableDescription() -> String {
         switch self {
         case .midnight: // 0:00 <-> 5:00
-            return "凌晨"
+            "凌晨"
         case .morning: // 5:00 <-> 10:00
-            return "早晨"
+            "早晨"
         case .noon: // 10:00 <-> 14:00
-            return "中午"
+            "中午"
         case .afternoon: // 14:00 <-> 17:00
-            return "下午"
+            "下午"
         case .dinner: // 17:00 <-> 19:00
-            return "晚餐时间"
+            "晚餐时间"
         case .night: // 19:00 <-> 24:00
-            return "晚上"
+            "晚上"
         }
     }
 

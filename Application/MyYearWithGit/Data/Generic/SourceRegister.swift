@@ -1,5 +1,5 @@
 //
-//  Source.swift
+//  SourceRegister.swift
 //  MyYearWithGit
 //
 //  Created by Lakr Aream on 2021/11/26.
@@ -20,13 +20,13 @@ enum SourceRegisters: String, CaseIterable, Codable, HumanReadable {
     func readableDescription() -> String {
         switch self {
         case .local:
-            return "本地仓库"
+            "本地仓库"
         case .github:
-            return "GitHub"
+            "GitHub"
         case .gitlab:
-            return "GitLab"
+            "GitLab"
         case .bitbucket:
-            return "Bitbucket"
+            "Bitbucket"
         }
     }
 }

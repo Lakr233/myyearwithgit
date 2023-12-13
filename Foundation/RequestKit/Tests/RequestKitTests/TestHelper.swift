@@ -1,7 +1,7 @@
 import Foundation
 
-internal class Helper {
-    internal class func stringFromFile(_ name: String) -> String? {
+class Helper {
+    class func stringFromFile(_ name: String) -> String? {
         let bundle = Bundle(for: self)
         let path = bundle.path(forResource: name, ofType: "json")
         if let path {
@@ -11,7 +11,7 @@ internal class Helper {
         return nil
     }
 
-    internal class func JSONFromFile(_ name: String) -> Any {
+    class func JSONFromFile(_ name: String) -> Any {
         let bundle = Bundle(for: self)
         let path = bundle.path(forResource: name, ofType: "json")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: path))
@@ -20,7 +20,7 @@ internal class Helper {
         return dict!
     }
 
-    internal class func codableFromFile<T: Codable>(_ name: String, type _: T.Type) -> Any {
+    class func codableFromFile<T: Codable>(_ name: String, type _: T.Type) -> Any {
         let bundle = Bundle(for: self)
         let path = bundle.path(forResource: name, ofType: "json")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: path))
@@ -31,7 +31,7 @@ internal class Helper {
         #if os(Linux)
             return (error as? NSError)
         #else
-            return (error as NSError?)
+            return error as NSError?
         #endif
     }
 }

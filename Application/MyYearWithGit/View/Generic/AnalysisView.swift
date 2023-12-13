@@ -5,7 +5,6 @@
 //  Created by Lakr Aream on 2021/11/27.
 //
 
-import Colorful
 import SwiftUI
 
 // After analysis, let user to choose his emails
@@ -18,7 +17,7 @@ extension Notification.Name {
 struct AnalysisView: View {
     let sourcePackage: SourcePackage
 
-    internal init(sourcePackage: SourcePackage) {
+    init(sourcePackage: SourcePackage) {
         self.sourcePackage = sourcePackage
         _progressTitle = State<String>(initialValue: "正在处理...")
         _completed = State<Int>(initialValue: 0)
@@ -74,7 +73,7 @@ struct AnalysisView: View {
         DispatchQueue.global().async {
             // iterate over the source
             let session = RepoAnalyser.shared.beginSession()
-            self.analyserSession = session
+            analyserSession = session
             RepoAnalyser.shared.submitEmails(with: [String](User.current.email))
             let tempDir = sourcePackage.tempDir
             for package in sourcePackage.representedObjects {

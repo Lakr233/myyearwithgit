@@ -264,30 +264,30 @@ enum IssueRouter: JSONPostRouter {
     var method: HTTPMethod {
         switch self {
         case .postIssue, .patchIssue, .commentIssue:
-            return .POST
+            .POST
         default:
-            return .GET
+            .GET
         }
     }
 
     var encoding: HTTPEncoding {
         switch self {
         case .postIssue, .patchIssue, .commentIssue:
-            return .json
+            .json
         default:
-            return .url
+            .url
         }
     }
 
     var configuration: Configuration {
         switch self {
-        case let .readAuthenticatedIssues(config, _, _, _): return config
-        case let .readIssue(config, _, _, _): return config
-        case let .readIssues(config, _, _, _, _, _): return config
-        case let .postIssue(config, _, _, _, _, _, _): return config
-        case let .patchIssue(config, _, _, _, _, _, _, _): return config
-        case let .commentIssue(config, _, _, _, _): return config
-        case let .readIssueComments(config, _, _, _, _, _): return config
+        case let .readAuthenticatedIssues(config, _, _, _): config
+        case let .readIssue(config, _, _, _): config
+        case let .readIssues(config, _, _, _, _, _): config
+        case let .postIssue(config, _, _, _, _, _, _): config
+        case let .patchIssue(config, _, _, _, _, _, _, _): config
+        case let .commentIssue(config, _, _, _, _): config
+        case let .readIssueComments(config, _, _, _, _, _): config
         }
     }
 
@@ -336,19 +336,19 @@ enum IssueRouter: JSONPostRouter {
     var path: String {
         switch self {
         case .readAuthenticatedIssues:
-            return "issues"
+            "issues"
         case let .readIssue(_, owner, repository, number):
-            return "repos/\(owner)/\(repository)/issues/\(number)"
+            "repos/\(owner)/\(repository)/issues/\(number)"
         case let .readIssues(_, owner, repository, _, _, _):
-            return "repos/\(owner)/\(repository)/issues"
+            "repos/\(owner)/\(repository)/issues"
         case let .postIssue(_, owner, repository, _, _, _, _):
-            return "repos/\(owner)/\(repository)/issues"
+            "repos/\(owner)/\(repository)/issues"
         case let .patchIssue(_, owner, repository, number, _, _, _, _):
-            return "repos/\(owner)/\(repository)/issues/\(number)"
+            "repos/\(owner)/\(repository)/issues/\(number)"
         case let .commentIssue(_, owner, repository, number, _):
-            return "repos/\(owner)/\(repository)/issues/\(number)/comments"
+            "repos/\(owner)/\(repository)/issues/\(number)/comments"
         case let .readIssueComments(_, owner, repository, number, _, _):
-            return "repos/\(owner)/\(repository)/issues/\(number)/comments"
+            "repos/\(owner)/\(repository)/issues/\(number)/comments"
         }
     }
 }

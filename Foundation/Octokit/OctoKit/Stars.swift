@@ -54,8 +54,8 @@ enum StarsRouter: Router {
 
     var configuration: Configuration {
         switch self {
-        case let .readAuthenticatedStars(config): return config
-        case let .readStars(_, config): return config
+        case let .readAuthenticatedStars(config): config
+        case let .readStars(_, config): config
         }
     }
 
@@ -66,9 +66,9 @@ enum StarsRouter: Router {
     var path: String {
         switch self {
         case .readAuthenticatedStars:
-            return "user/starred"
+            "user/starred"
         case let .readStars(username, _):
-            return "users/\(username)/starred"
+            "users/\(username)/starred"
         }
     }
 

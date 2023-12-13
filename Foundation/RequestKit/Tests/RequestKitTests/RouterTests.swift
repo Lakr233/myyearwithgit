@@ -155,35 +155,35 @@ enum TestRouter: Router {
 
     var configuration: Configuration {
         switch self {
-        case let .testRoute(config): return config
-        case let .formEncodedRoute(config): return config
+        case let .testRoute(config): config
+        case let .formEncodedRoute(config): config
         }
     }
 
     var method: HTTPMethod {
         switch self {
         case .testRoute:
-            return .GET
+            .GET
         case .formEncodedRoute:
-            return .POST
+            .POST
         }
     }
 
     var encoding: HTTPEncoding {
         switch self {
         case .testRoute:
-            return .url
+            .url
         case .formEncodedRoute:
-            return .form
+            .form
         }
     }
 
     var path: String {
         switch self {
         case .testRoute:
-            return "some_route"
+            "some_route"
         case .formEncodedRoute:
-            return "route"
+            "route"
         }
     }
 

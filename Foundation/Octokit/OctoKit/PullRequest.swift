@@ -148,21 +148,21 @@ enum PullRequestRouter: JSONPostRouter {
         switch self {
         case .readPullRequest,
              .readPullRequests:
-            return .GET
+            .GET
         }
     }
 
     var encoding: HTTPEncoding {
         switch self {
         default:
-            return .url
+            .url
         }
     }
 
     var configuration: Configuration {
         switch self {
-        case let .readPullRequest(config, _, _, _): return config
-        case let .readPullRequests(config, _, _, _, _, _, _): return config
+        case let .readPullRequest(config, _, _, _): config
+        case let .readPullRequests(config, _, _, _, _, _, _): config
         }
     }
 
@@ -188,9 +188,9 @@ enum PullRequestRouter: JSONPostRouter {
     var path: String {
         switch self {
         case let .readPullRequest(_, owner, repository, number):
-            return "repos/\(owner)/\(repository)/pulls/\(number)"
+            "repos/\(owner)/\(repository)/pulls/\(number)"
         case let .readPullRequests(_, owner, repository, _, _, _, _):
-            return "repos/\(owner)/\(repository)/pulls"
+            "repos/\(owner)/\(repository)/pulls"
         }
     }
 }

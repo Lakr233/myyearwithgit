@@ -1,5 +1,5 @@
 //
-//  MyYearWithGitApp.swift
+//  App.swift
 //  MyYearWithGit
 //
 //  Created by Lakr Aream on 2021/11/26.
@@ -16,7 +16,7 @@ let currentBootWorkingDir: String = FileManager
     .default
     .currentDirectoryPath
 
-let requiredYear = 2022
+let requiredYear = 2023
 
 let processCount: Int = {
     var count = ProcessInfo
@@ -95,9 +95,8 @@ private extension Scene {
     func restrictWindowResizing() -> some Scene {
         if #available(macOS 13.0, *) {
             return self.windowResizability(.contentSize)
-        } else {
-            return self
         }
+        return self
     }
 }
 

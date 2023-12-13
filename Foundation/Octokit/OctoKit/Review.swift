@@ -60,35 +60,35 @@ enum ReviewsRouter: JSONPostRouter {
     var method: HTTPMethod {
         switch self {
         case .listReviews:
-            return .GET
+            .GET
         }
     }
 
     var encoding: HTTPEncoding {
         switch self {
         default:
-            return .url
+            .url
         }
     }
 
     var configuration: Configuration {
         switch self {
         case let .listReviews(config, _, _, _):
-            return config
+            config
         }
     }
 
     var params: [String: Any] {
         switch self {
         case .listReviews:
-            return [:]
+            [:]
         }
     }
 
     var path: String {
         switch self {
         case let .listReviews(_, owner, repository, pullRequestNumber):
-            return "/repos/\(owner)/\(repository)/pulls/\(pullRequestNumber)/reviews"
+            "/repos/\(owner)/\(repository)/pulls/\(pullRequestNumber)/reviews"
         }
     }
 }
