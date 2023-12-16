@@ -16,7 +16,7 @@ import MetalKit
         let metalLayer: CAMetalLayer
         let commandQueue: MTLCommandQueue
 
-        var displayLink: CADisplayLink?
+        var displayLink: CADisplayLink!
 
         init() {
             guard let device = MTLCreateSystemDefaultDevice(),
@@ -36,12 +36,11 @@ import MetalKit
             super.init(frame: .zero)
 
             layer.addSublayer(metalLayer)
-            let displayLink = CADisplayLink()
-            self.displayLink = displayLink
 
-            let link = CADisplayLink(target: self, selector: #selector(displayLinkTik))
-            link.add(to: .main, forMode: .common)
-            self.displayLink = link
+            displayLink = CADisplayLink(target: self, selector: #selector(displayLinkCall))
+            displayLink.add(to: .main, forMode: .common)
+
+            backgroundColor = .clear
         }
 
         @available(*, unavailable)
@@ -49,56 +48,27 @@ import MetalKit
             fatalError("init(coder:) has not been implemented")
         }
 
-        deinit {
-            displayLink?.invalidate()
-            displayLink = nil
-        }
+        deinit { displayLink.invalidate() }
 
-        @objc func displayLinkTik() {
-            renderIfNeeded()
-        }
+        @objc func displayLinkCall() { vsync() }
 
-        func shouldRender() -> Bool {
-            true
-        }
-
-        func renderIfNeeded() {
-            guard shouldRender(),
-                  let drawable = metalLayer.nextDrawable(),
-                  let commandBuffer = commandQueue.makeCommandBuffer(),
-                  let computeEncoder = commandBuffer.makeComputeCommandEncoder()
-            else { return }
-
-            render(withDrawable: drawable, commandBuffer: commandBuffer, computeEncoder: computeEncoder)
-            commandBuffer.present(drawable)
-            commandBuffer.commit()
-        }
-
-        func render(withDrawable drawable: CAMetalDrawable, commandBuffer: MTLCommandBuffer, computeEncoder: MTLComputeCommandEncoder) {
-            _ = drawable
-            _ = commandBuffer
-            _ = computeEncoder
-        }
-
-        override public func display(_: CALayer) {
-            renderIfNeeded()
-        }
+        func vsync() {}
 
         override public func layoutSublayers(of _: CALayer) {
-            metalLayer.frame = bounds
-            updateDrawableSize()
-        }
-
-        private func updateDrawableSize() {
             #if os(visionOS)
                 let scaleFactor: CGFloat = 2
             #else
                 let scaleFactor = window?.screen.scale ?? 1
             #endif
-            metalLayer.drawableSize = CGSize(
-                width: bounds.width * scaleFactor,
-                height: bounds.height * scaleFactor
-            )
+            metalLayer.frame = bounds
+            var width = bounds.width * scaleFactor
+            var height = bounds.height * scaleFactor
+            assert(width <= 8192 && height <= 8192, "rendering over 8k is not supported")
+            if width <= 0 { width = 1 }
+            if height <= 0 { height = 1 }
+            if width > 8192 { width = 8192 }
+            if height > 8192 { height = 8192 }
+            metalLayer.drawableSize = CGSize(width: width, height: height)
         }
     }
 #else
@@ -134,16 +104,15 @@ import MetalKit
                 metalLayer.delegate = self
 
                 CVDisplayLinkCreateWithActiveCGDisplays(&displayLink)
-                CVDisplayLinkSetOutputCallback(displayLink!, { _, _, _, _, _, userInfo -> CVReturn in
-                    let metalView = Unmanaged<MetalView>.fromOpaque(userInfo!).takeUnretainedValue()
-                    metalView.renderIfNeeded()
-                    return kCVReturnSuccess
-                }, Unmanaged.passUnretained(self).toOpaque())
-                CVDisplayLinkStart(displayLink!)
-            }
-
-            deinit {
-                CVDisplayLinkStop(displayLink!)
+                if let displayLink {
+                    CVDisplayLinkSetOutputCallback(displayLink, { _, _, _, _, _, object -> CVReturn in
+                        guard let object else { return kCVReturnError }
+                        let me = Unmanaged<MetalView>.fromOpaque(object).takeUnretainedValue()
+                        me.vsync()
+                        return kCVReturnSuccess
+                    }, Unmanaged.passUnretained(self).toOpaque())
+                    CVDisplayLinkStart(displayLink)
+                } else { assertionFailure() }
             }
 
             @available(*, unavailable)
@@ -151,47 +120,25 @@ import MetalKit
                 fatalError("init(coder:) has not been implemented")
             }
 
-            func shouldRender() -> Bool {
-                true
+            deinit {
+                if let displayLink { CVDisplayLinkStop(displayLink) }
+                displayLink = nil
             }
 
-            func render(
-                withDrawable drawable: CAMetalDrawable,
-                commandBuffer: MTLCommandBuffer,
-                computeEncoder: MTLComputeCommandEncoder
-            ) {
-                _ = drawable
-                _ = commandBuffer
-                _ = computeEncoder
-            }
-
-            public func display(_: CALayer) {
-                renderIfNeeded()
-            }
-
-            func renderIfNeeded() {
-                guard shouldRender(),
-                      let drawable = metalLayer.nextDrawable(),
-                      let commandBuffer = commandQueue.makeCommandBuffer(),
-                      let commandEncoder = commandBuffer.makeComputeCommandEncoder()
-                else { return }
-                render(withDrawable: drawable, commandBuffer: commandBuffer, computeEncoder: commandEncoder)
-                commandBuffer.present(drawable)
-                commandBuffer.commit()
-            }
+            func vsync() {}
 
             public func layoutSublayers(of layer: CALayer) {
                 guard layer == metalLayer else { return }
                 metalLayer.frame = bounds
-                updateDrawableSize()
-            }
-
-            private func updateDrawableSize() {
                 let scaleFactor = window?.backingScaleFactor ?? 1
-                metalLayer.drawableSize = CGSize(
-                    width: bounds.width * scaleFactor,
-                    height: bounds.height * scaleFactor
-                )
+                var width = bounds.width * scaleFactor
+                var height = bounds.height * scaleFactor
+                assert(width <= 8192 && height <= 8192, "rendering over 8k is not supported")
+                if width <= 0 { width = 1 }
+                if height <= 0 { height = 1 }
+                if width > 8192 { width = 8192 }
+                if height > 8192 { height = 8192 }
+                metalLayer.drawableSize = CGSize(width: width, height: height)
             }
         }
     #else

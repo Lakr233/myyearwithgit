@@ -11,8 +11,9 @@ import SwiftUI
 struct SpringExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().background(.thinMaterial)
         }
+        .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
     }
 }

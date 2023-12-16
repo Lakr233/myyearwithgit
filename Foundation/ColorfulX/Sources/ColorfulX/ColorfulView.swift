@@ -8,32 +8,31 @@
 import SwiftUI
 
 public struct ColorfulView: View {
-    private let fps: Int
-    @Binding var colors: [Color]
-    @Binding var speedFactor: Double
-    @Binding var colorTransitionDuration: TimeInterval
+    @Binding var color: [Color]
+    @Binding var speed: Double
+    @Binding var noise: Double
+    @Binding var transitionInterval: TimeInterval
 
     public init(
-        fps: Int = 60,
-        colors: Binding<[Color]>,
-        speedFactor: Binding<Double> = .constant(1.0),
-        colorTransitionDuration: Binding<TimeInterval> = .constant(5)
+        color: Binding<[Color]>,
+        speed: Binding<Double> = .constant(1.0),
+        noise: Binding<Double> = .constant(0),
+        transitionInterval: Binding<TimeInterval> = .constant(5)
     ) {
-        self.fps = fps
-
-        _colors = colors
-        _speedFactor = speedFactor
-        _colorTransitionDuration = colorTransitionDuration
+        _color = color
+        _speed = speed
+        _noise = noise
+        _transitionInterval = transitionInterval
     }
 
     public var body: some View {
         AnimatedMulticolorGradientViewRepresentable(
-            colors: .init(get: {
-                colors.map { RGBColor(CoreColor($0)) }
+            color: .init(get: {
+                color.map { RGBColor(CoreColor($0)) }
             }, set: { _ in assertionFailure() }),
-            speedFactor: $speedFactor,
-            colorTransitionDuration: $colorTransitionDuration,
-            fps: fps
+            speed: $speed,
+            noise: $noise,
+            transitionDuration: $transitionInterval
         )
     }
 }

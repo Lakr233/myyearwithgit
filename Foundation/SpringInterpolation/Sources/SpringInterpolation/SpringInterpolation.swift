@@ -8,44 +8,32 @@
 import Foundation
 
 public struct SpringInterpolation {
-    public private(set) var config: Configuration
-    public private(set) var context: Context
+    public var config: Configuration
+    public var context: Context
 
-    public var currentPos: Double { context.currentPos }
-    public var currentVel: Double { context.currentVel }
-    public var targetPos: Double { context.targetPos }
-
-    public init(_ config: Configuration = .init()) {
+    public init(config: Configuration = .init(), context: Context = .init()) {
         self.config = config
-        context = config.generateContext()
+        self.context = context
     }
 
     @discardableResult
-    public mutating func tik() -> Double {
-        let ret = update(
-            pos: context.currentPos,
-            vel: context.currentVel,
-            equilibriumPos: context.targetPos
-        )
-        context.currentPos = ret.newPos
-        context.currentVel = ret.newVel
-        return ret.newPos
+    public mutating func update(withDeltaTime interval: TimeInterval) -> Double {
+        let oldPos = context.currentPos - context.targetPos
+        let oldVel = context.currentVel
+        let parms = config.generateParameters(deltaTime: interval)
+        let newPos = oldPos * parms.posPosCoef + oldVel * parms.posVelCoef + context.targetPos
+        let newVel = oldPos * parms.velPosCoef + oldVel * parms.velVelCoef
+        context.currentPos = newPos
+        context.currentVel = newVel
+        return context.currentPos
     }
 
-    public mutating func setCurrent(_ pos: Double) {
+    public mutating func setCurrent(_ pos: Double, _ vel: Double = 0) {
         context.currentPos = pos
-        context.currentVel = 0
+        context.currentVel = vel
     }
 
     public mutating func setTarget(_ pos: Double) {
         context.targetPos = pos
-    }
-
-    private func update(pos: Double, vel: Double, equilibriumPos: Double) -> (newPos: Double, newVel: Double) {
-        let oldPos = pos - equilibriumPos
-        let oldVel = vel
-        let newPos = oldPos * context.posPosCoef + oldVel * context.posVelCoef + equilibriumPos
-        let newVel = oldPos * context.velPosCoef + oldVel * context.velVelCoef
-        return (newPos, newVel)
     }
 }

@@ -60,7 +60,7 @@ struct MainView: View {
                 }
             )
             .background(
-                ColorfulView(colors: $colors, colorTransitionDuration: .constant(2.5))
+                ColorfulView(color: $colors)
                     .ignoresSafeArea()
                     .onChange(of: colorScheme) { _ in
                         updateColorScheme()

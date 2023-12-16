@@ -9,26 +9,15 @@ import Foundation
 
 public extension SpringInterpolation {
     struct Context {
-        public let posPosCoef, posVelCoef: Double
-        public let velPosCoef, velVelCoef: Double
-
         public var currentPos: Double
         public var currentVel: Double
         public var targetPos: Double
 
         public init(
-            posPosCoef: Double,
-            posVelCoef: Double,
-            velPosCoef: Double,
-            velVelCoef: Double,
             currentPos: Double = 0,
             currentVel: Double = 0,
             targetPos: Double = 0
         ) {
-            self.posPosCoef = posPosCoef
-            self.posVelCoef = posVelCoef
-            self.velPosCoef = velPosCoef
-            self.velVelCoef = velVelCoef
             self.currentPos = currentPos
             self.currentVel = currentVel
             self.targetPos = targetPos
@@ -37,12 +26,18 @@ public extension SpringInterpolation {
 }
 
 public extension SpringInterpolation.Configuration {
-    func generateContext() -> SpringInterpolation.Context {
-        if angularFrequency < epsilon {
-            return .init(posPosCoef: 1, posVelCoef: 0, velPosCoef: 0, velVelCoef: 1)
+    func generateParameters(deltaTime: Double) -> SpringInterpolation.Parameters {
+        if angularFrequency < .ulpOfOne {
+            return .init(
+                deltaTime: deltaTime,
+                posPosCoef: 1,
+                posVelCoef: 0,
+                velPosCoef: 0,
+                velVelCoef: 1
+            )
         }
 
-        if dampingRatio > 1.0 + epsilon {
+        if dampingRatio > 1.0 + .ulpOfOne {
             let za = -angularFrequency * dampingRatio
             let zb = angularFrequency * sqrt(dampingRatio * dampingRatio - 1.0)
             let z1 = za - zb
@@ -63,10 +58,16 @@ public extension SpringInterpolation.Configuration {
             let velPosCoef = (z1e1_Over_TwoZb - z2e2_Over_TwoZb + e2) * z2
             let velVelCoef = -z1e1_Over_TwoZb + z2e2_Over_TwoZb
 
-            return .init(posPosCoef: posPosCoef, posVelCoef: posVelCoef, velPosCoef: velPosCoef, velVelCoef: velVelCoef)
+            return .init(
+                deltaTime: deltaTime,
+                posPosCoef: posPosCoef,
+                posVelCoef: posVelCoef,
+                velPosCoef: velPosCoef,
+                velVelCoef: velVelCoef
+            )
         }
 
-        if dampingRatio < 1.0 - epsilon {
+        if dampingRatio < 1.0 - .ulpOfOne {
             let omegaZeta = angularFrequency * dampingRatio
             let alpha = angularFrequency * sqrt(1.0 - dampingRatio * dampingRatio)
 
@@ -86,7 +87,13 @@ public extension SpringInterpolation.Configuration {
             let velPosCoef = -expSin * alpha - omegaZeta * expOmegaZetaSin_Over_Alpha
             let velVelCoef = expCos - expOmegaZetaSin_Over_Alpha
 
-            return .init(posPosCoef: posPosCoef, posVelCoef: posVelCoef, velPosCoef: velPosCoef, velVelCoef: velVelCoef)
+            return .init(
+                deltaTime: deltaTime,
+                posPosCoef: posPosCoef,
+                posVelCoef: posVelCoef,
+                velPosCoef: velPosCoef,
+                velVelCoef: velVelCoef
+            )
         }
 
         let expTerm = exp(-angularFrequency * deltaTime)
@@ -98,6 +105,12 @@ public extension SpringInterpolation.Configuration {
 
         let velPosCoef = -angularFrequency * timeExpFreq
         let velVelCoef = -timeExpFreq + expTerm
-        return .init(posPosCoef: posPosCoef, posVelCoef: posVelCoef, velPosCoef: velPosCoef, velVelCoef: velVelCoef)
+        return .init(
+            deltaTime: deltaTime,
+            posPosCoef: posPosCoef,
+            posVelCoef: posVelCoef,
+            velPosCoef: velPosCoef,
+            velVelCoef: velVelCoef
+        )
     }
 }
