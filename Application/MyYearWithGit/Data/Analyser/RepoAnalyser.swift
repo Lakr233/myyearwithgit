@@ -20,6 +20,7 @@ private let dateFormatters: [DateFormatter] = [
 
 private func createFormatter(_ str: String) -> DateFormatter {
     let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
     dateFormatter.dateFormat = str
     return dateFormatter
 }
