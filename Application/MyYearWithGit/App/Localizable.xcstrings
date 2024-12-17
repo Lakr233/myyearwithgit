@@ -363,16 +363,6 @@
         }
       }
     },
-    "任意门" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jump Now"
-          }
-        }
-      }
-    },
     "休养生息" : {
       "localizations" : {
         "en" : {

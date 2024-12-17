@@ -138,7 +138,7 @@ struct MainView: View {
                         )
                     } label: {
                         HStack {
-                            Text("任意门")
+                            Text(String("任意门"))
                                 .foregroundColor(.orange)
                         }
                     }
