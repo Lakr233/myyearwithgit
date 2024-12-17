@@ -2,6 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<integer>1</integer>
+			<key>CFBundleTypeName</key>
+			<string>年度代码报告</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>wiki.qaq.mygitreport</string>
+			</array>
+		</dict>
+	</array>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
@@ -30,39 +47,6 @@
 				<array>
 					<string>mygitreport</string>
 				</array>
-			</dict>
-		</dict>
-	</array>
-	<key>UTImportedTypeDeclarations</key>
-	<array>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.data</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>年度代码报告</string>
-			<key>UTTypeIconFile</key>
-			<string>Avatar</string>
-			<key>UTTypeIcons</key>
-			<dict>
-				<key>UTTypeIconBadgeName</key>
-				<string>Avatar</string>
-				<key>UTTypeIconText</key>
-				<string>Annually Code Report</string>
-			</dict>
-			<key>UTTypeIdentifier</key>
-			<string>wiki.qaq.mygitreport</string>
-			<key>UTTypeReferenceURL</key>
-			<string></string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>mygitreport</string>
-				</array>
-				<key>public.mime-type</key>
-				<array/>
 			</dict>
 		</dict>
 	</array>
