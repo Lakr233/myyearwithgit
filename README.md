@@ -1,8 +1,11 @@
 # 我和我的代码，还有这一年。
 
-## 预览
+<p align="center">
+  <a href="README.md">简体中文</a> |
+  <a href="./Resources/i18n/en/README.md">English</a> |
+</p>
 
-**Chinese Only!**
+## 预览
 
 按道理这里是要放几张预览图片并配上一句话的说明的。本程序目前支持使用常见 Git 仓库托管提供商以及本地代码仓库进行分析。
 
@@ -67,4 +70,4 @@
 
 ---
 
-Copyright © 2021 Lakr Aream. All Rights Reserved.
+Copyright © 2024 Lakr Aream. All Rights Reserved.
