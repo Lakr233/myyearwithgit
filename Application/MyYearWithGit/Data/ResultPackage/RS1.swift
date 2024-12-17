@@ -98,6 +98,7 @@ class ResultSection1: ResultSection {
                     Text("提交记录告诉咱：")
                         .frame(height: preferredContentHeight)
                     Text("仓库因你增添了 \(makeAdd(commitIncreaseLine)) 行代码，也减去了 \(makeDelete(commitDecreaseLine)) 行的重量。")
+                        .fixedSize(horizontal: false, vertical: true)
                         .frame(height: preferredContentHeight)
                 }
 

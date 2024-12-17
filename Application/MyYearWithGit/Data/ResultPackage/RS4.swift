@@ -41,10 +41,16 @@ class ResultSection4: ResultSection {
         if dirtyWordList.contains(mostUsedWordInCode)
             || dirtyWordList.contains(mostUsedWordInCommitLog)
         {
-            return .init(achievement: .init(name: "文明语言大师", describe: "在代码或者提交备注中使用的最多的词语是脏话"))
+            return .init(achievement: .init(
+                name: NSLocalizedString("文明语言大师", comment: ""),
+                describe: NSLocalizedString("在代码或者提交备注中使用的最多的词语是脏话", comment: "")
+            ))
         }
         for item in otherUsedWordInCode + otherUsedWordInCommitLog where dirtyWordList.contains(item) {
-            return .init(achievement: .init(name: "文明语言学者", describe: "在代码或者提交备注中使用了不少的脏话"))
+            return .init(achievement: .init(
+                name: NSLocalizedString("文明语言学者", comment: ""),
+                describe: NSLocalizedString("在代码或者提交备注中使用了不少的脏话", comment: "")
+            ))
         }
         return nil
     }

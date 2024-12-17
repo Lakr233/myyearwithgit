@@ -70,6 +70,16 @@
         }
       }
     },
+    "%@的年度代码报告" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@’s Annually Code Report"
+          }
+        }
+      }
+    },
     "%lld" : {
       "localizations" : {
         "en" : {
@@ -80,6 +90,22 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "%lld 月 %lld 日" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld @ %2$lld th"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld 月 %2$lld 日"
+          }
+        }
+      }
     },
     "© %lld 标准件厂长@砍砍 & 他的朋友们" : {
       "localizations" : {
@@ -106,6 +132,16 @@
     },
     "Bitbucket" : {
       "shouldTranslate" : false
+    },
+    "Bufeature 制造机" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bufeature Maker"
+          }
+        }
+      }
     },
     "Bufeature: <noun> bug feature, feature with bug." : {
       "shouldTranslate" : false
@@ -201,6 +237,26 @@
         }
       }
     },
+    "今年有一天的提交次数超过五十次" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Having a day committed over 50 times."
+          }
+        }
+      }
+    },
+    "今年有一天的提交次数超过百次" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Having a day committed over 100 times."
+          }
+        }
+      }
+    },
     "今年有且只有一次提交" : {
       "localizations" : {
         "en" : {
@@ -217,6 +273,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Never Code This Year"
+          }
+        }
+      }
+    },
+    "今年的提交中熟练使用了超过六种语言" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More then 6 language was used this year."
           }
         }
       }
@@ -487,6 +553,66 @@
         }
       }
     },
+    "喜欢在下午茶时间提交代码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Likes to submit code during afternoon tea time"
+          }
+        }
+      }
+    },
+    "喜欢在中午提交代码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Likes to submit code during the noon"
+          }
+        }
+      }
+    },
+    "喜欢在午夜时分提交代码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Likes to submit code during the early morning"
+          }
+        }
+      }
+    },
+    "喜欢在早晨提交代码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Likes to submit code during the morning"
+          }
+        }
+      }
+    },
+    "喜欢在晚上提交代码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Likes to submit code during the evening"
+          }
+        }
+      }
+    },
+    "喜欢在晚饭时间提交代码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Likes to submit code during dinner time"
+          }
+        }
+      }
+    },
     "回过头来看看这一年，似乎付出了不少。咱一共活跃了 %@ 天。" : {
       "localizations" : {
         "en" : {
@@ -513,6 +639,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "In the year %@"
+          }
+        }
+      }
+    },
+    "在代码或者提交备注中使用了不少的脏话" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A fair amount of profanity was used in the code or commit messages."
+          }
+        }
+      }
+    },
+    "在代码或者提交备注中使用的最多的词语是脏话" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The most frequently used word in code or commit messages is profanity."
           }
         }
       }
@@ -563,6 +709,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Address"
+          }
+        }
+      }
+    },
+    "夜猫子" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Night Owl"
           }
         }
       }
@@ -643,6 +799,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Try My Best"
+          }
+        }
+      }
+    },
+    "干饭人！干饭魂！" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lets Have Launch First"
           }
         }
       }
@@ -823,6 +989,16 @@
         }
       }
     },
+    "我是奥特曼" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I’m Altman"
+          }
+        }
+      }
+    },
     "我的 Bufeature 做好了吗？" : {
       "localizations" : {
         "en" : {
@@ -923,6 +1099,66 @@
         }
       }
     },
+    "文件名关键词" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filename Keyword"
+          }
+        }
+      }
+    },
+    "文件名关键词 匹配大小写" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filename Keyword & Case Sensitive"
+          }
+        }
+      }
+    },
+    "文件名正则表达式完整匹配" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filename Regex Full Match"
+          }
+        }
+      }
+    },
+    "文明语言大师" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Civilized Language Master"
+          }
+        }
+      }
+    },
+    "文明语言学者" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Civilized Language Scholar"
+          }
+        }
+      }
+    },
+    "无名氏" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anonymous"
+          }
+        }
+      }
+    },
     "早晨" : {
       "localizations" : {
         "en" : {
@@ -933,12 +1169,32 @@
         }
       }
     },
+    "早睡早起身体好" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Early to bed, early to rise, healthy body."
+          }
+        }
+      }
+    },
     "星星有月亮，代码回家有仓库，而你有我相伴。😛" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The stars have the moon, code has repositories to return to, and you have me by your side. 😛"
+          }
+        }
+      }
+    },
+    "星爸爸和气氛组的关怀" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The coffee shop is necessary"
           }
         }
       }
@@ -969,6 +1225,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dinner Time"
+          }
+        }
+      }
+    },
+    "晚饭的吃好" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinner the Best"
           }
         }
       }
@@ -1263,6 +1529,16 @@
         }
       }
     },
+    "睡前故事" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nightmare Story"
+          }
+        }
+      }
+    },
     "确定" : {
       "localizations" : {
         "en" : {
@@ -1289,6 +1565,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sign Up & Wake Up."
+          }
+        }
+      }
+    },
+    "编程语言大师" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Master of Programing Language"
           }
         }
       }
@@ -1429,6 +1715,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Please select some folders from which we will search for repositories."
+          }
+        }
+      }
+    },
+    "路径中存在文件名" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Path Keyword"
+          }
+        }
+      }
+    },
+    "路径中存在文件名 匹配大小写" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Path Keyword & Case Sensitive"
+          }
+        }
+      }
+    },
+    "路径关键词" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Path"
+          }
+        }
+      }
+    },
+    "路径关键词 匹配大小写" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Path & Case Sensitive"
           }
         }
       }

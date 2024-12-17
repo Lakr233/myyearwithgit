@@ -25,8 +25,16 @@ struct TextTypeEffectView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Divider().hidden()
-            Text(displayText)
-                .font(.system(size: preferredTitleSize, weight: .semibold, design: .rounded))
+            if #available(macOS 13.0, *) {
+                Text(displayText)
+                    .font(.system(size: preferredTitleSize, weight: .semibold, design: .rounded))
+                    .contentTransition(.numericText())
+                    .animation(.interactiveSpring, value: displayText)
+            } else {
+                Text(displayText)
+                    .font(.system(size: preferredTitleSize, weight: .semibold, design: .rounded))
+                    .animation(.interactiveSpring, value: displayText)
+            }
             Divider().hidden()
         }
         .onReceive(timer) { _ in

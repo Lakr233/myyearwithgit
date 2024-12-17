@@ -13,32 +13,32 @@ private let imageSize: CGFloat = 12
 private let mainTitleTextList = [
     NSLocalizedString("我和我的代码，还有这一年。", comment: ""),
 ] + [
-    #"""print("Hello World")"""#, // Python
-    #"""System.out.println("Hello World");"""#, // Java
-    #"""printf("Hello World\n");"""#, // C
-    #"""std::cout << "Hello World" << std::endl;"""#, // C++
-    #"""console.log("Hello World");"""#, // JavaScript
-    #"""puts "Hello World""""#, // Ruby
-    #"""<?php echo "Hello World"; ?>"""#, // PHP
-    #"""print("Hello World")"""#, // Swift
-    #"""fmt.Println("Hello World")"""#, // Go
-    #"""Console.WriteLine("Hello World");"""#, // C#
-    #"""echo "Hello World";"""#, // Bash
-    #"""Write-Output "Hello World"""#, // PowerShell
-    #"""echo('Hello World')"""#, // Lua
-    #"""(println "Hello World")"""#, // Clojure
-    #"""echo Hello, World!"""#, // Batch
-    #"""DISPLAY 'Hello World'"""#, // COBOL
-    #"""write('Hello World')"""#, // Pascal
-    #"""io.write("Hello World\n")"""#, // Lua
-    #"""print *, "Hello World"""#, // Fortran
-    #"""PRINT "Hello World" """#, // BASIC
-    #"""printf("Hello World\n");"""#, // Kotlin (via C interop)
-    #"""System.Console.WriteLine("Hello World");"""#, // F#
-    #"""print_endline "Hello World";"""#, // OCaml
-    #"""IO.puts("Hello World")"""#, // Elixir
-    #"""'Hello World'"""#, // Haskell (via GHCi)
-    #"""print("Hello World!")"""#, // R
+    #"print("Hello World")"#, // Python
+    #"System.out.println("Hello World");"#, // Java
+    #"printf("Hello World\n");"#, // C
+    #"std::cout << "Hello World" << std::endl;"#, // C++
+    #"console.log("Hello World");"#, // JavaScript
+    #"puts "Hello World""#, // Ruby
+    #"<?php echo "Hello World"; ?>"#, // PHP
+    #"print("Hello World")"#, // Swift
+    #"fmt.Println("Hello World")"#, // Go
+    #"Console.WriteLine("Hello World");"#, // C#
+    #"echo "Hello World";"#, // Bash
+    #"Write-Output "Hello World"#, // PowerShell
+    #"echo('Hello World')"#, // Lua
+    #"(println "Hello World")"#, // Clojure
+    #"echo Hello, World!"#, // Batch
+    #"DISPLAY 'Hello World'"#, // COBOL
+    #"write('Hello World')"#, // Pascal
+    #"io.write("Hello World\n")"#, // Lua
+    #"print *, "Hello World"#, // Fortran
+    #"PRINT "Hello World" "#, // BASIC
+    #"printf("Hello World\n");"#, // Kotlin (via C interop)
+    #"System.Console.WriteLine("Hello World");"#, // F#
+    #"print_endline "Hello World";"#, // OCaml
+    #"IO.puts("Hello World")"#, // Elixir
+    #"'Hello World'"#, // Haskell (via GHCi)
+    #"print("Hello World!")"#, // R
 ]
 .shuffled()
 

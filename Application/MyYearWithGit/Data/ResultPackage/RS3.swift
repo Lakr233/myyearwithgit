@@ -59,17 +59,35 @@ class ResultSection3: ResultSection {
 
         switch commitDateInDay {
         case .midnight:
-            return .init(achievement: .init(name: "夜猫子", describe: "喜欢在午夜时分提交代码"))
+            return .init(achievement: .init(
+                name: NSLocalizedString("夜猫子", comment: ""),
+                describe: NSLocalizedString("喜欢在午夜时分提交代码", comment: "")
+            ))
         case .morning:
-            return .init(achievement: .init(name: "早睡早起身体好", describe: "喜欢在早晨提交代码"))
+            return .init(achievement: .init(
+                name: NSLocalizedString("早睡早起身体好", comment: ""),
+                describe: NSLocalizedString("喜欢在早晨提交代码", comment: "")
+            ))
         case .noon:
-            return .init(achievement: .init(name: "干饭人！干饭魂！", describe: "喜欢在中午提交代码"))
+            return .init(achievement: .init(
+                name: NSLocalizedString("干饭人！干饭魂！", comment: ""),
+                describe: NSLocalizedString("喜欢在中午提交代码", comment: "")
+            ))
         case .afternoon:
-            return .init(achievement: .init(name: "星爸爸和气氛组的关怀", describe: "喜欢在下午茶时间提交代码"))
+            return .init(achievement: .init(
+                name: NSLocalizedString("星爸爸和气氛组的关怀", comment: ""),
+                describe: NSLocalizedString("喜欢在下午茶时间提交代码", comment: "")
+            ))
         case .dinner:
-            return .init(achievement: .init(name: "晚饭的吃好", describe: "喜欢在晚饭时间提交代码"))
+            return .init(achievement: .init(
+                name: NSLocalizedString("晚饭的吃好", comment: ""),
+                describe: NSLocalizedString("喜欢在晚饭时间提交代码", comment: "")
+            ))
         case .night:
-            return .init(achievement: .init(name: "睡前故事", describe: "喜欢在晚上提交代码"))
+            return .init(achievement: .init(
+                name: NSLocalizedString("睡前故事", comment: ""),
+                describe: NSLocalizedString("喜欢在晚上提交代码", comment: "")
+            ))
         }
     }
 

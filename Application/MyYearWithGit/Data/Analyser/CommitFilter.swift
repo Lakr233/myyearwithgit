@@ -42,19 +42,19 @@ class CommitFileFilter {
         func readableDescription() -> String {
             switch self {
             case .nameKeyWord:
-                "文件名关键词"
+                NSLocalizedString("文件名关键词", comment: "")
             case .nameKeyWordCaseSensitive:
-                "文件名关键词 匹配大小写"
+                NSLocalizedString("文件名关键词 匹配大小写", comment: "")
             case .pathKeyWord:
-                "路径关键词"
+                NSLocalizedString("路径关键词", comment: "")
             case .pathKeyWordCaseSensitive:
-                "路径关键词 匹配大小写"
+                NSLocalizedString("路径关键词 匹配大小写", comment: "")
             case .pathComponentFullMatch:
-                "路径中存在文件名"
+                NSLocalizedString("路径中存在文件名", comment: "")
             case .pathComponentFullMatchCaseSensitive:
-                "路径中存在文件名 匹配大小写"
+                NSLocalizedString("路径中存在文件名 匹配大小写", comment: "")
             case .nameRegExFullMatch:
-                "文件名正则表达式完整匹配"
+                NSLocalizedString("文件名正则表达式完整匹配", comment: "")
             }
         }
     }

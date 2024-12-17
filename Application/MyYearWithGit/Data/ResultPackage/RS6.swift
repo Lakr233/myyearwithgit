@@ -41,9 +41,15 @@ class ResultSection6: ResultSection {
         }
 
         if specialCount > 50 {
-            return .init(achievement: .init(name: "Bufeature 制造机", describe: "今年有一天的提交次数超过五十次"))
+            return .init(achievement: .init(
+                name: NSLocalizedString("Bufeature 制造机", comment: ""),
+                describe: NSLocalizedString("今年有一天的提交次数超过五十次", comment: "")
+            ))
         } else if specialCount > 100 {
-            return .init(achievement: .init(name: "我是奥特曼", describe: "今年有一天的提交次数超过百次"))
+            return .init(achievement: .init(
+                name: NSLocalizedString("我是奥特曼", comment: ""),
+                describe: NSLocalizedString("今年有一天的提交次数超过百次", comment: "")
+            ))
         }
 
         return nil
@@ -219,7 +225,7 @@ class ResultSection6: ResultSection {
                 .foregroundColor(Color.orange)
         }
 
-        func makeLarge(text: String) -> Text {
+        func makeLarge(text: LocalizedStringKey) -> Text {
             Text(text)
                 .font(.system(size: preferredContextSize * 2, weight: .semibold, design: .rounded))
                 .foregroundColor(Color(NSColor(red: 87 / 255, green: 86 / 255, blue: 206 / 255, alpha: 1)))

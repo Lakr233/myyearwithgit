@@ -57,7 +57,11 @@ class ResultSection2: ResultSection {
         }
 
         if otherUsedLanguages.count + 1 >= 6 {
-            return .init(achievement: .init(name: "编程语言大师", describe: "今年的提交中熟练使用了超过六种语言"))
+            return .init(achievement: .init(
+                name: NSLocalizedString("编程语言大师", comment: ""),
+                describe: NSLocalizedString("今年的提交中熟练使用了超过六种语言", comment: "")
+            )
+            )
         }
         return nil
     }

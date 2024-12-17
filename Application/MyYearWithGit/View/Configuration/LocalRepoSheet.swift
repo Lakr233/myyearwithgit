@@ -133,7 +133,7 @@ struct LocalRepoSheet: View {
     }
 
     var progressSheetView: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 16) {
             ProgressView()
             Text("正在查找代码仓库...")
             Button {
@@ -184,7 +184,7 @@ struct LocalRepoSheet: View {
 private func repoEmulator(searchPaths: [URL], complete: @escaping ([URL]) -> Void) {
     var searchResults: Set<URL> = []
     func search(searchRoot: URL, depth: Int) {
-        guard depth < 50 else {
+        guard depth < 64 else {
             // avoid stack overflow!
             return
         }

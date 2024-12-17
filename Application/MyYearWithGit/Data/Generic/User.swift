@@ -20,7 +20,7 @@ class User {
         }
     }
 
-    @UserDefaultsWrapper(key: "wiki.qaq.mywg.name", defaultValue: "")
+    @UserDefaultsWrapper(key: "wiki.qaq.mywg.name", defaultValue: "anonymous")
     public var namespace: String
 
     private init() {

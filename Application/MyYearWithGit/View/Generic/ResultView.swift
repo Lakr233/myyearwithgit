@@ -120,25 +120,7 @@ struct ResultView: View {
 
                             HStack(alignment: .center, spacing: 12.0) {
                                 Button {
-                                    let data = resultPackage.representedData
-                                    guard let jsonData = try? JSONEncoder().encode(data) else {
-                                        print("failed to create json data")
-                                        return
-                                    }
-                                    guard let keyWindow = NSApp.keyWindow else {
-                                        return
-                                    }
-                                    DispatchQueue.main.async {
-                                        let savePanel = NSSavePanel()
-                                        savePanel.nameFieldStringValue = "scanner.result.json"
-                                        savePanel.beginSheetModal(for: keyWindow) { result in
-                                            if result.rawValue == NSApplication.ModalResponse.OK.rawValue,
-                                               let url = savePanel.url
-                                            {
-                                                try? jsonData.write(to: url)
-                                            }
-                                        }
-                                    }
+                                    saveReport()
                                 } label: {
                                     Text("导出分析数据")
                                 }
@@ -248,6 +230,31 @@ struct ResultView: View {
             .padding(10)
         }
         .padding(-10)
+    }
+
+    func saveReport() {
+        let data = resultPackage.representedData
+        guard let jsonData = try? JSONEncoder().encode(data) else {
+            print("failed to create json data")
+            return
+        }
+        guard let keyWindow = NSApp.keyWindow else {
+            return
+        }
+        DispatchQueue.main.async {
+            let savePanel = NSSavePanel()
+            savePanel.nameFieldStringValue = String(
+                format: NSLocalizedString("%@的年度代码报告", comment: ""),
+                User.current.namespace.isEmpty ? NSLocalizedString("无名氏", comment: "") : User.current.namespace
+            ) + ".mygitreport"
+            savePanel.beginSheetModal(for: keyWindow) { result in
+                if result.rawValue == NSApplication.ModalResponse.OK.rawValue,
+                   let url = savePanel.url
+                {
+                    try? jsonData.write(to: url)
+                }
+            }
+        }
     }
 
     func takeSnapshot(of view: some View) -> NSImage? {
