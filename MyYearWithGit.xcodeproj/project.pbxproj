@@ -36,7 +36,7 @@
 		50802D732D11379600694021 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50802D722D11379600694021 /* InfoPlist.xcstrings */; };
 		50802D752D1147B800694021 /* Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 50802D742D1147B800694021 /* Avatar.png */; };
 		5083A0BA275279A900BDF048 /* ConfigEmailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083A0B9275279A900BDF048 /* ConfigEmailSheet.swift */; };
-		5085B8F62D115AEA00A35814 /* GitBuild in Resources */ = {isa = PBXBuildFile; fileRef = 5085B8F52D1159EC00A35814 /* GitBuild */; };
+		5085BA542D11645B00A35814 /* GitBuild in Resources */ = {isa = PBXBuildFile; fileRef = 5085BA532D11645800A35814 /* GitBuild */; };
 		509071382752123A002D2C14 /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 509071372752123A002D2C14 /* OctoKit */; };
 		5090713B275223DF002D2C14 /* GitLabApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090713A275223DF002D2C14 /* GitLabApi.swift */; };
 		5090713D27523242002D2C14 /* SourcePackage.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090713C27523242002D2C14 /* SourcePackage.swift.swift */; };
@@ -97,8 +97,8 @@
 		50802D742D1147B800694021 /* Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avatar.png; sourceTree = "<group>"; };
 		5083A0B9275279A900BDF048 /* ConfigEmailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigEmailSheet.swift; sourceTree = "<group>"; };
 		5085B2542D1157AF00A35814 /* EmbedGit.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = EmbedGit.sh; sourceTree = "<group>"; };
-		5085B8F52D1159EC00A35814 /* GitBuild */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GitBuild; sourceTree = "<group>"; };
 		5085B8F72D115C0000A35814 /* Entitlements-Subprocess.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Entitlements-Subprocess.entitlements"; sourceTree = "<group>"; };
+		5085BA532D11645800A35814 /* GitBuild */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GitBuild; path = Git/GitBuild; sourceTree = SOURCE_ROOT; };
 		5090713A275223DF002D2C14 /* GitLabApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLabApi.swift; sourceTree = "<group>"; };
 		5090713C27523242002D2C14 /* SourcePackage.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePackage.swift.swift; sourceTree = "<group>"; };
 		5090713F2752337C002D2C14 /* NavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorView.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 		5085B2552D1157AF00A35814 /* Git */ = {
 			isa = PBXGroup;
 			children = (
-				5085B8F52D1159EC00A35814 /* GitBuild */,
+				5085BA532D11645800A35814 /* GitBuild */,
 				5085B2542D1157AF00A35814 /* EmbedGit.sh */,
 			);
 			path = Git;
@@ -408,7 +408,7 @@
 				50802D752D1147B800694021 /* Avatar.png in Resources */,
 				50802D732D11379600694021 /* InfoPlist.xcstrings in Resources */,
 				50802D712D11379100694021 /* Localizable.xcstrings in Resources */,
-				5085B8F62D115AEA00A35814 /* GitBuild in Resources */,
+				5085BA542D11645B00A35814 /* GitBuild in Resources */,
 				50FD1009275101D90090EAFB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
