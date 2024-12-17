@@ -1,0 +1,3 @@
+[submodule "Git/Core"]
+	path = Git/Core
+	url = https://github.com/git/git
