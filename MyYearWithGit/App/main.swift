@@ -13,6 +13,5 @@ setenv("GIT_TERMINAL_PROMPT", "0", 1)
 setenv("GIT_LFS_SKIP_SMUDGE", "1", 1)
 
 AuxiliaryExecuteWrapper.setupExecutables()
-AuxiliaryExecuteWrapper.setupGitTemplates()
 
 MyYearWithGitApp.main()

@@ -12,14 +12,13 @@ enum AuxiliaryExecuteWrapper {
     private(set) static var git: String = "/usr/bin/git"
 
     static func setupExecutables() {
-        let paths = [
-            CommandLine.arguments.first,
-            Bundle.main.url(forResource: "GitBuild", withExtension: nil)?.path
-        ].compactMap { $0 }
-        setenv("PATH", "\(paths.joined(separator: ":"))", 1)
         var binaryLookupTable = [String: URL]()
-
-        var searchPaths = paths.map { URL(fileURLWithPath: $0) }
+        let binarySearchPath = [
+            "/usr/local/bin",
+            "/usr/bin",
+            "/bin",
+        ]
+        var searchPaths = binarySearchPath.map { URL(fileURLWithPath: $0) }
         while !searchPaths.isEmpty {
             let path = searchPaths.removeFirst()
             
@@ -44,22 +43,6 @@ enum AuxiliaryExecuteWrapper {
         } else {
             fatalError()
         }
-    }
-    
-    static func setupGitTemplates() {
-        guard let gitBuildDir = Bundle.main.url(forResource: "GitBuild", withExtension: nil) else {
-            return
-        }
-        // export GIT_EXEC_PATH=<path_of_/libexec/git-core/>
-        let execPath = gitBuildDir.appendingPathComponent("libexec/git-core")
-        setenv("GIT_EXEC_PATH", execPath.path, 1)
-        // git config --global init.templateDir "" -> disable template
-        spawn(command: git, args: [
-            "config",
-            "--global",
-            "init.templateDir",
-            ""
-        ], timeout: 10) { _ in }
     }
 
     @discardableResult
