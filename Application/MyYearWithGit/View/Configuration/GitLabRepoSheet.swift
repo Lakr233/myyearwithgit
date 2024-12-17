@@ -52,8 +52,8 @@ struct GitLabRepoSheet: View {
 
     func makeSourceRegData() -> SourceRegistrationData {
         var repos = [SourceRegistrationData.RepoElement]()
-        currentRepos.forEach {
-            repos.append(.init(remoteUrl: $0, username: "redacted", token: token))
+        for currentRepo in currentRepos {
+            repos.append(.init(remoteUrl: currentRepo, username: "redacted", token: token))
         }
         return .init(
             register: .gitlab,

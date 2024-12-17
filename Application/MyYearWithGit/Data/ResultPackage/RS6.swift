@@ -200,7 +200,7 @@ class ResultSection6: ResultSection {
             let mod = 8
             var seed = [Character](hash)
                 .map { Int(String($0)) }
-                .compactMap { $0 }
+                .compactMap(\.self)
                 .reduce(0, +) % mod
             var result = [String]()
             while result.count < 16 {

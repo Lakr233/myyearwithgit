@@ -48,13 +48,12 @@ class ResultPackage {
     func update() {
         badgeEarned = resultSections
             .map { $0.update(with: representedData) }
-            .compactMap { $0 }
-        resultSections
-            .forEach { section in
-                if let object = section as? ResultSectionBadgeData {
-                    object.setBadge(badgeEarned)
-                }
+            .compactMap(\.self)
+        for section in resultSections {
+            if let object = section as? ResultSectionBadgeData {
+                object.setBadge(badgeEarned)
             }
+        }
     }
 
     func update(with scannerPackage: DataSource) {

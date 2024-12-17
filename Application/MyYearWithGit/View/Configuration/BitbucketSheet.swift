@@ -56,8 +56,8 @@ struct BitbucketSheet: View {
 
     func makeSourceRegData() -> SourceRegistrationData {
         var repos = [SourceRegistrationData.RepoElement]()
-        currentRepos.forEach {
-            repos.append(.init(remoteUrl: $0, username: username, token: password))
+        for currentRepo in currentRepos {
+            repos.append(.init(remoteUrl: currentRepo, username: username, token: password))
         }
         return .init(
             register: .bitbucket,

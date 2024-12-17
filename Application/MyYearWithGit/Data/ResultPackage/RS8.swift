@@ -40,7 +40,7 @@ class ResultSection8: ResultSection {
                             Text("扫码开启你的专属年度代码提交报告")
                                 .font(.system(size: 12, weight: .semibold, design: .rounded))
                                 .opacity(0.5)
-                            Text("Copyright © 2022 @Lakr233's Team. All Rights Reserved.")
+                            Text("© \(requiredYear) 标准件厂长@砍砍 & 他的朋友们")
                                 .font(.system(size: 12, weight: .semibold, design: .rounded))
                                 .opacity(0.5)
                         }

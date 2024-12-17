@@ -27,6 +27,13 @@
 		507528EA2753510B001F373E /* GitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507528E92753510B001F373E /* GitLog.swift */; };
 		507528EE27535BE2001F373E /* GitDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507528ED27535BE2001F373E /* GitDiff.swift */; };
 		507528F027535C23001F373E /* SourceLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507528EF27535C23001F373E /* SourceLanguage.swift */; };
+		50802D642D1133EC00694021 /* ColorfulX in Frameworks */ = {isa = PBXBuildFile; productRef = 50802D632D1133EC00694021 /* ColorfulX */; };
+		50802D672D1133F600694021 /* AuxiliaryExecute in Frameworks */ = {isa = PBXBuildFile; productRef = 50802D662D1133F600694021 /* AuxiliaryExecute */; };
+		50802D6A2D11343E00694021 /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 50802D692D11343E00694021 /* OctoKit */; };
+		50802D6C2D11347E00694021 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50802D6B2D11347E00694021 /* main.swift */; };
+		50802D6F2D1135BF00694021 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 50802D6E2D1135BF00694021 /* MarkdownUI */; };
+		50802D712D11379100694021 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50802D702D11379100694021 /* Localizable.xcstrings */; };
+		50802D732D11379600694021 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50802D722D11379600694021 /* InfoPlist.xcstrings */; };
 		5083A0BA275279A900BDF048 /* ConfigEmailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5083A0B9275279A900BDF048 /* ConfigEmailSheet.swift */; };
 		509071382752123A002D2C14 /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 509071372752123A002D2C14 /* OctoKit */; };
 		5090713B275223DF002D2C14 /* GitLabApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090713A275223DF002D2C14 /* GitLabApi.swift */; };
@@ -46,7 +53,7 @@
 		50BAB6D9275A44C700409089 /* BitbucketSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BAB6D8275A44C700409089 /* BitbucketSheet.swift */; };
 		50DC0FCF2755DA320014E94E /* RS8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC0FCE2755DA320014E94E /* RS8.swift */; };
 		50DF1108275674F2003FF552 /* sha256sum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DF1107275674F2003FF552 /* sha256sum.swift */; };
-		50E3A98F27512D88003CBE07 /* Protocol.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E3A98E27512D88003CBE07 /* Protocol.swift.swift */; };
+		50E3A98F27512D88003CBE07 /* Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E3A98E27512D88003CBE07 /* Exts.swift */; };
 		50E3A99227513266003CBE07 /* PickSourceSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E3A99127513266003CBE07 /* PickSourceSheet.swift */; };
 		50E3A99427513279003CBE07 /* LocalRepoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E3A99327513279003CBE07 /* LocalRepoSheet.swift */; };
 		50E3A996275132C7003CBE07 /* GitHubRepoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E3A995275132C7003CBE07 /* GitHubRepoSheet.swift */; };
@@ -82,6 +89,9 @@
 		507528E92753510B001F373E /* GitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLog.swift; sourceTree = "<group>"; };
 		507528ED27535BE2001F373E /* GitDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitDiff.swift; sourceTree = "<group>"; };
 		507528EF27535C23001F373E /* SourceLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceLanguage.swift; sourceTree = "<group>"; };
+		50802D6B2D11347E00694021 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		50802D702D11379100694021 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		50802D722D11379600694021 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		5083A0B9275279A900BDF048 /* ConfigEmailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigEmailSheet.swift; sourceTree = "<group>"; };
 		5090713A275223DF002D2C14 /* GitLabApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLabApi.swift; sourceTree = "<group>"; };
 		5090713C27523242002D2C14 /* SourcePackage.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePackage.swift.swift; sourceTree = "<group>"; };
@@ -101,7 +111,7 @@
 		50BAB6D8275A44C700409089 /* BitbucketSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitbucketSheet.swift; sourceTree = "<group>"; };
 		50DC0FCE2755DA320014E94E /* RS8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RS8.swift; sourceTree = "<group>"; };
 		50DF1107275674F2003FF552 /* sha256sum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sha256sum.swift; sourceTree = "<group>"; };
-		50E3A98E27512D88003CBE07 /* Protocol.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift.swift; sourceTree = "<group>"; };
+		50E3A98E27512D88003CBE07 /* Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exts.swift; sourceTree = "<group>"; };
 		50E3A99127513266003CBE07 /* PickSourceSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickSourceSheet.swift; sourceTree = "<group>"; };
 		50E3A99327513279003CBE07 /* LocalRepoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepoSheet.swift; sourceTree = "<group>"; };
 		50E3A995275132C7003CBE07 /* GitHubRepoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepoSheet.swift; sourceTree = "<group>"; };
@@ -123,9 +133,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50802D6A2D11343E00694021 /* OctoKit in Frameworks */,
+				50802D6F2D1135BF00694021 /* MarkdownUI in Frameworks */,
 				509071382752123A002D2C14 /* OctoKit in Frameworks */,
+				50802D672D1133F600694021 /* AuxiliaryExecute in Frameworks */,
 				50EA933E278C09570059EF8B /* AuxiliaryExecute in Frameworks */,
 				50720BEA2B2A2120004A2B8D /* ColorfulX in Frameworks */,
+				50802D642D1133EC00694021 /* ColorfulX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,9 +149,12 @@
 		50572E8B294C1DD0004BC0C6 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				50802D6B2D11347E00694021 /* main.swift */,
 				50FD1004275101D80090EAFB /* App.swift */,
 				50572E8C294C1DD7004BC0C6 /* Hooker.m */,
 				50FD1008275101D90090EAFB /* Assets.xcassets */,
+				50802D702D11379100694021 /* Localizable.xcstrings */,
+				50802D722D11379600694021 /* InfoPlist.xcstrings */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -188,7 +205,7 @@
 		507528EC27535BD1001F373E /* Generic */ = {
 			isa = PBXGroup;
 			children = (
-				50E3A98E27512D88003CBE07 /* Protocol.swift.swift */,
+				50E3A98E27512D88003CBE07 /* Exts.swift */,
 				50742543275BAE3B006B5354 /* User.swift */,
 				50E3A9992751331B003CBE07 /* SourceRegister.swift */,
 				507528EF27535C23001F373E /* SourceLanguage.swift */,
@@ -315,6 +332,10 @@
 				509071372752123A002D2C14 /* OctoKit */,
 				50EA933D278C09570059EF8B /* AuxiliaryExecute */,
 				50720BE92B2A2120004A2B8D /* ColorfulX */,
+				50802D632D1133EC00694021 /* ColorfulX */,
+				50802D662D1133F600694021 /* AuxiliaryExecute */,
+				50802D692D11343E00694021 /* OctoKit */,
+				50802D6E2D1135BF00694021 /* MarkdownUI */,
 			);
 			productName = MyYearWithGit;
 			productReference = 50FD1001275101D80090EAFB /* MyYearWithGit.app */;
@@ -337,13 +358,20 @@
 			};
 			buildConfigurationList = 50FD0FFC275101D80090EAFB /* Build configuration list for PBXProject "MyYearWithGit" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 50FD0FF8275101D80090EAFB;
+			packageReferences = (
+				50802D622D1133EC00694021 /* XCRemoteSwiftPackageReference "ColorfulX" */,
+				50802D652D1133F600694021 /* XCRemoteSwiftPackageReference "AuxiliaryExecute" */,
+				50802D682D11343E00694021 /* XCRemoteSwiftPackageReference "octokit" */,
+				50802D6D2D1135BF00694021 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+			);
 			productRefGroup = 50FD1002275101D80090EAFB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +386,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50802D732D11379600694021 /* InfoPlist.xcstrings in Resources */,
+				50802D712D11379100694021 /* Localizable.xcstrings in Resources */,
 				50FD1009275101D90090EAFB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +415,7 @@
 				50FD1005275101D80090EAFB /* App.swift in Sources */,
 				50E5007F275C7C33003E6C9A /* GitHubApi.swift in Sources */,
 				50DC0FCF2755DA320014E94E /* RS8.swift in Sources */,
+				50802D6C2D11347E00694021 /* main.swift in Sources */,
 				501B048D2754A1BB0077C8FB /* RS1.swift in Sources */,
 				50E3A99A2751331B003CBE07 /* SourceRegister.swift in Sources */,
 				50BAB6D9275A44C700409089 /* BitbucketSheet.swift in Sources */,
@@ -403,7 +434,7 @@
 				5090713B275223DF002D2C14 /* GitLabApi.swift in Sources */,
 				50E3A99227513266003CBE07 /* PickSourceSheet.swift in Sources */,
 				50742548275BB0E4006B5354 /* UserDefault.swift.swift in Sources */,
-				50E3A98F27512D88003CBE07 /* Protocol.swift.swift in Sources */,
+				50E3A98F27512D88003CBE07 /* Exts.swift in Sources */,
 				509071402752337C002D2C14 /* NavigatorView.swift in Sources */,
 				5070B09327572C4E00D23A75 /* CommitFilter.swift in Sources */,
 				501B04A0275503040077C8FB /* RS7.swift in Sources */,
@@ -484,6 +515,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -541,6 +573,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
@@ -554,22 +587,22 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2024;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyYearWithGit/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Git Year";
+				INFOPLIST_KEY_CFBundleDisplayName = "年度代码";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Lakr Aream";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "标准件厂长@砍砍";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.MyYearWithGit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -586,22 +619,22 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2024;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyYearWithGit/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Git Year";
+				INFOPLIST_KEY_CFBundleDisplayName = "年度代码";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Lakr Aream";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "标准件厂长@砍砍";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.MyYearWithGit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -632,10 +665,65 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		50802D622D1133EC00694021 /* XCRemoteSwiftPackageReference "ColorfulX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lakr233/ColorfulX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.2;
+			};
+		};
+		50802D652D1133F600694021 /* XCRemoteSwiftPackageReference "AuxiliaryExecute" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lakr233/AuxiliaryExecute";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+		50802D682D11343E00694021 /* XCRemoteSwiftPackageReference "octokit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nerdishbynature/octokit.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.0;
+			};
+		};
+		50802D6D2D1135BF00694021 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		50720BE92B2A2120004A2B8D /* ColorfulX */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ColorfulX;
+		};
+		50802D632D1133EC00694021 /* ColorfulX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50802D622D1133EC00694021 /* XCRemoteSwiftPackageReference "ColorfulX" */;
+			productName = ColorfulX;
+		};
+		50802D662D1133F600694021 /* AuxiliaryExecute */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50802D652D1133F600694021 /* XCRemoteSwiftPackageReference "AuxiliaryExecute" */;
+			productName = AuxiliaryExecute;
+		};
+		50802D692D11343E00694021 /* OctoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50802D682D11343E00694021 /* XCRemoteSwiftPackageReference "octokit" */;
+			productName = OctoKit;
+		};
+		50802D6E2D1135BF00694021 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50802D6D2D1135BF00694021 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
 		};
 		509071372752123A002D2C14 /* OctoKit */ = {
 			isa = XCSwiftPackageProductDependency;

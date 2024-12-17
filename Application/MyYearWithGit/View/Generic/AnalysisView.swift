@@ -19,7 +19,7 @@ struct AnalysisView: View {
 
     init(sourcePackage: SourcePackage) {
         self.sourcePackage = sourcePackage
-        _progressTitle = State<String>(initialValue: "正在处理...")
+        _progressTitle = State<String>(initialValue: NSLocalizedString("正在处理...", comment: ""))
         _completed = State<Int>(initialValue: 0)
         let count = sourcePackage
             .representedObjects
@@ -84,7 +84,7 @@ struct AnalysisView: View {
                     prepareRemoteRepos(with: package, andTempDir: tempDir)
                 }
             }
-            update(title: "正在生成汇总...")
+            update(title: NSLocalizedString("正在生成汇总...", comment: ""))
             // completed! now let's pass the analysis result
             let result = RepoAnalyser.shared.commitResult()
             DispatchQueue.main.async {
@@ -111,7 +111,9 @@ struct AnalysisView: View {
             let from = URL(fileURLWithPath: location)
             let dest = tempDir
                 .appendingPathComponent(identifier)
-            update(title: "正在创建分析副本 \(from.lastPathComponent)")
+            update(title: String(format:
+                NSLocalizedString("正在创建分析副本 %@...", comment: ""),
+                from.lastPathComponent))
             // we copy .git file only, and call a reset after that
             // so .gitignore like node_modules won't go too far
 //            try? FileManager.default.copyItem(at: from, to: dest)
@@ -141,7 +143,9 @@ struct AnalysisView: View {
                 return
             }
 
-            update(title: "正在分析 \(from.lastPathComponent)")
+            update(title: String(format:
+                NSLocalizedString("正在分析 %@...", comment: ""),
+                from.lastPathComponent))
             autoreleasepool {
                 analysisRepo(at: dest)
             }
@@ -194,7 +198,9 @@ struct AnalysisView: View {
                     dest: dest
                 )
             }
-            update(title: "正在分析 \(location)")
+            update(title: String(format:
+                NSLocalizedString("正在分析 %@...", comment: ""),
+                location))
             analysisRepo(at: dest)
         }
         for repo in package.repos {
@@ -203,7 +209,9 @@ struct AnalysisView: View {
     }
 
     func downloadRepoFromHub(token: String, location: String, dest: URL) {
-        update(title: "正在从 Github 下载仓库 \(location)")
+        update(title: String(format:
+            NSLocalizedString("正在从 Github 下载仓库 %@...", comment: ""),
+            location))
         var location = location
         if location.hasPrefix("http"), let url = URL(string: location) {
             location = url.path
@@ -222,7 +230,9 @@ struct AnalysisView: View {
     }
 
     func downloadRepoFromLab(mainUrl: String, token: String, location: String, dest: URL) {
-        update(title: "正在从 GitLab 下载仓库 \(location)")
+        update(title: String(format:
+            NSLocalizedString("正在从 GitLab 下载仓库 %@...", comment: ""),
+            location))
         var location = location
         if location.hasPrefix("http"), let url = URL(string: location) {
             location = url.path
@@ -251,7 +261,9 @@ struct AnalysisView: View {
     }
 
     func downloadRepoFromBitbucket(mainUrl: String, username: String, token: String, location: String, dest: URL) {
-        update(title: "正在从 Bitbucket 下载仓库 \(location)")
+        update(title: String(format:
+            NSLocalizedString("正在从 Bitbucket 下载仓库 %@...", comment: ""),
+            location))
         var location = location
         if location.hasPrefix("http"), let url = URL(string: location) {
             location = url.path

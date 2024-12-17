@@ -49,8 +49,8 @@ struct LocalRepoSheet: View {
             mainUrl = "/" + mainUrl
         }
         var repos = [SourceRegistrationData.RepoElement]()
-        currentRepos.forEach {
-            repos.append(.init(localUrl: $0))
+        for currentRepo in currentRepos {
+            repos.append(.init(localUrl: currentRepo))
         }
         return .init(
             register: .local,
@@ -149,7 +149,7 @@ struct LocalRepoSheet: View {
         func searchBegin() {
             let searchRoots = panel
                 .urls
-                .compactMap { $0 }
+                .compactMap(\.self)
             guard searchRoots.count > 0 else {
                 return
             }

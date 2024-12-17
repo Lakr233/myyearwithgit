@@ -1,0 +1,1368 @@
+{
+  "sourceLanguage" : "zh-Hans",
+  "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
+    " %@ " : {
+      "shouldTranslate" : false
+    },
+    " %lld " : {
+      "shouldTranslate" : false
+    },
+    "%@" : {
+      "shouldTranslate" : false
+    },
+    "%@  行" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Line(s)"
+          }
+        }
+      }
+    },
+    "%@ - %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ - %2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%@ 年" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Year"
+          }
+        }
+      }
+    },
+    "%@ 年 x %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ 年 x %2$@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ 年 x %2$@"
+          }
+        }
+      }
+    },
+    "%@ 是我今年的代言词。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ tagged my year."
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "© %lld 标准件厂长@砍砍 & 他的朋友们" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright © %lld @Lakr233's Team. All Rights Reserved."
+          }
+        }
+      }
+    },
+    "↓ 向下滑动开启报告 ↓" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "↓ Open My Git Letter ↓"
+          }
+        }
+      }
+    },
+    ">>" : {
+      "shouldTranslate" : false
+    },
+    "Bitbucket" : {
+      "shouldTranslate" : false
+    },
+    "Bufeature: <noun> bug feature, feature with bug." : {
+      "shouldTranslate" : false
+    },
+    "ghp_xxxxxx" : {
+      "shouldTranslate" : false
+    },
+    "Git" : {
+      "shouldTranslate" : false
+    },
+    "git 似乎没有安装，程序可能不工作。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It looks like git was not installed, this program may not work."
+          }
+        }
+      }
+    },
+    "GitHub" : {
+      "shouldTranslate" : false
+    },
+    "GitLab" : {
+      "shouldTranslate" : false
+    },
+    "https://your.git.lab.example.com" : {
+      "shouldTranslate" : false
+    },
+    "namespace::" : {
+      "shouldTranslate" : false
+    },
+    "xxxxxx" : {
+      "shouldTranslate" : false
+    },
+    "上串下跳的提交，是开心，是愉悦，还是害怕，或者担心呢？" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The erratic commits — are they driven by joy, pleasure, fear, or perhaps worry?"
+          }
+        }
+      }
+    },
+    "个人访问令牌" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personal Access Token"
+          }
+        }
+      }
+    },
+    "人们说色即是空，空即是色。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Form is emptiness, and emptiness is form."
+          }
+        }
+      }
+    },
+    "今年，我获得了不少成就。下面是我愿意和你分享的一些。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This year, I achieved quite a few things. Here are some I’d like to share with you."
+          }
+        }
+      }
+    },
+    "仓库因你增添了 %@ 行代码，也减去了 %@ 行的重量。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repository added %1$@ line(s) of code made by your hand, while removed %2$@ line(s), also made by your hand."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "仓库因你增添了 %1$@ 行代码，也减去了 %2$@ 行的重量。"
+          }
+        }
+      }
+    },
+    "他们也陪我走过一段旅程。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "They have also accompanied me on a journey."
+          }
+        }
+      }
+    },
+    "他们说多少不重要，因为我的提交，每一次都心意满满。😮" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "They say the number doesn’t matter, because each of my commits is filled with intention. 😮"
+          }
+        }
+      }
+    },
+    "他是我最好的伙伴。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "He is my best partner."
+          }
+        }
+      }
+    },
+    "代码里，这些词经常出现" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In your code, by your mind. These words are frequent."
+          }
+        }
+      }
+    },
+    "以获取 App 专用密码。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "to obtain the App-specific password."
+          }
+        }
+      }
+    },
+    "以获取个人访问令牌。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "to obtain a personal access token."
+          }
+        }
+      }
+    },
+    "任意门" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jump Now"
+          }
+        }
+      }
+    },
+    "你可添加本地或远端的仓库，不用担心仓库重复，相同的提交哈希仅计算一次。\n远端仓库在分析时会被载入本地临时文件夹内，分析完成以后会从本地删除。\n你可能需要额外的步骤来获取远端仓库的访问令牌，登录时会自动添加邮件地址。\n克隆仅支持使用 HTTPS 协议。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can add local or remote repositories without worrying about duplication. The same commit hash will only be counted once.\nRemote repositories will be loaded into a local temporary folder during analysis and will be deleted locally after the analysis is complete.\nYou may need additional steps to obtain an access token for remote repositories. Your email address will be automatically added during login.\nCloning only supports the HTTPS protocol. ￼"
+          }
+        }
+      }
+    },
+    "你看到了吗，这一页，有 1010 行空行呢。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Did you see this? This page has 1010 blank lines."
+          }
+        }
+      }
+    },
+    "修得的福报，是我一生最大的欢喜。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The good karma I’ve earned is the greatest joy of my life."
+          }
+        }
+      }
+    },
+    "偷得浮生半日闲，可不能再修福报啦！" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Having a half of the day off keyboard, no more coding!"
+          }
+        }
+      }
+    },
+    "共 %lld 个仓库" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld repository in total"
+          }
+        }
+      }
+    },
+    "关闭" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        }
+      }
+    },
+    "关闭窗口将不会保存你的分析记录。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close this window will delete your analysis record."
+          }
+        }
+      }
+    },
+    "分析过程中不可载入数据，请稍后再试。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data can not be loaded while in analysis."
+          }
+        }
+      }
+    },
+    "删除" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
+    },
+    "删除关键词" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete the keyword."
+          }
+        }
+      }
+    },
+    "删除包含 <关键词> 的仓库，区分大小写。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete repositories containing the <Keyword>, case-sensitive."
+          }
+        }
+      }
+    },
+    "取消" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "可能敲代码，正是我的乐趣吧。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Writing code might just be my source of joy."
+          }
+        }
+      }
+    },
+    "回过头来看看这一年，似乎付出了不少。咱一共活跃了 %@ 天。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Looking back on this year, it seems quite a lot of effort was put in. We were active for %@ days.\n"
+          }
+        }
+      }
+    },
+    "回过头来看看这一年，咱一共活跃了 %@ 天。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Looking back on this year, we were active for %@ days.\n"
+          }
+        }
+      }
+    },
+    "在 %@ 年" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In the year %@"
+          }
+        }
+      }
+    },
+    "在剩余的时光里，" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In the remaining time,"
+          }
+        }
+      }
+    },
+    "在这一年里，我使用这门语言提交了 %@ 行代码。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In this year, I have submitted %@ lines of code using this language."
+          }
+        }
+      }
+    },
+    "在这短短的一天里，你一共提交了 %@ 次代码。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In just this short day, you have made %@ commits."
+          }
+        }
+      }
+    },
+    "在这里输入表达式" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter expression here."
+          }
+        }
+      }
+    },
+    "地址" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Address"
+          }
+        }
+      }
+    },
+    "大概是很特别的一天。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Looks like a special day."
+          }
+        }
+      }
+    },
+    "天啦噜！我的摸鱼流量超过了 100TB 呢！" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oh my goodness! My “slacking off” bandwidth has exceeded 100TB!"
+          }
+        }
+      }
+    },
+    "如果不计算周末的日子，则是 %@ 次。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If weekends are not counted, it will be %@ times."
+          }
+        }
+      }
+    },
+    "如果说代码是有温度的字符，那仓库便是咱的小太阳～ 🤫" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If code is made up of characters with warmth, then the repository is our little sun~ 🤫"
+          }
+        }
+      }
+    },
+    "完成" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "导出分析数据" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export Analysis Data"
+          }
+        }
+      }
+    },
+    "平均而言，我一天提交代码 %@ 次。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On average, %@ commit(s) was made over day to day."
+          }
+        }
+      }
+    },
+    "应用密码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Passwrod"
+          }
+        }
+      }
+    },
+    "应该是太冷门了吧，数据库里找不到对应的语言。🥲" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It’s probably too obscure, that’s why the language can’t be found in the database. 🥲"
+          }
+        }
+      }
+    },
+    "开启我的年度报告" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open My Annual Report"
+          }
+        }
+      }
+    },
+    "感谢我的仓库们，他们记录着我生活的点点滴滴。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Many thanks to our repository, the kept our records."
+          }
+        }
+      }
+    },
+    "成就墙" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achievements"
+          }
+        }
+      }
+    },
+    "我不知道你写了什么" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I’m not sure what you wrote either."
+          }
+        }
+      }
+    },
+    "我从来不摸鱼，因为没有鱼给我摸。🐟" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I never slack off, because there’s no fish for me to touch. 🐟"
+          }
+        }
+      }
+    },
+    "我们将会列出你的全部仓库地址供你挑选，稍后克隆到本地为分析作准备。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We will list all your repository addresses for you to choose from, and later clone them to your local machine to prepare for analysis."
+          }
+        }
+      }
+    },
+    "我会写很多很多的单词，很多很多的句子。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I can write many, many words, many, many sentences."
+          }
+        }
+      }
+    },
+    "我最喜欢在 %@ 的时候提交代码，总共提交了 %lld 次。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I love submitting code when %1$@, and I have made a total of %2$lld commits."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "我最喜欢在 %1$@ 的时候提交代码，总共提交了 %2$lld 次。"
+          }
+        }
+      }
+    },
+    "我和我的代码，还有这一年。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My code, my journey, and this year."
+          }
+        }
+      }
+    },
+    "我很专一，没有使用过其他的语言。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I am very dedicated and have never used any other language."
+          }
+        }
+      }
+    },
+    "我想你也会很喜欢的，我如此说道，我如此和你说道。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I think you will like it too, as I say this, I say it to you."
+          }
+        }
+      }
+    },
+    "我是卷王本王 🤪" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I am the King of Competition! 🤪"
+          }
+        }
+      }
+    },
+    "我的 Bufeature 做好了吗？" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Is my Bufeature ready?"
+          }
+        }
+      }
+    },
+    "我的年度代码总结" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Annual Code Summary"
+          }
+        }
+      }
+    },
+    "我着实不能理解其中的含义。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I truly cannot understand the meaning behind it."
+          }
+        }
+      }
+    },
+    "打印" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print"
+          }
+        }
+      }
+    },
+    "扫码开启你的专属年度代码提交报告" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan the QR code to unlock your personalized annual code commit report."
+          }
+        }
+      }
+    },
+    "提交记录告诉咱：" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The commit history tells us:"
+          }
+        }
+      }
+    },
+    "提交记录里，这些词经常出现" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "These words often appear in the commit history:"
+          }
+        }
+      }
+    },
+    "星星有月亮，代码回家有仓库，而你有我相伴。😛" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The stars have the moon, code has repositories to return to, and you have me by your side. 😛"
+          }
+        }
+      }
+    },
+    "是的，我又在摸鱼 🥺" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haha, I see! Sometimes a little break is needed! 😅"
+          }
+        }
+      }
+    },
+    "有 %@ 个周末的日子，我在仓库留下了身影。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There are %@ weekends, and I’ve left my mark in the repository."
+          }
+        }
+      }
+    },
+    "未找到有效的仓库。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No valid repository found."
+          }
+        }
+      }
+    },
+    "本地仓库" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Local Repository"
+          }
+        }
+      }
+    },
+    "校验码: 0x%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checksum: 0x%@"
+          }
+        }
+      }
+    },
+    "正在从 Bitbucket 下载仓库 %@..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloading repository %@ from Bitbucket…"
+          }
+        }
+      }
+    },
+    "正在从 Github 下载仓库 %@..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloading repository %@ from GitHub…"
+          }
+        }
+      }
+    },
+    "正在从 GitLab 下载仓库 %@..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloading repository %@ from GitLab…"
+          }
+        }
+      }
+    },
+    "正在分析 %@..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Analysis %@…"
+          }
+        }
+      }
+    },
+    "正在创建分析副本 %@..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creating analysis copy %@…"
+          }
+        }
+      }
+    },
+    "正在处理..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Processing…"
+          }
+        }
+      }
+    },
+    "正在查找代码仓库..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Searching for code repositories…"
+          }
+        }
+      }
+    },
+    "正在生成汇总..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generating Summary…"
+          }
+        }
+      }
+    },
+    "正在解析数据..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decoding data…"
+          }
+        }
+      }
+    },
+    "此年度报告支持以下数据源" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This report supports following data source"
+          }
+        }
+      }
+    },
+    "没有可用的数据源，请点击上面的按钮来添加。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No available data sources. Please click the button above to add."
+          }
+        }
+      }
+    },
+    "添加" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
+          }
+        }
+      }
+    },
+    "狗急了会跳墙，我急了会骂娘。一天这么多次的提交，肯定是有人被我骂得很惨吧。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A cornered dog will jump over a wall, and when I’m pushed, I start swearing. With so many commits in a day, someone must’ve caught the brunt of my wrath, huh?"
+          }
+        }
+      }
+    },
+    "生成截图" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate screenshot"
+          }
+        }
+      }
+    },
+    "用户名" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Username"
+          }
+        }
+      }
+    },
+    "由 标准件厂长@砍砍 制作" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Made by @Lakr233"
+          }
+        }
+      }
+    },
+    "确定" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "空行能让我的代码变得好看，我很喜欢。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blank lines make my code look better, and I like it."
+          }
+        }
+      }
+    },
+    "编辑" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        }
+      }
+    },
+    "致谢" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acknowledgement"
+          }
+        }
+      }
+    },
+    "若要忽略指定的文件，请在此处填写。\n我们将会传入提交文件的相对路径与你的排除项逐一进行匹配。\n若有一项满足，则该文件不会被记入。此次提交的其他文件仍会进行统计。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you wish to ignore specific files, please enter them here.\nWe will match the relative path of the submitted files with your exclusions one by one.\nIf any of the exclusions match, the file will not be counted. The other files in this submission will still be included in the statistics."
+          }
+        }
+      }
+    },
+    "若要添加提交邮件地址，请在下方的文本框中输入。一次仅能输入一个，且只支持小写字符。\n若提交的电子邮件地址不在该列表内，则不会计算此次提交。\n我们会为你保存电子邮件地址记录，仅需配置一次即可。\n登录到 GitHub 或 GitLab 账号会自动添加账号所属的电子邮件地址。\n若有不愿使用的电子邮件地址，请在配置完成仓库以后，再来此处删除。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To add a commit email address, please enter it in the text box below. Only one email address can be entered at a time, and it must be in lowercase characters.\nIf the submitted email address is not in the list, the commit will not be counted.\nWe will save the email address record for you, and you only need to configure it once.\nLogging into your GitHub or GitLab account will automatically add the email address associated with the account.\nIf there is an email address you wish not to use, please come back to delete it after the repository configuration is complete."
+          }
+        }
+      }
+    },
+    "若要连接到 Bitbucket，请参考" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To connect to Bitbucket, please refer to:"
+          }
+        }
+      }
+    },
+    "若要连接到 GitHub，请参考" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To connect to GitHub, please refer to:"
+          }
+        }
+      }
+    },
+    "若要连接到 GitLab，请参考" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To connect to GitLab, please refer to:"
+          }
+        }
+      }
+    },
+    "获取数据" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fetch Data"
+          }
+        }
+      }
+    },
+    "语言大师的称号，非你莫属！" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The title of Language Master is yours and yours alone! 🙌"
+          }
+        }
+      }
+    },
+    "请为 App 专用密码添加 Account 和 Repositories 的 Read 权限。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please grant the App-specific password Read access to Account and Repositories."
+          }
+        }
+      }
+    },
+    "请为令牌添加 read_user, read_api, read_repository 权限，需要服务端支持 v4 api。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please grant the token read_user, read_api, and read_repository permissions, and ensure the server supports the v4 API."
+          }
+        }
+      }
+    },
+    "请为令牌添加 repo 和 user 的全部权限。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please grant the token full repo and user permissions."
+          }
+        }
+      }
+    },
+    "请选择一个需要分析的仓库的来源，我们将在稍后填写具体信息。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please select the source of the repository to be analyzed. Specific details will be filled in later."
+          }
+        }
+      }
+    },
+    "请选择一些文件夹，我们将从中搜索仓库。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please select some folders from which we will search for repositories."
+          }
+        }
+      }
+    },
+    "输入昵称 可选" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter Nickname (Optional）"
+          }
+        }
+      }
+    },
+    "输入电子邮件地址" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter Email Address"
+          }
+        }
+      }
+    },
+    "辛苦啦 🥲" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thank you for your hard work! 🥲"
+          }
+        }
+      }
+    },
+    "过滤器" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
+          }
+        }
+      }
+    },
+    "这一天，是忙碌的自己，没吃好，没睡好。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This day is the busy version of myself — didn’t eat well, didn’t sleep well."
+          }
+        }
+      }
+    },
+    "这一年，咱一共卷了 %@ 天。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This year, I’ve been competitive for a total of %@ days."
+          }
+        }
+      }
+    },
+    "这一年的周末，我都没有提交代码。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I didn’t commit any code on the weekends this year."
+          }
+        }
+      }
+    },
+    "这一年里，我总共进行了 %@ 次代码提交。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In this year, I made a total of %@ code commits."
+          }
+        }
+      }
+    },
+    "这份文档" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This document"
+          }
+        }
+      }
+    },
+    "这会删除分析记录。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This will delete analysis record."
+          }
+        }
+      }
+    },
+    "这是我今年写的空行的数量。空行，没错，就是只有空格或者什么都没有的那一行。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is the number of empty lines I wrote this year. Empty lines, yes, the ones that only have spaces or nothing at all."
+          }
+        }
+      }
+    },
+    "这是我最常用的语言。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is the language I use most often."
+          }
+        }
+      }
+    },
+    "这是我在代码中最常写到的单词，他出现了 %lld 次。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is the word I most frequently wrote in my code, and it appeared %lld times."
+          }
+        }
+      }
+    },
+    "这是我在代码提交记录中最常写到的单词，他出现了 %lld 次。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is the word I most frequently wrote in my commit history, and it appeared %lld times."
+          }
+        }
+      }
+    },
+    "这相当于好几百只 🐳🐳🐳🐳🐳🐳 从我身边游过" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "That’s like several hundred 🐳🐳🐳🐳🐳🐳 swimming past me!"
+          }
+        }
+      }
+    },
+    "选择..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select…"
+          }
+        }
+      }
+    },
+    "配置排除项" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configure Excludes"
+          }
+        }
+      }
+    },
+    "配置邮箱地址" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configure Commit Email"
+          }
+        }
+      }
+    },
+    "重新开始" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start Over"
+          }
+        }
+      }
+    },
+    "风雨兼程，目的地是我向往的星辰大海。🥺" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "While the world sleep, we dream about the ocean with star. 🥺"
+          }
+        }
+      }
+    },
+    "风雨兼程的 Coding 旅途，一天中我最忙碌的时段。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was the busy day. Was the busy hour."
+          }
+        }
+      }
+    },
+    "黑客是我的外号，我总能找到属于我的 🚩! 是 🏳️‍⚧️ 还是 🏳️‍🌈 呢？" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hacker is my nickname—I always manage to claim my own 🚩! But is it 🏳️‍⚧️ or 🏳️‍🌈? 😉"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

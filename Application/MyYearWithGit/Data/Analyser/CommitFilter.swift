@@ -72,6 +72,7 @@ class CommitFileFilter {
                     .lastPathComponent
                     .lowercased()
                     .contains(value.lowercased())
+
             case .nameKeyWordCaseSensitive:
                 return location
                     .lastPathComponent
@@ -83,6 +84,7 @@ class CommitFileFilter {
                     .path
                     .lowercased()
                     .contains(value.lowercased())
+
             case .pathKeyWordCaseSensitive:
                 return location
                     .deletingLastPathComponent()
@@ -98,6 +100,7 @@ class CommitFileFilter {
                     return true
                 }
                 return false
+
             case .pathComponentFullMatchCaseSensitive:
                 let items = location
                     .deletingLastPathComponent()

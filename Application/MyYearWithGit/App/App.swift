@@ -16,30 +16,17 @@ let currentBootWorkingDir: String = FileManager
     .default
     .currentDirectoryPath
 
-let requiredYear = 2023
-
 let processCount: Int = {
     var count = ProcessInfo
         .processInfo
         .processorCount
-    if count < 0 {
-        count = 1
-    }
+    if count < 0 { count = 1 }
     return count
 }()
 
-@main
 struct MyYearWithGitApp: App {
     init() {
         unprotectWindowFromClose()
-
-        // override
-        setenv("GIT_TERMINAL_PROMPT", "0", 1)
-        setenv("GIT_LFS_SKIP_SMUDGE", "1", 1)
-
-        AuxiliaryExecuteWrapper.setupExecutables()
-
-        // now check if git is working
         do {
             let command = AuxiliaryExecuteWrapper.spawn(
                 command: AuxiliaryExecuteWrapper.git,
@@ -47,14 +34,13 @@ struct MyYearWithGitApp: App {
                     "version",
                 ],
                 timeout: 0
-            ) { _ in
-            }
+            ) { _ in }
             if !command.1.contains("git version") {
                 DispatchQueue.main.async {
                     let alert = NSAlert()
                     alert.alertStyle = .critical
-                    alert.messageText = "git 似乎没有安装，程序可能不工作。"
-                    alert.addButton(withTitle: "确定")
+                    alert.messageText = NSLocalizedString("git 似乎没有安装，程序可能不工作。", comment: "")
+                    alert.addButton(withTitle: NSLocalizedString("确定", comment: ""))
                     alert.beginSheetModal(for: NSApp.keyWindow ?? NSWindow()) { _ in
                     }
                 }

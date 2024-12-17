@@ -152,7 +152,7 @@ struct ResultView: View {
                                     }
                                     DispatchQueue.main.async {
                                         let savePanel = NSSavePanel()
-                                        savePanel.nameFieldStringValue = "我的年度代码总结.png"
+                                        savePanel.nameFieldStringValue = NSLocalizedString("我的年度代码总结", comment: "") + ".png"
                                         savePanel.beginSheetModal(for: keyWindow) { result in
                                             if result.rawValue == NSApplication.ModalResponse.OK.rawValue,
                                                let url = savePanel.url,
@@ -175,7 +175,7 @@ struct ResultView: View {
                                     }
                                     DispatchQueue.main.async {
                                         if let pdfDocument = PDFDocument(url: pdfURL) {
-                                            pdfDocument.documentAttributes?["Title"] = "我的年度代码总结"
+                                            pdfDocument.documentAttributes?["Title"] = NSLocalizedString("我的年度代码总结", comment: "")
                                             let printInfo = NSPrintInfo.shared
                                             printInfo.orientation = .landscape
                                             printInfo.topMargin = 0
@@ -205,9 +205,9 @@ struct ResultView: View {
                                 Button {
                                     let alert = NSAlert()
                                     alert.alertStyle = .critical
-                                    alert.messageText = "这会删除分析记录。"
-                                    alert.addButton(withTitle: "确定")
-                                    alert.addButton(withTitle: "取消")
+                                    alert.messageText = NSLocalizedString("这会删除分析记录。", comment: "")
+                                    alert.addButton(withTitle: NSLocalizedString("删除", comment: ""))
+                                    alert.addButton(withTitle: NSLocalizedString("取消", comment: ""))
                                     guard let window = NSApp.keyWindow else {
                                         NotificationCenter.default.post(name: .analysisErase, object: nil)
                                         return

@@ -20,7 +20,7 @@ enum SourceRegisters: String, CaseIterable, Codable, HumanReadable {
     func readableDescription() -> String {
         switch self {
         case .local:
-            "本地仓库"
+            NSLocalizedString("本地仓库", comment: "")
         case .github:
             "GitHub"
         case .gitlab:

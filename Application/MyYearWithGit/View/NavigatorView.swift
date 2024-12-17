@@ -31,8 +31,8 @@ struct NavigatorView: View {
             guard sourcePackage == nil else {
                 let alert = NSAlert()
                 alert.alertStyle = .critical
-                alert.messageText = "分析过程中不可载入数据，请稍后再试。"
-                alert.addButton(withTitle: "确定")
+                alert.messageText = NSLocalizedString("分析过程中不可载入数据，请稍后再试。", comment: "")
+                alert.addButton(withTitle: NSLocalizedString("确定", comment: ""))
                 alert.beginSheetModal(for: NSApp.keyWindow ?? NSWindow()) { _ in
                 }
                 return false
@@ -63,7 +63,7 @@ struct NavigatorView: View {
             return true
         })
         .sheet(isPresented: $progress, onDismiss: nil, content: {
-            SheetTemplate.makeProgress(text: "正在解析数据...")
+            SheetTemplate.makeProgress(text: NSLocalizedString("正在解析数据...", comment: ""))
         })
         .onReceive(NotificationCenter.default.publisher(for: .postAnalysis, object: nil)) { notification in
             guard let sourcePackage = notification.object as? SourcePackage else {

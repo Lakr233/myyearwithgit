@@ -39,9 +39,9 @@ static void replaced_NSWindow_close(NSWindow *self, SEL _cmd)
     
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setAlertStyle:NSAlertStyleCritical];
-    [alert setMessageText:@"关闭窗口将不会保存你的分析记录。"];
-    [alert addButtonWithTitle:@"确定"];
-    [alert addButtonWithTitle:@"取消"];
+    [alert setMessageText:NSLocalizedString(@"关闭窗口将不会保存你的分析记录。", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"关闭", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"取消", nil)];
     NSWindow *window = [NSApp keyWindow];
     if (window) {
         [alert beginSheetModalForWindow:window completionHandler:^(NSModalResponse returnCode) {

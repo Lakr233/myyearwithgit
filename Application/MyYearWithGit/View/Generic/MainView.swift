@@ -11,7 +11,7 @@ import SwiftUI
 private let imageSize: CGFloat = 12
 
 private let mainTitleTextList = [
-    "我和我的代码，还有这一年。",
+    NSLocalizedString("我和我的代码，还有这一年。", comment: ""),
 ] + [
     #"""print("Hello World")"""#, // Python
     #"""System.out.println("Hello World");"""#, // Java
@@ -23,6 +23,22 @@ private let mainTitleTextList = [
     #"""print("Hello World")"""#, // Swift
     #"""fmt.Println("Hello World")"""#, // Go
     #"""Console.WriteLine("Hello World");"""#, // C#
+    #"""echo "Hello World";"""#, // Bash
+    #"""Write-Output "Hello World"""#, // PowerShell
+    #"""echo('Hello World')"""#, // Lua
+    #"""(println "Hello World")"""#, // Clojure
+    #"""echo Hello, World!"""#, // Batch
+    #"""DISPLAY 'Hello World'"""#, // COBOL
+    #"""write('Hello World')"""#, // Pascal
+    #"""io.write("Hello World\n")"""#, // Lua
+    #"""print *, "Hello World"""#, // Fortran
+    #"""PRINT "Hello World" """#, // BASIC
+    #"""printf("Hello World\n");"""#, // Kotlin (via C interop)
+    #"""System.Console.WriteLine("Hello World");"""#, // F#
+    #"""print_endline "Hello World";"""#, // OCaml
+    #"""IO.puts("Hello World")"""#, // Elixir
+    #"""'Hello World'"""#, // Haskell (via GHCi)
+    #"""print("Hello World!")"""#, // R
 ]
 .shuffled()
 
@@ -48,7 +64,7 @@ struct MainView: View {
             .overlay(
                 VStack {
                     Spacer()
-                    Text("Made with love by @Lakr233")
+                    Text("由 标准件厂长@砍砍 制作")
                         .font(.system(size: 8, weight: .semibold, design: .rounded))
                         .multilineTextAlignment(.center)
                         .opacity(0.5)
@@ -60,7 +76,8 @@ struct MainView: View {
                 }
             )
             .background(
-                ColorfulView(color: $colors)
+                ColorfulView(color: $colors, speed: .constant(0.5))
+                    .opacity(0.25)
                     .ignoresSafeArea()
                     .onChange(of: colorScheme) { _ in
                         updateColorScheme()
@@ -182,6 +199,6 @@ struct MainView: View {
     func updateColorScheme() {
         let candidates: [ColorfulPreset] = colorScheme == .light ? lightColorfulTheme : darkColorfulTheme
         guard let c = candidates.randomElement() else { return }
-        colors = c.colors
+        colors = c.colors.map { .init($0) }
     }
 }
