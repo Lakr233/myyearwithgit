@@ -41,3 +41,45 @@ extension URL {
         return urlComponents.url!
     }
 }
+
+extension String {
+    private static let camelCaseRegex = try! NSRegularExpression(
+        pattern: "([a-z](?=[A-Z]))",
+        options: []
+    )
+
+    func enumerateSubstringsByWordsWithCamelCase(
+        _ body: @escaping (
+            _ substring: String?,
+            _ substringRange: Range<Self.Index>,
+            _ enclosingRange: Range<Self.Index>,
+            inout Bool
+        ) -> Void
+    ) -> Void {
+        var processingBuffer = self
+        processingBuffer = processingBuffer.replacingOccurrences(of: ".", with: " ")
+        processingBuffer = processingBuffer.replacingOccurrences(of: "-", with: " ")
+        processingBuffer = processingBuffer.replacingOccurrences(of: "_", with: " ")
+        processingBuffer = String.camelCaseRegex.stringByReplacingMatches(
+            in: processingBuffer,
+            options: [],
+            range: NSRange(location: 0, length: processingBuffer.utf16.count),
+            withTemplate: "$1 "
+        )
+        processingBuffer = processingBuffer.lowercased()
+        let newBody: (
+            _ substring: String?,
+            _ substringRange: Range<Self.Index>,
+            _ enclosingRange: Range<Self.Index>,
+            inout Bool
+        ) -> Void = { (substring, substringRange, enclosingRange, stop) in
+            let newSubstring = substring?.lowercased()
+            body(newSubstring, substringRange, enclosingRange, &stop)
+        }
+        processingBuffer.enumerateSubstrings(
+            in: processingBuffer.startIndex...,
+            options: .byWords,
+            newBody
+        )
+    }
+}

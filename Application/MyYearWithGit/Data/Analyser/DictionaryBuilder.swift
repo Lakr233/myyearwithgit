@@ -35,13 +35,11 @@ class DictionaryBuilder {
         guard session == currentSession else {
             return
         }
-        buffer.enumerateSubstrings(
-            in: buffer.startIndex...,
-            options: .byWords
-        ) { substring, _, _, _ in
+        buffer.enumerateSubstringsByWordsWithCamelCase { substring, _, _, _ in
             guard let substring,
                   substring.count > 3,
-                  substring.elegantForDictonary
+                  substring.elegantForDictonary,
+                  Double(substring) == nil
             else {
                 return
             }
