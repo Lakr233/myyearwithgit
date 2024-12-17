@@ -11,7 +11,7 @@ let preferredSheetTitleSize: CGFloat = 20
 
 enum SheetTemplate {
     typealias Confirmed = Bool
-    static func makeSheet(title: String, body: AnyView, complete: @escaping (Confirmed) -> Void) -> some View {
+    static func makeSheet(title: LocalizedStringKey, body: AnyView, complete: @escaping (Confirmed) -> Void) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             Text(title)
                 .font(.system(size: preferredSheetTitleSize, weight: .semibold, design: .rounded))

@@ -41,17 +41,17 @@ enum CommitDateInDay: String, HumanReadable {
     func readableDescription() -> String {
         switch self {
         case .midnight: // 0:00 <-> 5:00
-            "凌晨"
+            NSLocalizedString("凌晨", comment: "")
         case .morning: // 5:00 <-> 10:00
-            "早晨"
+            NSLocalizedString("早晨", comment: "")
         case .noon: // 10:00 <-> 14:00
-            "中午"
+            NSLocalizedString("中午", comment: "")
         case .afternoon: // 14:00 <-> 17:00
-            "下午"
+            NSLocalizedString("下午", comment: "")
         case .dinner: // 17:00 <-> 19:00
-            "晚餐时间"
+            NSLocalizedString("晚餐时间", comment: "")
         case .night: // 19:00 <-> 24:00
-            "晚上"
+            NSLocalizedString("晚上", comment: "")
         }
     }
 

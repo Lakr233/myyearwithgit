@@ -173,26 +173,50 @@ class ResultSection1: ResultSection {
 
 private func totoalCommitToDesc(totalCommit: Int, totoalAdd: Int) -> ResultSectionUpdateRecipe {
     if totalCommit < 0 {
-        return .init(achievement: .init(name: "flag{Hack_m3_1n_th3_b0x!}", describe: "提交的次数为负数"))
+        return .init(achievement: .init(
+            name: "flag{Hack_m3_1n_th3_b0x!}",
+            describe: NSLocalizedString("提交的次数为负数", comment: "")
+        ))
     }
     if totalCommit == 0 {
-        return .init(achievement: .init(name: "我也不知道你来这里干什么", describe: "今年没有写代码"))
+        return .init(achievement: .init(
+            name: NSLocalizedString("我也不知道你来这里干什么", comment: ""),
+            describe: NSLocalizedString("今年没有写代码", comment: "")
+        ))
     }
     if totalCommit == 1 {
-        return .init(achievement: .init(name: "签到不是胡闹", describe: "今年有且只有一次提交"))
+        return .init(achievement: .init(
+            name: NSLocalizedString("签到不是胡闹", comment: ""),
+            describe: NSLocalizedString("今年有且只有一次提交", comment: "")
+        ))
     }
     let score = totalCommit * 10 + totoalAdd
     if (0 ... 500).contains(score) {
-        return .init(achievement: .init(name: "休养生息", describe: "有一些提交"))
+        return .init(achievement: .init(
+            name: NSLocalizedString("休养生息", comment: ""),
+            describe: NSLocalizedString("有一些提交", comment: "")
+        ))
     }
     if (500 ... 1000).contains(score) {
-        return .init(achievement: .init(name: "小试牛刀", describe: "有一些些提交"))
+        return .init(achievement: .init(
+            name: NSLocalizedString("小试牛刀", comment: ""),
+            describe: NSLocalizedString("有一些些提交", comment: "")
+        ))
     }
     if (1000 ... 10000).contains(score) {
-        return .init(achievement: .init(name: "勤劳努力", describe: "有很多提交"))
+        return .init(achievement: .init(
+            name: NSLocalizedString("勤劳努力", comment: ""),
+            describe: NSLocalizedString("有很多提交", comment: "")
+        ))
     }
     if (10000 ... 100_000).contains(score) {
-        return .init(achievement: .init(name: "发奋图强", describe: "有很多很多很多很多的提交"))
+        return .init(achievement: .init(
+            name: NSLocalizedString("发奋图强", comment: ""),
+            describe: NSLocalizedString("有很多很多很多很多的提交", comment: "")
+        ))
     }
-    return .init(achievement: .init(name: "卷卷卷卷卷卷", describe: "我是卷王王中王本王"))
+    return .init(achievement: .init(
+        name: NSLocalizedString("卷卷卷卷卷卷", comment: ""),
+        describe: NSLocalizedString("我是卷王王中王本王", comment: "")
+    ))
 }

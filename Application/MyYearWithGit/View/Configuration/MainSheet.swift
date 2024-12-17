@@ -52,8 +52,8 @@ struct MainSheet: View {
             } else if confirmed, currentSources.count < 1 {
                 let alert = NSAlert()
                 alert.alertStyle = .critical
-                alert.messageText = "没有可用的数据源，分析被取消。"
-                alert.addButton(withTitle: "确定")
+                alert.messageText = NSLocalizedString("没有可用的数据源，分析被取消。", comment: "")
+                alert.addButton(withTitle: NSLocalizedString("确定", comment: ""))
                 presentationMode.wrappedValue.dismiss()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     alert.beginSheetModal(for: NSApp.keyWindow ?? NSWindow(), completionHandler: nil)

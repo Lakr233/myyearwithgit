@@ -151,12 +151,32 @@
         }
       }
     },
+    "下午" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afternoon"
+          }
+        }
+      }
+    },
     "个人访问令牌" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Personal Access Token"
+          }
+        }
+      }
+    },
+    "中午" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noon"
           }
         }
       }
@@ -177,6 +197,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This year, I achieved quite a few things. Here are some I’d like to share with you."
+          }
+        }
+      }
+    },
+    "今年有且只有一次提交" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Being Single"
+          }
+        }
+      }
+    },
+    "今年没有写代码" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Never Code This Year"
           }
         }
       }
@@ -267,6 +307,16 @@
         }
       }
     },
+    "休养生息" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taking Break"
+          }
+        }
+      }
+    },
     "你可添加本地或远端的仓库，不用担心仓库重复，相同的提交哈希仅计算一次。\n远端仓库在分析时会被载入本地临时文件夹内，分析完成以后会从本地删除。\n你可能需要额外的步骤来获取远端仓库的访问令牌，登录时会自动添加邮件地址。\n克隆仅支持使用 HTTPS 协议。" : {
       "localizations" : {
         "en" : {
@@ -337,6 +387,16 @@
         }
       }
     },
+    "凌晨" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Early Morning"
+          }
+        }
+      }
+    },
     "分析过程中不可载入数据，请稍后再试。" : {
       "localizations" : {
         "en" : {
@@ -373,6 +433,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete repositories containing the <Keyword>, case-sensitive."
+          }
+        }
+      }
+    },
+    "勤劳努力" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Some Hardworking"
+          }
+        }
+      }
+    },
+    "卷卷卷卷卷卷" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haaarrrddd Wooorrrkkk"
+          }
+        }
+      }
+    },
+    "发奋图强" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hard Work"
           }
         }
       }
@@ -497,6 +587,16 @@
         }
       }
     },
+    "天才第一步" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "First Step"
+          }
+        }
+      }
+    },
     "如果不计算周末的日子，则是 %@ 次。" : {
       "localizations" : {
         "en" : {
@@ -533,6 +633,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Export Analysis Data"
+          }
+        }
+      }
+    },
+    "小试牛刀" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try My Best"
           }
         }
       }
@@ -603,6 +713,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "I’m not sure what you wrote either."
+          }
+        }
+      }
+    },
+    "我也不知道你来这里干什么" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I don’t know why you’ve here."
           }
         }
       }
@@ -693,6 +813,16 @@
         }
       }
     },
+    "我是卷王王中王本王" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "King of Compete"
+          }
+        }
+      }
+    },
     "我的 Bufeature 做好了吗？" : {
       "localizations" : {
         "en" : {
@@ -743,6 +873,26 @@
         }
       }
     },
+    "排除列表" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exclude List"
+          }
+        }
+      }
+    },
+    "提交的次数为负数" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Negative Commits"
+          }
+        }
+      }
+    },
     "提交记录告诉咱：" : {
       "localizations" : {
         "en" : {
@@ -759,6 +909,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "These words often appear in the commit history:"
+          }
+        }
+      }
+    },
+    "数据源" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data Source"
+          }
+        }
+      }
+    },
+    "早晨" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Morning"
           }
         }
       }
@@ -783,12 +953,72 @@
         }
       }
     },
+    "晚上" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Night"
+          }
+        }
+      }
+    },
+    "晚餐时间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinner Time"
+          }
+        }
+      }
+    },
     "有 %@ 个周末的日子，我在仓库留下了身影。" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "There are %@ weekends, and I’ve left my mark in the repository."
+          }
+        }
+      }
+    },
+    "有一些些提交" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Committed Some Sometimes"
+          }
+        }
+      }
+    },
+    "有一些提交" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Committed Sometimes"
+          }
+        }
+      }
+    },
+    "有很多很多很多很多的提交" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Many Many Many Commits"
+          }
+        }
+      }
+    },
+    "有很多提交" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Many Commits"
           }
         }
       }
@@ -923,6 +1153,16 @@
         }
       }
     },
+    "没有可用的数据源，分析被取消。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No data source available."
+          }
+        }
+      }
+    },
     "没有可用的数据源，请点击上面的按钮来添加。" : {
       "localizations" : {
         "en" : {
@@ -943,6 +1183,46 @@
         }
       }
     },
+    "添加来自 Bitbucket 的仓库" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Repository @Bitbucket"
+          }
+        }
+      }
+    },
+    "添加来自 GitHub 的仓库" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Repository @GitHub"
+          }
+        }
+      }
+    },
+    "添加来自 GitLab 的仓库" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Repository @GitLab"
+          }
+        }
+      }
+    },
+    "添加来自本地的仓库" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Repository @localhost"
+          }
+        }
+      }
+    },
     "狗急了会跳墙，我急了会骂娘。一天这么多次的提交，肯定是有人被我骂得很惨吧。" : {
       "localizations" : {
         "en" : {
@@ -958,7 +1238,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Generate screenshot"
+            "value" : "Generate Screenshot"
           }
         }
       }
@@ -999,6 +1279,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Blank lines make my code look better, and I like it."
+          }
+        }
+      }
+    },
+    "签到不是胡闹" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign Up & Wake Up."
           }
         }
       }
@@ -1299,6 +1589,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Select…"
+          }
+        }
+      }
+    },
+    "邮件地址" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email Address"
           }
         }
       }
