@@ -10,6 +10,16 @@
     " %lld " : {
       "shouldTranslate" : false
     },
+    "**制作名单**\n\n此项目由 [标准件厂长@砍砍](https://twitter.com/Lakr233) 发起，设计，并完成撰写。\n\n与此同时，感谢 [Cyandev](https://twitter.com/unixzii) [拾一](https://twitter.com/__oquery) [82Flex](https://twitter.com/82flex) 与我一同前行。排名不分先后。\n\n**软件许可证**\n\n此项目使用了 [Octokit](https://github.com/nerdishbynature/octokit.swift) 与 [RequestKit](https://github.com/nerdishbynature/RequestKit.git) 来处理 GitHub 相关 Api，请参考他们的使用许可。\n\n此项目使用了来自 [Git](https://git-scm.com/downloads/logos) [GitHub](https://github.com/logos) [GitLab](https://about.gitlab.com/press/press-kit/) [Bitbucket](https://Bitbucket.org/) 的相关图标，请参考他们的使用许可。\n\n2021 冬，最后更新于 2024 年。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Made by List**\n\nThis project was initiated, designed, and written by [@Lakr233](https://twitter.com/Lakr233).\n\nAt the same time, thanks to [Cyandev](https://twitter.com/unixzii), [拾一](https://twitter.com/__oquery), and [82Flex](https://twitter.com/82flex) for working with me. The ranking is in no particular order.\n\n**Software Licenses**\n\nThis project uses [Octokit](https://github.com/nerdishbynature/octokit.swift) and [RequestKit](https://github.com/nerdishbynature/RequestKit.git) to handle GitHub-related APIs. Please refer to their respective licenses for use.\n\nThis project uses related icons from [Git](https://git-scm.com/downloads/logos), [GitHub](https://github.com/logos), [GitLab](https://about.gitlab.com/press/press-kit/), and [Bitbucket](https://Bitbucket.org/). Please refer to their respective licenses for use.\n\nWinter 2021, last updated in 2024.\n"
+          }
+        }
+      }
+    },
     "%@" : {
       "shouldTranslate" : false
     },
