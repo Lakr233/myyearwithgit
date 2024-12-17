@@ -1,11 +1,13 @@
-<p align="center">
-  <h1>我和我的代码，还有这一年。</h1>
-</p>
+<div align="center">
+
+# 我和我的代码，还有这一年。
 
 <p align="center">
   <a href="README.md">简体中文</a> |
   <a href="./Resources/i18n/en/README.md">English</a> |
 </p>
+
+</div>
 
 ## 预览
 

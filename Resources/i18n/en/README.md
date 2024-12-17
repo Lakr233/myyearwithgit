@@ -1,11 +1,13 @@
-<p align="center">
-  <h1>My Code & This Year</h1>
-</p>
+<div align="center">
+
+# My Code & This Year
 
 <p align="center">
   <a href="../../README.md">简体中文</a> |
   <a href="README.md">English</a> |
 </p>
+
+</div>
 
 ## Preview
 
