@@ -181,11 +181,19 @@ struct LocalRepoSheet: View {
     }
 }
 
+private let blockedDirectoryName: Set<String> = [
+    "node_modules"
+]
+
 private func repoEmulator(searchPaths: [URL], complete: @escaping ([URL]) -> Void) {
     var searchResults: Set<URL> = []
     func search(searchRoot: URL, depth: Int) {
         guard depth < 64 else {
             // avoid stack overflow!
+            return
+        }
+        guard !blockedDirectoryName.contains(searchRoot.lastPathComponent.lowercased()) else {
+            print("[*] enumerator skipped a blocked dir \(searchRoot)")
             return
         }
         guard FileManager.default.fileExists(atPath: searchRoot.path) else {
