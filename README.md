@@ -2,7 +2,7 @@
 
 ## 预览
 
-**Chinese Only!**
+~~Chinese Only!~~ English is now supported.
 
 按道理这里是要放几张预览图片并配上一句话的说明的。本程序目前支持使用常见 Git 仓库托管提供商以及本地代码仓库进行分析。
 
