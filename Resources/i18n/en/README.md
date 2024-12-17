@@ -1,4 +1,6 @@
+<p align="center">
 # My Code & This Year
+</p>
 
 <p align="center">
   <a href="../../README.md">简体中文</a> |
