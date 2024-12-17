@@ -49,7 +49,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@ 年 x %2$@"
+            "value" : "%1$@ x %2$@"
           }
         },
         "zh-Hans" : {

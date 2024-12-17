@@ -54,6 +54,22 @@
           }
         }
       }
+    },
+    "年度代码报告" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annually Code Report"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "年度代码报告"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

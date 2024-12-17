@@ -10,9 +10,13 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Annually Code Report</string>
+			<string>年度代码报告</string>
+			<key>UTTypeIconFile</key>
+			<string>Avatar</string>
 			<key>UTTypeIcons</key>
 			<dict>
+				<key>UTTypeIconBackgroundName</key>
+				<string></string>
 				<key>UTTypeIconBadgeName</key>
 				<string>Avatar</string>
 				<key>UTTypeIconText</key>
@@ -37,7 +41,9 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Annually Code Report</string>
+			<string>年度代码报告</string>
+			<key>UTTypeIconFile</key>
+			<string>Avatar</string>
 			<key>UTTypeIcons</key>
 			<dict>
 				<key>UTTypeIconBadgeName</key>
@@ -47,6 +53,8 @@
 			</dict>
 			<key>UTTypeIdentifier</key>
 			<string>wiki.qaq.mygitreport</string>
+			<key>UTTypeReferenceURL</key>
+			<string></string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
