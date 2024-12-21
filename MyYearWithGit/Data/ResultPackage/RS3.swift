@@ -199,11 +199,13 @@ class ResultSection3: ResultSection {
     }
 
     func isDateWeekend(_ date: Date, with calendar: Calendar) -> Bool {
-        let components = calendar.dateComponents([.weekday], from: date)
+        var enCalendar = calendar
+        enCalendar.locale = Locale(identifier: "en_US")
+        let components = enCalendar.dateComponents([.weekday], from: date)
         guard let weekday = components.weekday else {
             assertionFailure("Failed to extract weekday from date")
             return false
         }
-        return ["Saturday", "Sunday", "星期六", "星期日"].contains(calendar.weekdaySymbols[weekday - 1])
+        return ["Saturday", "Sunday"].contains(enCalendar.weekdaySymbols[weekday - 1])
     }
 }
