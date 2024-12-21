@@ -204,6 +204,6 @@ class ResultSection3: ResultSection {
             assertionFailure("Failed to extract weekday from date")
             return false
         }
-        return ["Saturday", "Sunday"].contains(calendar.weekdaySymbols[weekday - 1])
+        return ["Saturday", "Sunday", "星期六", "星期日"].contains(calendar.weekdaySymbols[weekday - 1])
     }
 }
