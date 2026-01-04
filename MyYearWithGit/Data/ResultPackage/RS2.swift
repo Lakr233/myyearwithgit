@@ -12,11 +12,13 @@ class ResultSection2: ResultSection {
     var mostUsedLanguage: SourceLanguage?
     var howManyLine: Int = 0
     var otherUsedLanguages: [SourceLanguage] = []
+    var languageStats: [(language: SourceLanguage, lines: Int)] = [] // 新增：所有语言统计
 
     func update(with scannerResult: ResultPackage.DataSource) -> ResultSectionUpdateRecipe? {
         mostUsedLanguage = nil
         howManyLine = 0
         otherUsedLanguages = []
+        languageStats = [] // 重置统计数据
 
         var languageBuilder: [SourceLanguage: Int] = [:]
         for repo in scannerResult.repoResult.repos {
@@ -29,6 +31,11 @@ class ResultSection2: ResultSection {
                 }
             }
         }
+        
+        // 按行数从高到低排序所有语言
+        languageStats = languageBuilder.map { (language: $0.key, lines: $0.value) }
+            .sorted { $0.lines > $1.lines }
+        
         var mostUsed: SourceLanguage?
         var mostUsedCount: Int = -1
         for key in languageBuilder.keys {
@@ -70,7 +77,8 @@ class ResultSection2: ResultSection {
         AnyView(AssociatedView(
             mostUsedLanguage: mostUsedLanguage,
             howManyLine: howManyLine,
-            otherUsedLanguages: otherUsedLanguages
+            otherUsedLanguages: otherUsedLanguages,
+            languageStats: languageStats // 传递统计数据
         ))
     }
 
@@ -82,6 +90,7 @@ class ResultSection2: ResultSection {
         let mostUsedLanguage: SourceLanguage?
         let howManyLine: Int
         let otherUsedLanguages: [SourceLanguage]
+        let languageStats: [(language: SourceLanguage, lines: Int)] // 新增参数
 
         let preferredContextSize: CGFloat = 12
         let preferredContentHeight: CGFloat = 30
@@ -94,6 +103,20 @@ class ResultSection2: ResultSection {
         }
 
         var container: some View {
+            HStack(alignment: .top, spacing: 30) {
+                // 左侧：文字描述
+                textContent
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                // 右侧：柱状图
+                if !languageStats.isEmpty {
+                    chartContent
+                        .frame(width: 200)
+                }
+            }
+        }
+        
+        var textContent: some View {
             VStack(alignment: .leading, spacing: 0) {
                 if let mostUsedLanguage {
                     Group {
@@ -157,6 +180,73 @@ class ResultSection2: ResultSection {
                 }
             }
             .font(.system(size: preferredContextSize, weight: .semibold, design: .rounded))
+        }
+        
+        // 新增：柱状图视图
+        var chartContent: some View {
+            VStack(alignment: .leading, spacing: 8) {
+                // 获取最大值用于计算比例
+                let maxLines = languageStats.first?.lines ?? 1
+                
+                // 显示前8种语言（如果有的话）
+                ForEach(Array(languageStats.prefix(8).enumerated()), id: \.element.language) { index, stat in
+                    VStack(alignment: .leading, spacing: 2) {
+                        HStack(spacing: 4) {
+                            Text(stat.language.readableDescription())
+                                .font(.system(size: 9, weight: .medium, design: .rounded))
+                                .frame(width: 60, alignment: .leading)
+                                .lineLimit(1)
+                            
+                            Text("\(stat.lines)")
+                                .font(.system(size: 8, weight: .regular, design: .monospaced))
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        // 横向柱状条
+                        GeometryReader { geometry in
+                            ZStack(alignment: .leading) {
+                                // 背景条
+                                RoundedRectangle(cornerRadius: 3)
+                                    .fill(Color.gray.opacity(0.2))
+                                    .frame(width: geometry.size.width, height: 12)
+                                
+                                // 数据条
+                                RoundedRectangle(cornerRadius: 3)
+                                    .fill(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [
+                                                getColorForIndex(index),
+                                                getColorForIndex(index).opacity(0.7)
+                                            ]),
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    )
+                                    .frame(
+                                        width: geometry.size.width * CGFloat(stat.lines) / CGFloat(maxLines),
+                                        height: 12
+                                    )
+                            }
+                        }
+                        .frame(height: 12)
+                    }
+                }
+                
+                if languageStats.count > 8 {
+                    Text("还有 \(languageStats.count - 8) 种语言...")
+                        .font(.system(size: 8, weight: .regular, design: .rounded))
+                        .foregroundColor(.secondary)
+                        .padding(.top, 4)
+                }
+            }
+        }
+        
+        // 为不同的柱状条分配颜色
+        func getColorForIndex(_ index: Int) -> Color {
+            let colors: [Color] = [
+                .blue, .green, .orange, .purple, .pink, .red, .yellow, .cyan
+            ]
+            return colors[index % colors.count]
         }
 
         func makeBigNumber(_ number: Int) -> Text {

@@ -423,6 +423,36 @@
         }
       }
     },
+    "全勤战士" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perfect Attendance Warrior"
+          }
+        }
+      }
+    },
+    "全年提交热力图" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annual Commit Heatmap"
+          }
+        }
+      }
+    },
+    "全年每天都有提交记录" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Committed every single day of the year"
+          }
+        }
+      }
+    },
     "共 %lld 个仓库" : {
       "localizations" : {
         "en" : {
@@ -1179,6 +1209,16 @@
         }
       }
     },
+    "时光印记" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Traces"
+          }
+        }
+      }
+    },
     "星星有月亮，代码回家有仓库，而你有我相伴。😛" : {
       "localizations" : {
         "en" : {
@@ -1219,22 +1259,22 @@
         }
       }
     },
-    "晚餐时间" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dinner Time"
-          }
-        }
-      }
-    },
     "晚饭的吃好" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dinner the Best"
+          }
+        }
+      }
+    },
+    "晚餐时间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinner Time"
           }
         }
       }
@@ -1415,6 +1455,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This report supports following data source"
+          }
+        }
+      }
+    },
+    "每月代码量统计" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monthly Code Statistics"
           }
         }
       }
@@ -1795,6 +1845,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Filter"
+          }
+        }
+      }
+    },
+    "还有 %lld 种语言..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "And %lld more languages..."
           }
         }
       }

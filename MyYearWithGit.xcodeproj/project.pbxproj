@@ -67,6 +67,7 @@
 		50FD1005275101D80090EAFB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD1004275101D80090EAFB /* App.swift */; };
 		50FD1007275101D80090EAFB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD1006275101D80090EAFB /* MainView.swift */; };
 		50FD1009275101D90090EAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50FD1008275101D90090EAFB /* Assets.xcassets */; };
+		A988C1792F0A37CC00F418E0 /* RS9.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988C1782F0A37CC00F418E0 /* RS9.swift */; };
 		FAA2B69127529057008A21E8 /* TextIncrementEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2B69027529057008A21E8 /* TextIncrementEffectView.swift */; };
 /* End PBXBuildFile section */
 
@@ -122,11 +123,12 @@
 		50E5007E275C7C33003E6C9A /* GitHubApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApi.swift; sourceTree = "<group>"; };
 		50E50080275C7C84003E6C9A /* ApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
 		50EB62BA275508E700F6E6FF /* ThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksView.swift; sourceTree = "<group>"; };
-		50FD1001275101D80090EAFB /* MyYearWithGit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyYearWithGit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50FD1001275101D80090EAFB /* MyYearWithGit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MyYearWithGit.app; path = /Users/hele/CursorProjects/myyearwithgit/build/Debug/MyYearWithGit.app; sourceTree = "<absolute>"; };
 		50FD1004275101D80090EAFB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		50FD1006275101D80090EAFB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		50FD1008275101D90090EAFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50FD100D275101D90090EAFB /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
+		A988C1782F0A37CC00F418E0 /* RS9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RS9.swift; sourceTree = "<group>"; };
 		FAA2B69027529057008A21E8 /* TextIncrementEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIncrementEffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +167,7 @@
 		506CB6E627537CE000CF2A6E /* ResultPackage */ = {
 			isa = PBXGroup;
 			children = (
+				A988C1782F0A37CC00F418E0 /* RS9.swift */,
 				506CB6E727537F9F00CF2A6E /* RSProtocol.swift.swift */,
 				50907141275233A7002D2C14 /* ResultPackage.swift */,
 				501B04992754DFAC0077C8FB /* DicCounter.swift */,
@@ -298,7 +301,6 @@
 		50FD1002275101D80090EAFB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50FD1001275101D80090EAFB /* MyYearWithGit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -450,6 +452,7 @@
 				50E3A996275132C7003CBE07 /* GitHubRepoSheet.swift in Sources */,
 				FAA2B69127529057008A21E8 /* TextIncrementEffectView.swift in Sources */,
 				50A8C3F92751222900C545BC /* MainSheet.swift in Sources */,
+				A988C1792F0A37CC00F418E0 /* RS9.swift in Sources */,
 				501B049A2754DFAC0077C8FB /* DicCounter.swift in Sources */,
 				501B049C2754E8180077C8FB /* RS5.swift in Sources */,
 				501B049E2754F9680077C8FB /* RS6.swift in Sources */,
@@ -595,12 +598,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MyYearWithGit/Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2025;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = DZUF88A58A;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -629,12 +633,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MyYearWithGit/Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2025;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = DZUF88A58A;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

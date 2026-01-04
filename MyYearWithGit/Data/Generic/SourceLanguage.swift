@@ -56,6 +56,8 @@ enum SourceLanguage: String, Codable, HumanReadable {
             .swift
         case "ts", "tsx":
             .typescript
+        case "vue":
+            .vue
         default:
             nil
         }
@@ -84,6 +86,7 @@ enum SourceLanguage: String, Codable, HumanReadable {
     case shell
     case swift
     case typescript
+    case vue
 
     func readableDescription() -> String {
         switch self {
@@ -133,6 +136,8 @@ enum SourceLanguage: String, Codable, HumanReadable {
             "Swift"
         case .typescript:
             "TypeScript"
+        case .vue:
+            "Vue"
         }
     }
 }

@@ -41,6 +41,7 @@ class ResultPackage {
         ResultSection4(),
         ResultSection5(),
         ResultSection6(),
+        ResultSection9(),
         ResultSection7(),
         ResultSection8(),
     ]
