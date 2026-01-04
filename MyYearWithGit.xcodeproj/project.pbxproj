@@ -123,7 +123,7 @@
 		50E5007E275C7C33003E6C9A /* GitHubApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApi.swift; sourceTree = "<group>"; };
 		50E50080275C7C84003E6C9A /* ApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
 		50EB62BA275508E700F6E6FF /* ThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksView.swift; sourceTree = "<group>"; };
-		50FD1001275101D80090EAFB /* MyYearWithGit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyYearWithGit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50FD1001275101D80090EAFB /* MyYearWithGit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MyYearWithGit.app; path = /Users/hele/CursorProjects/myyearwithgit/build/Debug/MyYearWithGit.app; sourceTree = "<absolute>"; };
 		50FD1004275101D80090EAFB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		50FD1006275101D80090EAFB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		50FD1008275101D90090EAFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -301,7 +301,6 @@
 		50FD1002275101D80090EAFB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50FD1001275101D80090EAFB /* MyYearWithGit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";

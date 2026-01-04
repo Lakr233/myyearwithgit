@@ -10,7 +10,7 @@ import SwiftUI
 
 private let calendar = Calendar.current
 
-class ResultSection6-1: ResultSection {
+class ResultSection9: ResultSection {
     // 每天的提交次数 [日期字符串: 提交次数]
     var dailyCommits: [String: Int] = [:]
     // 每月的代码行数 [月份: 代码行数]

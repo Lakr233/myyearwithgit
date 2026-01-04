@@ -424,13 +424,34 @@
       }
     },
     "全勤战士" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perfect Attendance Warrior"
+          }
+        }
+      }
     },
     "全年提交热力图" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annual Commit Heatmap"
+          }
+        }
+      }
     },
     "全年每天都有提交记录" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Committed every single day of the year"
+          }
+        }
+      }
     },
     "共 %lld 个仓库" : {
       "localizations" : {
@@ -1189,7 +1210,14 @@
       }
     },
     "时光印记" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Traces"
+          }
+        }
+      }
     },
     "星星有月亮，代码回家有仓库，而你有我相伴。😛" : {
       "localizations" : {
@@ -1432,7 +1460,14 @@
       }
     },
     "每月代码量统计" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monthly Code Statistics"
+          }
+        }
+      }
     },
     "没有可用的数据源，分析被取消。" : {
       "localizations" : {
@@ -1815,7 +1850,14 @@
       }
     },
     "还有 %lld 种语言..." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "And %lld more languages..."
+          }
+        }
+      }
     },
     "这一天，是忙碌的自己，没吃好，没睡好。" : {
       "localizations" : {
