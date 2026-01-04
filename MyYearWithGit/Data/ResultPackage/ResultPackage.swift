@@ -43,6 +43,7 @@ class ResultPackage {
         ResultSection6(),
         ResultSection7(),
         ResultSection8(),
+        ResultSection9(),
     ]
 
     func update() {

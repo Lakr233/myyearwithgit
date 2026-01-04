@@ -423,6 +423,15 @@
         }
       }
     },
+    "全勤战士" : {
+
+    },
+    "全年提交热力图" : {
+
+    },
+    "全年每天都有提交记录" : {
+
+    },
     "共 %lld 个仓库" : {
       "localizations" : {
         "en" : {
@@ -1179,6 +1188,9 @@
         }
       }
     },
+    "时光印记" : {
+
+    },
     "星星有月亮，代码回家有仓库，而你有我相伴。😛" : {
       "localizations" : {
         "en" : {
@@ -1219,22 +1231,22 @@
         }
       }
     },
-    "晚餐时间" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dinner Time"
-          }
-        }
-      }
-    },
     "晚饭的吃好" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dinner the Best"
+          }
+        }
+      }
+    },
+    "晚餐时间" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinner Time"
           }
         }
       }
@@ -1418,6 +1430,9 @@
           }
         }
       }
+    },
+    "每月代码量统计" : {
+
     },
     "没有可用的数据源，分析被取消。" : {
       "localizations" : {
@@ -1798,6 +1813,9 @@
           }
         }
       }
+    },
+    "还有 %lld 种语言..." : {
+
     },
     "这一天，是忙碌的自己，没吃好，没睡好。" : {
       "localizations" : {

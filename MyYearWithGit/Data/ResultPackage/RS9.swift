@@ -2,7 +2,7 @@
 //  RS9.swift
 //  MyYearWithGit
 //
-//  Created by You on 2025/1/5.
+//  Created by diablohl on 2025/1/5.
 //
 
 import Foundation
@@ -73,6 +73,13 @@ class ResultSection9: ResultSection {
         
         let preferredContextSize: CGFloat = 12
         
+        // 日期格式化器
+        private var dateFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            return formatter
+        }
+        
         var body: some View {
             Group {
                 container
@@ -114,9 +121,6 @@ class ResultSection9: ResultSection {
         // 热力图视图
         var heatmapView: some View {
             GeometryReader { geometry in
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                
                 // 计算每个方块的大小
                 let columns = 53 // 一年约52-53周
                 let rows = 7 // 一周7天
