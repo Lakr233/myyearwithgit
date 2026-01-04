@@ -10,7 +10,7 @@ import SwiftUI
 
 private let calendar = Calendar.current
 
-class ResultSection9: ResultSection {
+class ResultSection6-1: ResultSection {
     // 每天的提交次数 [日期字符串: 提交次数]
     var dailyCommits: [String: Int] = [:]
     // 每月的代码行数 [月份: 代码行数]
@@ -100,8 +100,14 @@ class ResultSection9: ResultSection {
                         .font(.system(size: 10, weight: .semibold, design: .rounded))
                         .foregroundColor(.secondary)
                     
-                    heatmapView
-                        .frame(height: 100)
+                    VStack(spacing: 0) {
+                        heatmapView
+                            .frame(height: 90)
+                        
+                        // 月份时间轴
+                        monthAxisView
+                            .frame(height: 15)
+                    }
                 }
                 
                 Spacer().frame(height: 10)
@@ -112,8 +118,15 @@ class ResultSection9: ResultSection {
                         .font(.system(size: 10, weight: .semibold, design: .rounded))
                         .foregroundColor(.secondary)
                     
-                    monthlyChartView
-                        .frame(height: 120)
+                    HStack(spacing: 0) {
+                        // 纵坐标
+                        yAxisView
+                            .frame(width: 35)
+                        
+                        // 柱状图
+                        monthlyChartView
+                            .frame(height: 120)
+                    }
                 }
             }
         }
@@ -145,6 +158,30 @@ class ResultSection9: ResultSection {
                         }
                     }
                 }
+            }
+        }
+        
+        // 月份时间轴
+        var monthAxisView: some View {
+            GeometryReader { geometry in
+                let columns = 53
+                let cellWidth = (geometry.size.width - CGFloat(columns + 1) * 2) / CGFloat(columns)
+                
+                ZStack(alignment: .leading) {
+                    ForEach(0..<12, id: \.self) { monthIndex in
+                        let month = monthIndex + 1
+                        let weekPosition = getWeekPositionForMonth(month)
+                        
+                        if weekPosition < columns {
+                            Text(getMonthAbbreviation(month))
+                                .font(.system(size: 7, weight: .regular, design: .rounded))
+                                .foregroundColor(.secondary)
+                                .frame(width: cellWidth * 4, alignment: .leading)
+                                .offset(x: CGFloat(weekPosition) * (cellWidth + 2))
+                        }
+                    }
+                }
+                .frame(width: geometry.size.width, alignment: .leading)
             }
         }
         
@@ -187,6 +224,32 @@ class ResultSection9: ResultSection {
             }
         }
         
+        // 纵坐标轴
+        var yAxisView: some View {
+            GeometryReader { geometry in
+                let maxLines = monthlyLines.values.max() ?? 1
+                let height = geometry.size.height - 15
+                
+                VStack(alignment: .trailing, spacing: 0) {
+                    // 显示 4 个刻度
+                    ForEach([1.0, 0.75, 0.5, 0.25, 0.0], id: \.self) { ratio in
+                        let value = Int(Double(maxLines) * ratio)
+                        Spacer()
+                            .frame(height: ratio == 1.0 ? 0 : height * 0.25)
+                        HStack(spacing: 2) {
+                            Text(formatNumber(value))
+                                .font(.system(size: 7, weight: .regular, design: .monospaced))
+                                .foregroundColor(.secondary)
+                            Rectangle()
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(width: 3, height: 1)
+                        }
+                    }
+                }
+                .frame(height: height)
+            }
+        }
+        
         // 根据提交次数返回颜色
         func getColorForCommits(_ commits: Int) -> Color {
             if commits == 0 {
@@ -224,6 +287,44 @@ class ResultSection9: ResultSection {
                 .red, .pink, .purple, .indigo, .teal, .brown
             ]
             return colors[(month - 1) % colors.count]
+        }
+        
+        // 格式化数字（简化大数字显示）
+        func formatNumber(_ number: Int) -> String {
+            if number >= 10000 {
+                return String(format: "%.1fk", Double(number) / 1000.0)
+            } else if number >= 1000 {
+                return String(format: "%.1fk", Double(number) / 1000.0)
+            } else {
+                return "\(number)"
+            }
+        }
+        
+        // 获取月份的周位置（更准确的计算）
+        func getWeekPositionForMonth(_ month: Int) -> Int {
+            let year = requiredYear
+            var components = DateComponents()
+            components.year = year
+            components.month = month
+            components.day = 1
+            
+            guard let monthStart = calendar.date(from: components),
+                  let yearStart = calendar.date(from: DateComponents(year: year, month: 1, day: 1))
+            else {
+                // 降级为粗略估算
+                let daysInMonths = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
+                return daysInMonths[month - 1] / 7
+            }
+            
+            let days = calendar.dateComponents([.day], from: yearStart, to: monthStart).day ?? 0
+            return days / 7
+        }
+        
+        // 获取月份缩写
+        func getMonthAbbreviation(_ month: Int) -> String {
+            let months = ["1月", "2月", "3月", "4月", "5月", "6月",
+                         "7月", "8月", "9月", "10月", "11月", "12月"]
+            return months[month - 1]
         }
     }
 }
