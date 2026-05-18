@@ -68,6 +68,7 @@
 		50FD1007275101D80090EAFB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FD1006275101D80090EAFB /* MainView.swift */; };
 		50FD1009275101D90090EAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50FD1008275101D90090EAFB /* Assets.xcassets */; };
 		A988C1792F0A37CC00F418E0 /* RS9.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988C1782F0A37CC00F418E0 /* RS9.swift */; };
+		D67B0FBAB76B2DA406CCA1C9 /* LookInsideServer in Frameworks */ = {isa = PBXBuildFile; productRef = 83C3DD3F63217535A3A6C888 /* LookInsideServer */; };
 		FAA2B69127529057008A21E8 /* TextIncrementEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2B69027529057008A21E8 /* TextIncrementEffectView.swift */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +145,7 @@
 				50EA933E278C09570059EF8B /* AuxiliaryExecute in Frameworks */,
 				50720BEA2B2A2120004A2B8D /* ColorfulX in Frameworks */,
 				50802D642D1133EC00694021 /* ColorfulX in Frameworks */,
+				D67B0FBAB76B2DA406CCA1C9 /* LookInsideServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +343,7 @@
 				50802D662D1133F600694021 /* AuxiliaryExecute */,
 				50802D692D11343E00694021 /* OctoKit */,
 				50802D6E2D1135BF00694021 /* MarkdownUI */,
+				83C3DD3F63217535A3A6C888 /* LookInsideServer */,
 			);
 			productName = MyYearWithGit;
 			productReference = 50FD1001275101D80090EAFB /* MyYearWithGit.app */;
@@ -374,8 +377,9 @@
 			packageReferences = (
 				50802D622D1133EC00694021 /* XCRemoteSwiftPackageReference "ColorfulX" */,
 				50802D652D1133F600694021 /* XCRemoteSwiftPackageReference "AuxiliaryExecute" */,
-				50802D682D11343E00694021 /* XCRemoteSwiftPackageReference "octokit" */,
+				50802D682D11343E00694021 /* XCRemoteSwiftPackageReference "octokit.swift" */,
 				50802D6D2D1135BF00694021 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				284E9D903FF73BD15191DCB1 /* XCRemoteSwiftPackageReference "LookInside-Release" */,
 			);
 			productRefGroup = 50FD1002275101D80090EAFB /* Products */;
 			projectDirPath = "";
@@ -643,6 +647,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_SOURCE_FILE_NAMES = (
+					"$(inherited)",
+					"LookInsideServer*",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyYearWithGit/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "年度代码";
@@ -685,6 +693,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		284E9D903FF73BD15191DCB1 /* XCRemoteSwiftPackageReference "LookInside-Release" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LookInsideApp/LookInside-Release.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
 		50802D622D1133EC00694021 /* XCRemoteSwiftPackageReference "ColorfulX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Lakr233/ColorfulX";
@@ -701,7 +717,7 @@
 				minimumVersion = 2.1.0;
 			};
 		};
-		50802D682D11343E00694021 /* XCRemoteSwiftPackageReference "octokit" */ = {
+		50802D682D11343E00694021 /* XCRemoteSwiftPackageReference "octokit.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nerdishbynature/octokit.swift";
 			requirement = {
@@ -736,7 +752,7 @@
 		};
 		50802D692D11343E00694021 /* OctoKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 50802D682D11343E00694021 /* XCRemoteSwiftPackageReference "octokit" */;
+			package = 50802D682D11343E00694021 /* XCRemoteSwiftPackageReference "octokit.swift" */;
 			productName = OctoKit;
 		};
 		50802D6E2D1135BF00694021 /* MarkdownUI */ = {
@@ -751,6 +767,11 @@
 		50EA933D278C09570059EF8B /* AuxiliaryExecute */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AuxiliaryExecute;
+		};
+		83C3DD3F63217535A3A6C888 /* LookInsideServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 284E9D903FF73BD15191DCB1 /* XCRemoteSwiftPackageReference "LookInside-Release" */;
+			productName = LookInsideServer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
